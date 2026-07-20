@@ -8,14 +8,14 @@ The assistant is designed for customer support, technical documentation, and ent
 
 # 🚀 Features
 
-| Feature | Description | Business Impact |
-|---------|-------------|-----------------|
-| 🎤 Voice Analytics | Real-time Arabic and English ASR for speech transcription | 70% reduction in manual QA |
-| 📚 Knowledge Retrieval | Instant retrieval of relevant documents and FAQs using RAG | 60% faster issue resolution |
-| 🧠 Intelligent Agent | Context-aware LLM for intelligent customer interactions | 24/7 automated support |
-| 🗣️ Voice Synthesis | Natural Arabic and English Text-to-Speech responses | Enhanced customer experience |
-| 📊 Analytics Dashboard | Real-time metrics and insights | Data-driven decision making |
-| 💾 Conversation Memory | Stores recent conversation history (up to **200** memory documents) for contextual responses | Improved conversation continuity |
+| Feature | Description | 
+|---------|-------------|
+| 🎤 Voice Analytics | Real-time Arabic and English ASR for speech transcription
+| 📚 Knowledge Retrieval | Instant retrieval of relevant documents and FAQs using RAG |
+| 🧠 Intelligent Agent | Context-aware LLM for intelligent customer interactions |
+| 🗣️ Voice Synthesis | Natural Arabic and English Text-to-Speech responses |
+| 📊 Analytics Dashboard | Real-time metrics and insights | 
+| 💾 Conversation Memory | Stores recent conversation history (up to **200** memory documents) for contextual responses |
 
 ---
 
