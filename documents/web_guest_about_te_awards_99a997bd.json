@@ -1,0 +1,46 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/guest/about-te/awards",
+    "title": "الجوائز - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:38:11Z",
+    "screenshot": "output_screenshots/web_guest_about_te_awards_99a997bd.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "الجوائز تشمل: - جائزة أفضل برامج للمسئولية المجتمعية لشركات الاتصالات محليا ودوليا لعام 2024 من مجلة The Global Economics البريطانية. - شفاء الأورمان: وضع اسم الشركة على حائط الشفاء تقديرا لجهودها في دعم المستشفى. - تصنيف الشركة أفضل خمس شركات للعلاقات المستثمرين بمصر (2018). - جائزة أفضل مبادرة للمسئولية المجتمعية من جوائز الاتصالات العالمية WCA لعام 2019. - جائزة أفضل علاقات مستثمرين فئة شركات الاتصالات لعام 2024 من إنترناشونال فاينانس. - جائزة أفضل علاقات المستثمرين لعام 2010 مقدمة من GTM/EGX. - جائزة أفضل موقع إلكترونى لعام 2010 في قطاع تكنولوجيا المعلومات والاتصالات.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 95,
+        "sentence_count": 9,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "جوائز",
+          "CSR",
+          "علاقات المستثمرين",
+          "أفضل موقع"
+        ],
+        "start_position": 0,
+        "end_position": 460
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 95,
+    "total_tokens": 95,
+    "processing_time": "2026-07-17T14:51:05Z"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/ar/web/guest/w/we-air-4g-routers-offer",
+    "title": "WE Air 4G Routers offer - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:37:13Z",
+    "screenshot": "output_screenshots/ar_web_guest_w_we_air_4g_routers_offer_d6bc3427.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "عرض الخصم على أجهزة الإنترنت الهوائي (WE Air 4G): ليك خصم علي أجهزة الراوتر الهوائي 4G كالتالي: - CAT 4 (K10): السعر الأساسي 1,100 جنيه، سعر العرض 850 جنيه. الشروط و الأحكام: - للحصول على العرض اشتري خط داتا مع الجهاز وفعله واشحن الباقه. - في حال شراء الجهاز بدون خط داتا، يباع الجهاز بالسعر الأساسي بدون خصم. - لمزيد من المعلومات عن الراوتر: اضغط هنا.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 63,
+        "sentence_count": 7,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "WE Air",
+          "4G",
+          "راوتر",
+          "CAT 4",
+          "خصم"
+        ],
+        "start_position": 0,
+        "end_position": 320
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 63,
+    "total_tokens": 63,
+    "processing_time": "2026-07-17T14:48:32Z"
+  }
+}

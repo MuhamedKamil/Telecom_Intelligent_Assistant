@@ -1,0 +1,70 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/web/guest/personal",
+    "title": "WE Egypt | Home Internet, Mobile Packages, Broadband & Telecom Services - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:39:33Z",
+    "screenshot": "output_screenshots/en_web_guest_personal_39147588.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "Quick Services: - Reserve my WE Gold Number - Renew my WE Internet subscription - Pay my Fixed Voice bill - Pay bill / Recharge my Mobile Special Services: - WE Innovate: Think..Develop..Accelerate - WE Sports: A new service from WE that provides football content covering moment by moment the latest news. - Play & Win: Now you can participate in WE play and win competition. - WE Shops: Real State Registration Office. - We Pay: Mobile Wallet Service. - Tazkarti: Collect WE Egyptian Premier League Tickets. - 140 Guide: Get any information you need. - Parental Control: Protect your child from harmful online content with the highest level of security. - Apple Pay: Make recharging, paying your bill and renewing your package simple and secure.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 125,
+        "sentence_count": 12,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "Help & Support:",
+        "topic_keywords": [
+          "quick services",
+          "WE Sports",
+          "We Pay",
+          "Tazkarti",
+          "Apple Pay"
+        ],
+        "start_position": 0,
+        "end_position": 580
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "Help & Support: - Ma3ak - Dot Masr - FAQ - Store Locator WE Points & Vouchers: Earn and Redeem your points together with Exclusive vouchers and gifts from WE Partners.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 26,
+        "sentence_count": 5,
+        "has_overlap": true,
+        "overlap_with_prev": "Help & Support:",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "help",
+          "support",
+          "Ma3ak",
+          "WE Points",
+          "vouchers"
+        ],
+        "start_position": 520,
+        "end_position": 680
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 75,
+    "total_tokens": 151,
+    "processing_time": "2026-07-17T14:50:36Z"
+  }
+}

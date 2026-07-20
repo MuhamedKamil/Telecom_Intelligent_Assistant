@@ -1,0 +1,46 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/guest/w/nitro-prime-130-1",
+    "title": "Nitro Prime 150 - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:34:26Z",
+    "screenshot": "output_screenshots/web_guest_w_nitro_prime_130_1_84d5035e.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "Nitro Prime 150: - الباقة متاحة لكل العملاء على جميع أنظمة الكارت المدفوع مقدما والفاتورة للعملاء الحاليين والجدد. - في حالة الاستخدام أو التحميل يتم خصم 1 ميجابايت من الباقة لكل ميجابايت استخدام. - حرية الاستخدام على جميع المواقع والتطبيقات بدون قيود. - يتم التجديد تلقائيا في حالة توافر رصيد كافي بعد 28 يوم. - يتم ترحيل الميجابايتس الغير مستخدمة للشهر التالي في حالة التجديد في ميعاد التجديد. - بعد استهلاك 100% من الباقة تكون المحاسبة خارج الباقة علي حسب نظام الخط. - يمكنك الاشتراك, تجديد او اختيار باقه اضافيه من خلال *999*150# لخطوط الدفع المسبق و *888*150# للفاتورة او من خلال تطبيق MyWe. - تطبق الشروط والاحكام.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 101,
+        "sentence_count": 9,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "Nitro Prime",
+          "باقة",
+          "ميجابايت",
+          "تجديد",
+          "ترحيل"
+        ],
+        "start_position": 0,
+        "end_position": 460
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 101,
+    "total_tokens": 101,
+    "processing_time": "2026-07-17T14:48:14Z"
+  }
+}

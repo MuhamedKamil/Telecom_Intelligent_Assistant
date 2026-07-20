@@ -1,0 +1,66 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/about-te/careers-and-training",
+    "title": "وظائف وتدريب المصرية للاتصالات | فرص العمل والتطوير المهني - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:07Z",
+    "screenshot": "output_screenshots/about_te_careers_and_training_89c52f93.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "الموارد البشرية: تبذل المصرية للاتصالات كل جهد ممكن لتعزيز قدرات موظفيها وتحقيق أعلى مستويات الكفاءة. ينشأ هذا من اعتقاد الشركة بأن الموظفين هم كنزها الحقيقي. أفضل صاحب عمل لعام 2026: للعام الثاني على التوالي، المصرية للاتصالات تحصد جائزة أفضل بيئة عمل Top Employer لعام 2026. اختر المسار: حياتك المهنية تبدأ معنا. ستجد طرقا لا حصر لها لتصبح أفضل نسخة من نفسك تعمل جنبا إلى جنب مع القادة والزملاء الملهمين الذين يقودهم الغرض.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 74,
+        "sentence_count": 8,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "قطاع التدريب والتطوير:",
+        "topic_keywords": [
+          "الموارد البشرية",
+          "Top Employer",
+          "وظائف",
+          "تدريب"
+        ],
+        "start_position": 0,
+        "end_position": 400
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "قطاع التدريب والتطوير: يقوم مركز التدريب حاليا بتطوير برامج تدريبية في مختلف المجالات لتقديم خدمات تدريبية رائعة.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 18,
+        "sentence_count": 2,
+        "has_overlap": true,
+        "overlap_with_prev": "قطاع التدريب والتطوير:",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "التدريب",
+          "التطوير",
+          "مركز التدريب"
+        ],
+        "start_position": 340,
+        "end_position": 480
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 46,
+    "total_tokens": 92,
+    "processing_time": "2026-07-17T14:47:57Z"
+  }
+}

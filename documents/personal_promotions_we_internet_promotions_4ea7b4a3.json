@@ -1,0 +1,69 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/personal/promotions/we-internet-promotions",
+    "title": "عروض الإنترنت من WE | باقات وخصومات الإنترنت والموبايل داتا - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:36:55Z",
+    "screenshot": "output_screenshots/personal_promotions_we_internet_promotions_4ea7b4a3.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "عروض الإنترنت المنزلى: - عرض كاس العالم للإنترنت المنزلى مع beIN STREAM: حصريا من WE، إشترك في باقة كاس العالم من beIN بخصم 50% و احصل علي جهاز beIN STREAM هدية. - عرض WE Space للعملاء الجدد: إشترك في باقات WE Space و ليك 50% زيادة علي الباقة لـمدة 3 شهور. - عرض كأس العالم لعملاء ال IPTV: إستمتع بخصم 50% و إتفرج علي أقوي ماتشات كأس العالم. - باقات WE Space السنوية: إدفع 10 شهور و ليك راوتر هدية مع باقات WE SPACE السنوية.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 98,
+        "sentence_count": 5,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "عروض WE Air:",
+        "topic_keywords": [
+          "إنترنت منزلي",
+          "WE Space",
+          "beIN STREAM",
+          "كأس العالم"
+        ],
+        "start_position": 0,
+        "end_position": 480
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "عروض WE Air: - عرض كأس العالم لعملاء WE Air: اشترك أو جدد باقة WE AIR، واختر فريقك، واكسب ميجابايت مع كل فوز، وميجابايت إضافية مع كل توقع صحيح لنتيجة المباراة، حتى 24,000 ميجابايت. - عرض الخصم على أجهزة الإنترنت الهوائي (WE Air 5G): لعملاء WE Air ليك خصم على أجهزة الراوتر الهوائي 5G. - عرض الخصم على أجهزة الإنترنت الهوائي (WE Air 4G): لعملاء WE Air ليك خصم على أجهزة الراوتر الهوائي 4G.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 95,
+        "sentence_count": 5,
+        "has_overlap": true,
+        "overlap_with_prev": "عروض WE Air:",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "WE Air",
+          "كأس العالم",
+          "ميجابايت",
+          "خصم",
+          "راوتر هوائي"
+        ],
+        "start_position": 420,
+        "end_position": 840
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_category",
+    "avg_chunk_size": 96,
+    "total_tokens": 193,
+    "processing_time": "2026-07-17T14:47:50Z"
+  }
+}

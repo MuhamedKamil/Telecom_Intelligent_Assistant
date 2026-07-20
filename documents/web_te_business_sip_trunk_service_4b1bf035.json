@@ -1,0 +1,48 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/te-business/sip-trunk-service",
+    "title": "SIP Trunk Service | VoIP Business Calls with 30 Simultaneous Channels | Telecom Egypt - TE Business - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:22Z",
+    "screenshot": "output_screenshots/web_te_business_sip_trunk_service_4b1bf035.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "SIP Trunk Service for Business customer: 1. Perfect solution to make easily your calls; just connect the PBX system asking for our SIP trunk service, which supports VOIP. 2. Enjoy VPN 2 mega speed enabling you 30 calling channels sending & receiving at the same time beside the ability of getting 100 number with free caller ID overall circuit. 3. You can install the necessary devices for operating the SIP by paying yearly amount to be added the service subscription. 4. You can enjoy also our SIP packages (5-10-15-20-25-30 sessions) & have the absolute choice to upgrade package or downgrade sessions on your need basis after making the financial settlement.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 96,
+        "sentence_count": 6,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "SIP",
+          "trunk",
+          "VoIP",
+          "PBX",
+          "sessions",
+          "business"
+        ],
+        "start_position": 0,
+        "end_position": 500
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 96,
+    "total_tokens": 96,
+    "processing_time": "2026-07-17T14:47:52Z"
+  }
+}

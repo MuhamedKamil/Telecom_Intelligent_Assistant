@@ -1,0 +1,47 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/about-te/ma3ak",
+    "title": "Ma3ak - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:38:40Z",
+    "screenshot": "output_screenshots/en_about_te_ma3ak_45d7ea72.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "Ma3ak is WE's customer support service for the deaf and mute. A specialized team will attend to all your inquiries using sign language over a video call on Te.eg. Before using Ma3ak service, please ensure the following: - Allow your browser to access the camera and mic during the video call. - You are using one of the supported browsers, which are: Android (Chrome, Firefox), iPhone (Safari), PC (Chrome, Firefox). - You have a strong, stable internet connection to ensure high quality service. - The working hours is from 9 Am to 9 Pm. The page also lists stores that provide sign language service by governorate.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 92,
+        "sentence_count": 8,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "Ma3ak",
+          "sign language",
+          "deaf",
+          "mute",
+          "customer support"
+        ],
+        "start_position": 0,
+        "end_position": 480
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 92,
+    "total_tokens": 92,
+    "processing_time": "2026-07-17T14:47:35Z"
+  }
+}

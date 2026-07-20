@@ -1,0 +1,69 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/te-business/m2m-shared-data",
+    "title": "WE M2M Solutions | Shared Data for IoT, Smart Meters & POS Devices | Telecom Egypt - TE Business - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:40Z",
+    "screenshot": "output_screenshots/web_te_business_m2m_shared_data_80b0d179.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "WE Business Shared Data empowers your business with seamless, cost-efficient connectivity. The WE Business Shared Data Bundle is a powerful M2M solution that pools megabytes (MBs) across multiple SIMs, allowing your devices to share data from a single, centralized pool. This gives your machines the freedom to communicate, exchange information, and operate reliably without the need for human intervention. Machine-to-Machine (M2M) communication is exactly what it sounds like: devices talking to each other automatically, sharing data and performing tasks in real time. With WE's M2M solution, your devices don't just connect—they collaborate, helping your business run smarter, faster, and more efficiently.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 112,
+        "sentence_count": 6,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "Why choose WE Business Shared Data Bundle?",
+        "topic_keywords": [
+          "M2M",
+          "Shared Data",
+          "IoT",
+          "SIM pooling",
+          "connectivity"
+        ],
+        "start_position": 0,
+        "end_position": 560
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "Why choose WE Business Shared Data Bundle? - Cost Savings: Pay for a single data pool instead of individual SIM plans. - Scalable Connectivity: Easily add more devices without worrying about separate data plans. - Reliable M2M Communication: Ideal for IoT, smart meters, POS devices, and other connected machines. - Simplified Management: Monitor usage across all devices from a single dashboard. Turn your connected devices into business enablers – reduce downtime, improve efficiency, and stay connected wherever your operations take you.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 91,
+        "sentence_count": 8,
+        "has_overlap": true,
+        "overlap_with_prev": "Why choose WE Business Shared Data Bundle?",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "benefits",
+          "cost savings",
+          "scalability",
+          "IoT",
+          "POS"
+        ],
+        "start_position": 480,
+        "end_position": 810
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 101,
+    "total_tokens": 203,
+    "processing_time": "2026-07-17T14:45:10Z"
+  }
+}

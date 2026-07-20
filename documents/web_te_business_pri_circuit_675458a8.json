@@ -1,0 +1,47 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/te-business/pri-circuit",
+    "title": "PRI Circuit | 30 Simultaneous Call Channels & 100 Numbers for Business | Telecom Egypt - TE Business - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:12Z",
+    "screenshot": "output_screenshots/web_te_business_pri_circuit_675458a8.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "PRI circuit service for Business customer: 1. Perfect choice to provide you 30 telecommunications sending and receiving channel. 2. With the feasibility of getting 100 phone number with sending and receiving 30 call at the same time. 3. You can use lines separately. 4. You can enjoy as well to activate Short Number service & call center. 5. Getting free caller ID with availing all other value added services according to your need. 6. You can install the necessary devices for operating the PRI by paying yearly amount to be added the service subscription.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 81,
+        "sentence_count": 8,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "PRI",
+          "circuit",
+          "channels",
+          "call center",
+          "business"
+        ],
+        "start_position": 0,
+        "end_position": 400
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 81,
+    "total_tokens": 81,
+    "processing_time": "2026-07-17T14:47:40Z"
+  }
+}

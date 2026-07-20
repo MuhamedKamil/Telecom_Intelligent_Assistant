@@ -1,0 +1,196 @@
+import torch
+from typing import List, Dict, Optional
+from .Retriever import (
+    EmbeddingManager,
+    WebsiteStore,
+    UploadedStore,
+    RetrievalManager,
+)
+from .llm import LLM
+from .memory import ChatMemory
+
+class RAGSystem:
+
+    def __init__(
+        self,
+        embedder_model: str    = "BAAI/bge-m3",
+        device: Optional[str]  = None,
+        use_fp16: bool         = True,
+
+
+        llm_model: str        = "meta-llama/Llama-3.2-1B-Instruct",
+        max_turns: int        = 5,
+        top_k: int            = 5,
+        max_new_tokens: int   = 512,
+        system_prompt: Optional[str] = None,
+    ):
+        """
+        Initialize the RAG system.
+        
+        Args:
+            embedder_model: Name of the embedding model
+            llm_model: Name of the LLM model
+            max_turns: Maximum conversation turns to remember
+            top_k: Number of documents to retrieve
+            max_new_tokens: Maximum tokens to generate
+            system_prompt: Custom system prompt for LLM
+            device: Device to use ('cuda' or 'cpu')
+            use_fp16: Whether to use FP16 precision
+        """
+        self.embedding_manager = EmbeddingManager(
+            model_name  = embedder_model,
+            device      = device,
+            use_fp16    = use_fp16,
+        )
+        self.website_store = WebsiteStore()
+        self.uploaded_store = UploadedStore()
+        
+        self.retrieval_manager = RetrievalManager(
+            embedding_manager  = self.embedding_manager,
+            website_store      = self.website_store,
+            uploaded_store     = self.uploaded_store,
+        )
+        
+        self.llm = LLM(
+            model_name     = llm_model,
+            max_new_tokens = max_new_tokens,
+            system_prompt  = system_prompt,
+        )
+        
+        self.memory = ChatMemory(max_turns=max_turns)
+        self.top_k = top_k
+    
+    def add_website_documents(
+        self,
+        chunks: List[Dict],
+        embeddings: Optional[torch.Tensor] = None,
+    ) -> None:
+        """
+        Add website documents to the retriever.
+        
+        Args:
+            chunks: List of document chunks with metadata
+            embeddings: Pre-computed embeddings (optional)
+        """
+        if embeddings is None:
+            texts = [chunk["text"] for chunk in chunks]
+            embeddings = self.embedding_manager.embed_documents(texts)
+        
+        self.website_store.load(chunks, embeddings)
+    
+    def add_uploaded_documents(
+        self,
+        document: Dict,
+        chunks: List[Dict],
+        embeddings: Optional[torch.Tensor] = None,
+    ) -> None:
+        """
+        Add uploaded documents to the retriever.
+        
+        Args:
+            document: Document metadata
+            chunks: List of document chunks with metadata
+            embeddings: Pre-computed embeddings (optional)
+        """
+        if embeddings is None:
+            texts = [chunk["text"] for chunk in chunks]
+            embeddings = self.embedding_manager.embed_documents(texts)
+        
+        self.uploaded_store.index(document, chunks, embeddings)
+    
+    def ask(self, question: str) -> str:
+        """
+        Ask a question and get a response.
+        
+        Args:
+            question: User question
+            
+        Returns:
+            Generated response string
+        """
+        retrieved_chunks = self.retrieval_manager.retrieve(
+            query=question,
+            top_k=self.top_k,
+        )
+        context_chunks = [chunk["text"] for chunk in retrieved_chunks]
+        history = self.memory.get_history()
+        response = self.llm.generate(
+            question       = question,
+            context_chunks = context_chunks,
+            chat_history   = history,
+        )
+        self.memory.add_turn(question, response)
+        
+        return response
+    
+    def ask_with_sources(self, question: str) -> Dict:
+        """
+        Ask a question and get response with source information.
+        
+        Args:
+            question: User question
+            
+        Returns:
+            Dictionary with response and source documents
+        """
+        retrieved_chunks = self.retrieval_manager.retrieve(
+            query=question,
+            top_k=self.top_k,
+        )
+        
+        context_chunks = []
+        sources = []
+        for chunk in retrieved_chunks:
+            context_chunks.append(chunk["text"])
+            sources.append({
+                "text": chunk["text"],
+                "source": chunk.get("source", "unknown"),
+                "score": chunk.get("score", 0.0),
+                "title": chunk.get("title", "Untitled"),  # ← Add
+                "url": chunk.get("url", "N/A"),          # ← Add
+                "chunk_id": chunk.get("chunk_id", ""),   # ← Add
+                "chunk_index": chunk.get("chunk_index", 0),  # ← Add
+                "language": chunk.get("language", "unknown"),  # ← Add
+            })
+        
+        history = self.memory.get_history()
+        
+        response = self.llm.generate(
+            question=question,
+            context_chunks=context_chunks,
+            chat_history=history,
+        )
+        
+        self.memory.add_turn(question, response)
+        
+        return {
+            "question": question,
+            "response": response,
+            "sources": sources,
+            "total_sources": len(sources),
+        }
+        
+    def clear(self) -> None:
+        """Clear all data (documents and memory)."""
+        self.website_store.clear()
+        self.uploaded_store.clear()
+        self.memory.clear()
+    
+    def clear_memory(self) -> None:
+        """Clear only conversation memory."""
+        self.memory.clear()
+    
+    def get_history(self) -> List[Dict]:
+        """Get conversation history."""
+        return self.memory.get_history()
+    
+    @property
+    def document_count(self) -> int:
+        """Get total number of documents in both stores."""
+        website_count = len(self.website_store.chunks)
+        uploaded_count = len(self.uploaded_store.chunks)
+        return website_count + uploaded_count
+    
+    def __repr__(self) -> str:
+        return f"RAGSystem(documents={self.document_count}, turns={len(self.memory)})"
+

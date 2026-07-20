@@ -1,0 +1,47 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/te-business/voice-service-0900",
+    "title": "Voice Service 0900 | Earn Call Revenue with Telecom Egypt - TE Business - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:34:59Z",
+    "screenshot": "output_screenshots/web_te_business_voice_service_0900_d052e74b.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "Voice service 0900 for Business customer: 1. Enjoy a partnership with WE & get up to 70% of your incoming calls (call revenue). 2. You can define the tariff of your choice as per to fit the service you offer (starting from 50 piasters/min). 3. Perfect choice to achieve additional profit. 4. You will get your profit percentage on quarterly basis. 5. You can advertise the services you provide and at the same time generate revenue.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 61,
+        "sentence_count": 6,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "0900",
+          "voice service",
+          "revenue",
+          "partnership",
+          "profit"
+        ],
+        "start_position": 0,
+        "end_position": 340
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 61,
+    "total_tokens": 61,
+    "processing_time": "2026-07-17T14:48:22Z"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/about-te/press-releases",
+    "title": "اصدارات الصحافة - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:32:46Z",
+    "screenshot": "output_screenshots/about_te_press_releases_b471aa57.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "تتضمن الإصدارات الصحفية لعام 2026 أخبارا عن: - رعاية مبادرة يلا ساحل لترسيخ مكانة الساحل الشمالي كوجهة سياحية عالمية. - تكريم أصحاب المشروعات المتميزة بمدارس WE للتكنولوجيا التطبيقية في حفل WE Shine. - توقيع مذكرة تفاهم مع شركة جروفا للتطوير العقاري وشركة VIE Communities. - افتتاح معمل الابتكار للأمن السيبراني. - إطلاق خدمة الألياف الضوئية إلى الغرف (FTTR) بالتعاون مع هواوي. - نتائج أعمال الربع الأول 2026 (إيرادات 28.2 مليار جنيه). - نتائج أعمال العام 2025 (إيرادات 106.7 مليار جنيه). - مبادرة توزيع مليون كرتونة غذائية. - الفوز بجائزة أفضل بيئة عمل Top Employer لعام 2026.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 118,
+        "sentence_count": 10,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "وتشمل أيضا إصدارات سابقة من عام 2025 و2024 و2023 و2022",
+        "topic_keywords": [
+          "إصدارات صحفية",
+          "2026",
+          "يلا ساحل",
+          "WE Shine",
+          "FTTR",
+          "Top Employer"
+        ],
+        "start_position": 0,
+        "end_position": 560
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "وتشمل أيضا إصدارات سابقة من عام 2025 و2024 و2023 و2022 تغطي مختلف الأنشطة والشراكات والإنجازات.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 18,
+        "sentence_count": 1,
+        "has_overlap": true,
+        "overlap_with_prev": "وتشمل أيضا إصدارات سابقة من عام 2025 و2024 و2023 و2022",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "إصدارات سابقة",
+          "2025",
+          "2024",
+          "2023",
+          "2022"
+        ],
+        "start_position": 500,
+        "end_position": 620
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_year",
+    "avg_chunk_size": 68,
+    "total_tokens": 136,
+    "processing_time": "2026-07-17T14:48:47Z"
+  }
+}

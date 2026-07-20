@@ -1,0 +1,71 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/ar/web/guest/personal/we-air-prepaid",
+    "title": "باقات WE Air Prepaid | إنترنت هوائي محمول 5G في مصر - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:36:25Z",
+    "screenshot": "output_screenshots/ar_web_guest_personal_we_air_prepaid_262e23f4.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "WE Air مسبق الدفع: - WE Air 290: 290 جنيه/شهر، 40 جيجابايت. - WE Air 460: 460 جنيه/شهر، 105 جيجابايت. - WE Air 690: 690 جنيه/شهر، 200 جيجابايت. - WE Air 1040: 1040 جنيه/شهر، 325 جيجابايت. - WE Air 1270: 1270 جنيه/شهر، 400 جيجابايت. - WE Air 1600: 1600 جنيه/شهر، 500 جيجابايت. الباقات الإضافية (صالحة 30 يوم): - WE Air 23: 3 جيجابايت، 23 جنيه. - WE Air 69: 9.5 جيجابايت، 69 جنيه. - WE Air 105: 12 جيجابايت، 105 جنيه. - WE Air 150: 20 جيجابايت، 150 جنيه. الأسعار غير شاملة الضريبة.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 128,
+        "sentence_count": 14,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "الأسئلة الشائعة تشمل معلومات عن أجهزة الراوتر، التجديد، الترحيل، والمحاسبة. يتم تحديد مكان تشغيل الخدمة عن طريق موقع WE أو فروعها أو خدمة العملاء.",
+        "topic_keywords": [
+          "WE Air",
+          "مسبق الدفع",
+          "باقات",
+          "جيجابايت",
+          "أسعار",
+          "إضافية"
+        ],
+        "start_position": 0,
+        "end_position": 540
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "الأسئلة الشائعة تشمل معلومات عن أجهزة الراوتر، التجديد، الترحيل، والمحاسبة. يتم تحديد مكان تشغيل الخدمة عن طريق موقع WE أو فروعها أو خدمة العملاء.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 26,
+        "sentence_count": 2,
+        "has_overlap": true,
+        "overlap_with_prev": "الأسئلة الشائعة تشمل معلومات عن أجهزة الراوتر، التجديد، الترحيل، والمحاسبة. يتم تحديد مكان تشغيل الخدمة عن طريق موقع WE أو فروعها أو خدمة العملاء.",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "أسئلة شائعة",
+          "راوتر",
+          "تجديد",
+          "ترحيل",
+          "محاسبة"
+        ],
+        "start_position": 480,
+        "end_position": 640
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 77,
+    "total_tokens": 154,
+    "processing_time": "2026-07-17T14:35:26Z"
+  }
+}

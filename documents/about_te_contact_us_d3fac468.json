@@ -1,0 +1,46 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/about-te/contact-us",
+    "title": "Contact Us - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:48Z",
+    "screenshot": "output_screenshots/about_te_contact_us_d3fac468.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "اتصل بنا: رضاؤكم هدفنا.. لذا نسعى للوصول اليكم في اي وقت و في كل مكان. للاستفسارات والشكاوي تواصل معنا: - مكاتب خدمة العملاء - الاتصال بمراكز خدمة العملاء: 111 أو 01555000111 - البريد الإلكتروني: Customer.care@te.eg - وسائل التواصل الاجتماعي: /TelecomEgypt يمكنك أيضا إرسال بريد إلكتروني من خلال نموذج الاتصال الموجود على الصفحة.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 57,
+        "sentence_count": 8,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "اتصل بنا",
+          "خدمة العملاء",
+          "111",
+          "Customer.care@te.eg"
+        ],
+        "start_position": 0,
+        "end_position": 320
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 57,
+    "total_tokens": 57,
+    "processing_time": "2026-07-17T14:46:38Z"
+  }
+}

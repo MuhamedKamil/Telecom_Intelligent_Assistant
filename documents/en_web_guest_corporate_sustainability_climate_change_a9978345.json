@@ -1,0 +1,68 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/web/guest/corporate-sustainability/climate-change",
+    "title": "Telecom Egypt Climate Change | Sustainability & Carbon Reduction - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:39:13Z",
+    "screenshot": "output_screenshots/en_web_guest_corporate_sustainability_climate_change_a9978345.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "Climate Change: Climate change is a pressing global challenge, and Telecom Egypt recognizes its role in addressing it. Our focus extends beyond business operations—we constantly contribute to a more sustainable future; through proactive measures aimed at emission reduction, Telecom Egypt demonstrates unwavering dedication to fostering a greener environment. Telecom Egypt as an integrated telecom operator has been a significant player in the Egyptian market, and now, with a forward-looking vision, we are releasing our first carbon footprint report, a milestone that underscores its commitment to sustainability. By adhering to international standards, Telecom Egypt aims to provide an overall picture of its carbon emissions and identify major sources for potential improvement.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 112,
+        "sentence_count": 5,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "Climate Change Reports:",
+        "topic_keywords": [
+          "climate change",
+          "sustainability",
+          "carbon footprint",
+          "emissions",
+          "environment"
+        ],
+        "start_position": 0,
+        "end_position": 580
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "Climate Change Reports: - Carbon footprint Report 2021-2022 - Climate Report 2023-2024",
+      "lang": "en",
+      "metadata": {
+        "token_count": 17,
+        "sentence_count": 3,
+        "has_overlap": true,
+        "overlap_with_prev": "Climate Change Reports:",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "reports",
+          "carbon footprint",
+          "climate report"
+        ],
+        "start_position": 520,
+        "end_position": 660
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 64,
+    "total_tokens": 129,
+    "processing_time": "2026-07-17T14:35:40Z"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/web/guest/about-te/careers-and-training",
+    "title": "Telecom Egypt Careers & Training | Jobs, Internships & Professional Development - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:38:51Z",
+    "screenshot": "output_screenshots/en_web_guest_about_te_careers_and_training_faae2de2.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "Human Resources: Telecom Egypt exerts every possible effort to promote the capacity of its employees and achieve the highest levels of efficiency. This arises from the company's belief that the employees are its genuine treasure. Top Employer of 2026: For the second year in a row, we are thrilled to announce that Telecom Egypt has been awarded the Top Employer Award 2026. Choose Your Path: Your Career Starts With Us. You will find endless ways to become the best version of yourself working alongside purpose-led, inspiring leaders and colleagues.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 82,
+        "sentence_count": 7,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "Training & Development Sector:",
+        "topic_keywords": [
+          "HR",
+          "Top Employer",
+          "careers",
+          "training",
+          "employees",
+          "efficiency"
+        ],
+        "start_position": 0,
+        "end_position": 460
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "Training & Development Sector: The Training Center is currently developing training programs in various fields to provide exquisite training services.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 17,
+        "sentence_count": 2,
+        "has_overlap": true,
+        "overlap_with_prev": "Training & Development Sector:",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "training",
+          "development",
+          "Training Center",
+          "programs"
+        ],
+        "start_position": 400,
+        "end_position": 540
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 49,
+    "total_tokens": 99,
+    "processing_time": "2026-07-17T14:35:34Z"
+  }
+}

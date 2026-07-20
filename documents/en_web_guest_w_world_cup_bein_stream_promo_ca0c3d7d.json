@@ -1,0 +1,71 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/web/guest/w/world-cup-bein-stream-promo",
+    "title": "World Cup Home Internet beIN STREAM promo - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:37:05Z",
+    "screenshot": "output_screenshots/en_web_guest_w_world_cup_bein_stream_promo_ca0c3d7d.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "World Cup Home Internet beIN STREAM promo: Enjoy 50% discount on your beIN STREAM World Cup bundle. You get a free beIN STREAM device exclusively from WE, along with 100 GB and a complimentary 3-month subscription to beIN SPORTS channels. Eligible packages for discounts: - Super 250,300,400,500,750 GB packages - Mega 250,500,750 GB packages - Ultra 250,500,750 packages Price after discount: 4300 EGP Offer: Free beIN STREAM device, Free 100GB, 3-month subscription to beIN SPORTS channels. - Super 1500 GB package - Mega 1500 GB package - Max 1500 GB package - Max Plus 1500 GB package Price after discount: 4000 EGP",
+      "lang": "en",
+      "metadata": {
+        "token_count": 116,
+        "sentence_count": 8,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "Terms & Conditions:",
+        "topic_keywords": [
+          "beIN STREAM",
+          "World Cup",
+          "discount",
+          "Super",
+          "Mega",
+          "Ultra"
+        ],
+        "start_position": 0,
+        "end_position": 560
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "Terms & Conditions: - beIN STREAM promo available for subscription on WE Space plans. - World Cup package price for Super 50,150,200 GB packages is 4800 EGP. - Customer will get 100 GBs as a gift upon subscription for one time when he receives the device on his Home Internet number valid for 30 days. - Customers can subscribe through WE branches or by contacting customer service 111. - Customers can request home delivery of the beIN STREAM device for a shipping charge of 50 EGP, excluding VAT. - All prices are excluding VAT.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 72,
+        "sentence_count": 7,
+        "has_overlap": true,
+        "overlap_with_prev": "Terms & Conditions:",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "terms",
+          "VAT",
+          "delivery",
+          "111",
+          "WE Space"
+        ],
+        "start_position": 500,
+        "end_position": 820
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 94,
+    "total_tokens": 188,
+    "processing_time": "2026-07-17T14:51:19Z"
+  }
+}

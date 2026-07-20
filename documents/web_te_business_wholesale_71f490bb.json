@@ -1,0 +1,47 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/te-business/wholesale",
+    "title": "Wholesale - TE Business - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:17Z",
+    "screenshot": "output_screenshots/web_te_business_wholesale_71f490bb.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "Telecom Egypt Wholesale: Telecom Egypt will help you extend your network and reach to global destinations. As a perfectly centralized location in the heart of the world, Egypt has always served and will always serve, as a critical international hub for global communication network connecting Africa, Asia and Europe. Telecom Egypt has over 160 years history serving its customers in Egypt, in the region and beyond, using state of the art technology, reliable infrastructure solutions and a wide network of submarine cables. Key services include: - International Connectivity: Dedicated point-to-point bandwidth between customer sites, carrier PoPs, data centers, internet exchanges and submarine cable landing stations through WE's global network extending in 60+ countries. - Hosting: Co-location hosting facilities for critical content, carrier hubs & data centers. - IP Transit services: IP connectivity to the global internet with high level service performance. - MPLS IP-VPN: End to end service covering over more than 200 countries.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 142,
+        "sentence_count": 8,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "wholesale",
+          "submarine cables",
+          "international connectivity",
+          "IP Transit",
+          "MPLS"
+        ],
+        "start_position": 0,
+        "end_position": 720
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 142,
+    "total_tokens": 142,
+    "processing_time": "2026-07-17T14:51:24Z"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/web/guest/about-te/awards",
+    "title": "Awards - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:39:06Z",
+    "screenshot": "output_screenshots/en_web_guest_about_te_awards_c06e79b7.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "Awards include: - Global Economics: Best CSR Programs for Telecom Companies Locally and Internationally (2024). - Al-Orman: Recognition for supporting the healthcare sector. - Top 5 Investor Relations in Egypt (2018). - Best CSR Initiative in the World Communication Awards (2019). - Best Investor Relations - Telecom Company - 2024 at the 12th Annual International Finance Awards. - Best Investor Relations Award for traded companies (2010 GTM/EGX). - Best Website Award (2010 Egypt Web Academy Awards).",
+      "lang": "en",
+      "metadata": {
+        "token_count": 68,
+        "sentence_count": 8,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "awards",
+          "CSR",
+          "investor relations",
+          "recognition"
+        ],
+        "start_position": 0,
+        "end_position": 360
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 68,
+    "total_tokens": 68,
+    "processing_time": "2026-07-17T14:48:34Z"
+  }
+}

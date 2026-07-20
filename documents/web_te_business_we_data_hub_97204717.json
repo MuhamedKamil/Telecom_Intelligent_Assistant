@@ -1,0 +1,70 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/te-business/we-data-hub",
+    "title": "WE Data Hub | Shared 4G Data Pool for Business Teams | Telecom Egypt - TE Business - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:29Z",
+    "screenshot": "output_screenshots/web_te_business_we_data_hub_97204717.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "Data Hub: Choose the suitable bundle, share it with your employees and support them with the speed of 4G. Bundles: - WE Business Data Hub 18: Monthly Fees 650 EGP, Quota 18 GB, Sim Card Included 6. - WE Business Data Hub 35: Monthly Fees 1250 EGP, Quota 35 GB, Sim Card Included 12. - WE Business Data Hub 80: Monthly Fees 2800 EGP, Quota 80 GB, Sim Card Included 30. - WE Business Data Hub 160: Monthly Fees 5300 EGP, Quota 160 GB, Sim Card Included 60. - WE Business Data Hub 320: Monthly Fees 9500 EGP, Quota 320 GB, Sim Card Included 120.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 95,
+        "sentence_count": 8,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "Terms & Conditions:",
+        "topic_keywords": [
+          "Data Hub",
+          "business",
+          "bundles",
+          "4G",
+          "SIM",
+          "quota"
+        ],
+        "start_position": 0,
+        "end_position": 440
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "Terms & Conditions: - Out of bundle rate is 10 PTS per MB. - Add extra SIM Card to your group for 8 EGP monthly.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 22,
+        "sentence_count": 3,
+        "has_overlap": true,
+        "overlap_with_prev": "Terms & Conditions:",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "terms",
+          "rates",
+          "SIM",
+          "extra card"
+        ],
+        "start_position": 380,
+        "end_position": 500
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 58,
+    "total_tokens": 117,
+    "processing_time": "2026-07-17T14:48:00Z"
+  }
+}

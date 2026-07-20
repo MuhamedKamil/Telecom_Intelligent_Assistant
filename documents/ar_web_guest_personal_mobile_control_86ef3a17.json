@@ -1,0 +1,47 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/ar/web/guest/personal/mobile/control",
+    "title": "باقات WE كنترول | مكالمات ونت وباقات موبايل شهرية في مصر - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:36:03Z",
+    "screenshot": "output_screenshots/ar_web_guest_personal_mobile_control_86ef3a17.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "أنظمة كنترول: - WE MIX - سوبر كيكس - تظبيط - نظام We Club لمزيد من التفاصيل حول كل نظام، يرجى النقر على رابط تفاصيل أكتر.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 22,
+        "sentence_count": 4,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "كنترول",
+          "WE MIX",
+          "سوبر كيكس",
+          "تظبيط",
+          "We Club"
+        ],
+        "start_position": 0,
+        "end_position": 140
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 22,
+    "total_tokens": 22,
+    "processing_time": "2026-07-17T14:51:01Z"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/guest/personal/devices/usb-modems",
+    "title": "مودم USB من WE | أجهزة إنترنت 4G محمولة للكمبيوتر واللابتوب - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:37:48Z",
+    "screenshot": "output_screenshots/web_guest_personal_devices_usb_modems_e6f8dcfb.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "الأجهزة المتاحة: - LTE Wingle (Wi-Fi USB Modem) ZTE MF79U: 635 جنيه - صنع بواسطة ZTE.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 13,
+        "sentence_count": 2,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "مودم USB",
+          "ZTE",
+          "MF79U",
+          "4G"
+        ],
+        "start_position": 0,
+        "end_position": 80
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 13,
+    "total_tokens": 13,
+    "processing_time": "2026-07-17T14:50:33Z"
+  }
+}

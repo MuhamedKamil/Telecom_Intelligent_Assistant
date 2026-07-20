@@ -1,0 +1,70 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/ar/web/guest/w/weairworldcuppromo",
+    "title": "عرض كأس العالم لعملاء WE Air - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:37:38Z",
+    "screenshot": "output_screenshots/ar_web_guest_w_weairworldcuppromo_b2147251.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "عرض كأس العالم لعملاء WE Air: اختر فريقك، توقع واكسب حتى 24 جيجابايت. كل ما فريقك المختار يكسب، ليك ميجابايت إضافية، ولو توقعت نتيجة الماتش صح ليك ميجابايت أكتر. الشروط والأحكام: - العرض متاح لعملاء WE Air. - يمكنك الاشتراك وتوقع المباريات عن طريق تطبيق My WE. - للعملاء الجدد يمكن المشاركة في العرض تلقائيا. - العملاء الحاليين اشترك في العرض وجدد الباقة خلال فترة البطولة. - صلاحية الميجابايتس حتى نهاية يوم إضافتها. - لا يمكن تحويل أو ترحيل الميجابايتس الهدية. - العرض ساري من 11 يونيو 2026 حتى 19 يوليو 2026.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 115,
+        "sentence_count": 10,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "كيفية الاشتراك في العرض:",
+        "topic_keywords": [
+          "WE Air",
+          "كأس العالم",
+          "جيجابايت",
+          "My WE",
+          "توقعات"
+        ],
+        "start_position": 0,
+        "end_position": 540
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "كيفية الاشتراك في العرض: 1. جدد أو اشترك في باقة WE Air. 2. معرفة العروض المتاحة عن طريق تطبيق My WE. 3. اختر عرض كاس العالم WE Air. 4. جدد باقتك. 5. اضغط على اشترك. 6. اختر فريقك وتوقع النتائج عبر رابط WE Sport.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 43,
+        "sentence_count": 7,
+        "has_overlap": true,
+        "overlap_with_prev": "كيفية الاشتراك في العرض:",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "خطوات",
+          "اشتراك",
+          "WE Air",
+          "My WE",
+          "WE Sport"
+        ],
+        "start_position": 480,
+        "end_position": 680
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 79,
+    "total_tokens": 158,
+    "processing_time": "2026-07-17T14:51:08Z"
+  }
+}

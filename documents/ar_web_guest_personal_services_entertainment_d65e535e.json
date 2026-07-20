@@ -1,0 +1,46 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/ar/web/guest/personal/services/entertainment",
+    "title": "خدمات الترفيه | واتش ات، WE Sports، نغمة الانتظار | تليكوم مصر WE - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:36:45Z",
+    "screenshot": "output_screenshots/ar_web_guest_personal_services_entertainment_d65e535e.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "الخدمات المتاحة: - كول تون: يمكن للمتصلين برقمك الأستماع بنغمة مخصصة حسب إختيارك من مكتبة النغمات, بدلا من النغمة المعتادة للمكالمات. للإشتراك اطلب *777#. - مسابقة العب واكسب: وقت التحدي اللي بجد خلاص بدأ اشترك دلوقتى ف مسابقة ألعب و أكسب. - WE Sports: خدمة جديدة من وي تقدم محتوى لكرة القدم وبتقدملك أحدث الاخبار لمختلف البطولات المحلية والعالمية لحظة بلحظة. - WATCH IT: لعملاء WE، عيش تجربة المشاهدة في أي وقت ومن أي مكان مع WATCH IT، منصة العرض الرقمية الرائدة في مصر.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 86,
+        "sentence_count": 5,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "كول تون",
+          "WE Sports",
+          "WATCH IT",
+          "العب واكسب"
+        ],
+        "start_position": 0,
+        "end_position": 440
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_service",
+    "avg_chunk_size": 86,
+    "total_tokens": 86,
+    "processing_time": "2026-07-17T14:46:45Z"
+  }
+}

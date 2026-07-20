@@ -1,0 +1,72 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/guest/personal/services/mobile-call-services",
+    "title": "خدمات المكالمات WE | خدمات الموبايل وإدارة المكالمات في مصر - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:37:43Z",
+    "screenshot": "output_screenshots/web_guest_personal_services_mobile_call_services_9344c271.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "الخدمات المتاحة: - الاحتفاظ بالمكالمات: يمكنك استقبال رسالة نصية بالأرقام التي حاولت الإتصال بك عندما كان هاتفك غير متوفر. للإشتراك اطلب *066#. - اتحكم فى فاتورتك: يمكنك اختيار حد مسبق لفاتورتك بقيمة معينة لإشتراكك الشهري باستخدام Bill Limit. للإشتراك اطلب *883#. - الإستعلام عن الرصيد: يمكنك الإستعلام عن رصيدك من خلال الإتصال بـ #550*. - إستعلام عن الباقة: لمعرفة عدد وحداتك الحالي، اطلب *414#. - حظر المكالمات. - التنبيه عند الوصول: يمكنك معرفة الأرقام الغير متاحة أو مغلقة واصبحت متاحة عن طريق رسالة نصية لإخطارك بمعاودة الإتصال. للإشتراك اطلب *066#. - البريد الصوتي: من خلال خدمة البريد الصوتي سيتم استقبال مكالمتك في حالة عدم الوصول إليك. للإشتراك اطلب *505#. - الرسائل الاخبارية: أشترك في مجموعة متنوعة من الموضوعات طريق خدمة الرسائل الأخبارية, أطلب #2525*.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 150,
+        "sentence_count": 10,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "حوللي نت: الأن يمكن لعملاء Nitro تحويل مجابايتس لعملاء وي الاخرين عن طريق كود #552*.",
+        "topic_keywords": [
+          "خدمات مكالمات",
+          "احتفاظ",
+          "Bill Limit",
+          "رصيد",
+          "حظر",
+          "بريد صوتي",
+          "رسائل اخبارية"
+        ],
+        "start_position": 0,
+        "end_position": 680
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "حوللي نت: الأن يمكن لعملاء Nitro تحويل مجابايتس لعملاء وي الاخرين عن طريق كود #552*. - تقنية VoLTE. - تمديد صلاحية خطك: خدمة لكل عملاء الدفع المسبق لشراء صلاحيه و الإحتفاظ بالخط. - الشريحة الإلكترونية. - تقنية المكالمات عبر الـ Wi-Fi.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 40,
+        "sentence_count": 6,
+        "has_overlap": true,
+        "overlap_with_prev": "حوللي نت: الأن يمكن لعملاء Nitro تحويل مجابايتس لعملاء وي الاخرين عن طريق كود #552*.",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "حوللي نت",
+          "VoLTE",
+          "تمديد صلاحية",
+          "شريحة إلكترونية",
+          "Wi-Fi Calling"
+        ],
+        "start_position": 620,
+        "end_position": 840
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_service_category",
+    "avg_chunk_size": 95,
+    "total_tokens": 190,
+    "processing_time": "2026-07-17T14:35:45Z"
+  }
+}

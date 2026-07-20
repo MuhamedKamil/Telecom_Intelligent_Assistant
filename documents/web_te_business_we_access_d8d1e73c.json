@@ -1,0 +1,48 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/te-business/we-access",
+    "title": "WE Access | Managed Router & Secure Business WiFi by Cisco Meraki | Telecom Egypt - TE Business - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:20Z",
+    "screenshot": "output_screenshots/web_te_business_we_access_d8d1e73c.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "WE Access provides managed router and WiFi services for businesses, enabling secure connectivity and network control. Features & Benefits: - WAN connectivity optimization to prioritize bandwidth allocation for selected applications. - An IP-SEC VPN over Internet. - A fully fledged firewall with unified threat management (UTM) that ensures it is automatically updated. - Firewall - Intrusion Prevention System (IPS) - Anti-virus - Anti-malware. - Application control i.e. bandwidth optimization by application. - Dedicated User-friendly, web-based dashboard with powerful real-time network data and data analytics. - Search for users by device type (iPad, Android etc.). - Locate clients across multiple sites with Google Maps integration. - Monitor client or organization application usage. - Access network summary reports. The service is provided on a monthly subscription basis, saving businesses from bearing the costs of purchasing devices.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 123,
+        "sentence_count": 9,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "WE Access",
+          "managed router",
+          "WiFi",
+          "Cisco Meraki",
+          "VPN",
+          "firewall"
+        ],
+        "start_position": 0,
+        "end_position": 620
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 123,
+    "total_tokens": 123,
+    "processing_time": "2026-07-17T14:49:06Z"
+  }
+}

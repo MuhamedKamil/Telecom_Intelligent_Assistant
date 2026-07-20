@@ -1,0 +1,70 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/te-business/we-business-prepaid",
+    "title": "WE Business Prepaid | Corporate Mobile Voice & Internet Bundles | Telecom Egypt - TE Business - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:33Z",
+    "screenshot": "output_screenshots/web_te_business_we_business_prepaid_7df55ac9.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "Enterprise Prepaid Tariffs: - WE Business 29: Mobile internet MBs 500, Units 300, Intra-Company Minutes 250. - WE Business 46: Mobile internet MBs 1,000, Units 800, Intra-Company Minutes 400. - WE Business 75: Mobile internet MBs 2,500, Units 1,500, Intra-Company Minutes 700. - WE Business 105: Mobile internet MBs 4,000, Units 2,500, Intra-Company Minutes 800.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 62,
+        "sentence_count": 5,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "Terms & Conditions:",
+        "topic_keywords": [
+          "business prepaid",
+          "tariffs",
+          "units",
+          "MBs",
+          "intra-company"
+        ],
+        "start_position": 0,
+        "end_position": 340
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "Terms & Conditions: - 1 Minute to We Mobile or land line customers = 1 unit. - 1 Minute to Other Operators = 5 units. - Prices are subjectable to normal taxation. - Resources will be carried over for one month only when the customer renew the bundle before or on the renewal date and consumption will be for the old resources first. - Resources will be lost if customer renewed the bundle after due date. - Bundle validity = 30 days. - Customer will be charged with a flat rate of 12 pt. for every minute or megabyte consumed after consuming the main bundle.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 78,
+        "sentence_count": 8,
+        "has_overlap": true,
+        "overlap_with_prev": "Terms & Conditions:",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "terms",
+          "units",
+          "taxation",
+          "carry-over",
+          "validity"
+        ],
+        "start_position": 280,
+        "end_position": 620
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 70,
+    "total_tokens": 140,
+    "processing_time": "2026-07-17T14:48:12Z"
+  }
+}

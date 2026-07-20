@@ -1,0 +1,44 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/web/guest/personal/devices/fixed-landline-phones",
+    "title": "WE Fixed Landline Phones | Cordless & Home Telephone Devices in Egypt - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:38:56Z",
+    "screenshot": "output_screenshots/en_web_guest_personal_devices_fixed_landline_phones_3f2d947f.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "Available Devices: - DEX Cordless D1005: 1499 EGP - Manufactured by DEX.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 12,
+        "sentence_count": 2,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "landline phones",
+          "DEX",
+          "Cordless"
+        ],
+        "start_position": 0,
+        "end_position": 60
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 12,
+    "total_tokens": 12,
+    "processing_time": "2026-07-17T14:48:41Z"
+  }
+}

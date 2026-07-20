@@ -1,0 +1,46 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/personal/mobile/nitro-mobile-internet/nitro-exclusive?filterBy=learning",
+    "title": "باقات WE Nitro Exclusive Learning | باقات نت للتعليم والتعلم أونلاين في مصر - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:33:37Z",
+    "screenshot": "output_screenshots/personal_mobile_nitro_mobile_internet_nitro_exclusive_803670a4.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "باقة خط طلاب المدارس: - السعر: 5 جنيه/شهر - الباقة: 1 جيجابايت - صلاحية الباقة: شهر - السعر غير شامل الضريبة.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 25,
+        "sentence_count": 5,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "Nitro Exclusive",
+          "طلاب",
+          "مدارس",
+          "جيجابايت",
+          "أسعار"
+        ],
+        "start_position": 0,
+        "end_position": 140
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 25,
+    "total_tokens": 25,
+    "processing_time": "2026-07-17T14:25:42Z"
+  }
+}

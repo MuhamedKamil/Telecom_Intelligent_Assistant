@@ -1,0 +1,46 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/web/guest/w/nitro-prime-90",
+    "title": "Nitro Prime 105 - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:34:20Z",
+    "screenshot": "output_screenshots/en_web_guest_w_nitro_prime_90_7a25f811.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "Nitro Prime 105: - This package is available for Prepaid and Postpaid customers. - In case of any browsing or download activity, 1 MB will be deducted from your bundle for every 1 MB Consumption. - The bundle will be automatically renewed in case of sufficient balance after 28 Days. - Carry-over of unused megabytes is applicable upon on-time renewal. - After 100% consumption, you will be charged as out of bundle according to your main bundle. - You can subscribe, renew, add extension packages by dialing *999*105# for prepaid and *888*105# for postpaid or through MyWe app. - Terms and conditions apply.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 92,
+        "sentence_count": 8,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "Nitro Prime",
+          "bundle",
+          "prepaid",
+          "postpaid",
+          "renewal"
+        ],
+        "start_position": 0,
+        "end_position": 440
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 92,
+    "total_tokens": 92,
+    "processing_time": "2026-07-17T14:48:16Z"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/te-business/ip-vpn",
+    "title": "IP VPN | Secure Private Network to Connect Business Branches | Telecom Egypt - TE Business - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:10Z",
+    "screenshot": "output_screenshots/web_te_business_ip_vpn_6fffdb37.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 3,
+      "text": "IP VPN simplifies it for your representatives to interface safely to business applications, in the workplace, in the field or at home. Our Internet Protocol Virtual Private Network (IP-VPN) gives you a safe private organization utilizing the most recent fixed and portable access innovations. Therefore, you will appreciate financially perceptive availability, with choices for remote and versatile access. Nature of Administration (QoS) implies that you can focus on business-basic applications, calls and video traffic, and the help is versatile to develop and adjust, as you need it to. So you can decrease costs and further develop proficiency by utilizing a solitary organization for all that you need.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 115,
+        "sentence_count": 6,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "VPN service connects the branches of companies and institutions and linking them to the headquarter",
+        "topic_keywords": [
+          "IP VPN",
+          "VPN",
+          "secure network",
+          "QoS",
+          "business connectivity"
+        ],
+        "start_position": 0,
+        "end_position": 540
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 3,
+      "text": "VPN service connects the branches of companies and institutions and linking them to the headquarter to share information and resources between them accurately and safely. - We provide the service with competitive prices and different connection speeds to suit the requirement of all companies of all sizes. - The service is provided through a variety of the latest fiber optic technologies in addition to WiMAX and satellite Transmission solutions.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 62,
+        "sentence_count": 4,
+        "has_overlap": true,
+        "overlap_with_prev": "VPN service connects the branches of companies and institutions and linking them to the headquarter",
+        "overlap_with_next": "Features & Benefits:",
+        "topic_keywords": [
+          "VPN service",
+          "branches",
+          "headquarter",
+          "fiber optic",
+          "WiMAX",
+          "satellite"
+        ],
+        "start_position": 460,
+        "end_position": 780
+      }
+    },
+    {
+      "chunk_id": "chunk_003",
+      "chunk_index": 2,
+      "total_chunks": 3,
+      "text": "Features & Benefits: - Symmetric connection speed for consistent upload/download without any sharing. - Highest levels of security for data and information. - Close monitoring of the performance of the network in all its parties 24/7.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 42,
+        "sentence_count": 4,
+        "has_overlap": true,
+        "overlap_with_prev": "Features & Benefits:",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "features",
+          "benefits",
+          "symmetric speed",
+          "security",
+          "monitoring"
+        ],
+        "start_position": 700,
+        "end_position": 920
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 73,
+    "total_tokens": 219,
+    "processing_time": "2026-07-17T14:45:23Z"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/te-business/toll-free-numbers",
+    "title": "Toll Free Numbers 0800 | Free Customer Calls at Your Expense | Telecom Egypt - TE Business - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:17Z",
+    "screenshot": "output_screenshots/web_te_business_toll_free_numbers_18d7b300.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "Toll Free Number 0800 for Business customer: 1. Suitable for expanding your businesses scope with unique & easy to remember number. One number for advertising for all branches starting with 0800, It enables your customers to contact you free of charge from anywhere in Egypt from landline and mobile operators upon your request (You can also receive international calls). 2. Customers will easily & frequently call you free of charge (You are responsible to pay the bill instead of your customer). 3. Perfectly supports your marketing campaign all over the world via calling call centers. 4. Receiving 30 calls at the same time on subscribing to PRI service & with the normal call tariff.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 94,
+        "sentence_count": 6,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "toll free",
+          "0800",
+          "business",
+          "call center",
+          "PRI"
+        ],
+        "start_position": 0,
+        "end_position": 480
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 94,
+    "total_tokens": 94,
+    "processing_time": "2026-07-17T14:49:01Z"
+  }
+}

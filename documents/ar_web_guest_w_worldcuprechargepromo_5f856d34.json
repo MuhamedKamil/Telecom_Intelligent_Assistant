@@ -1,0 +1,70 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/ar/web/guest/w/worldcuprechargepromo",
+    "title": "عرض شحن كأس العالم - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:37:27Z",
+    "screenshot": "output_screenshots/ar_web_guest_w_worldcuprechargepromo_5f856d34.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "عرض شحن كأس العالم: اشحن وكل مرة فريقك يكسب ليك جيجابايتس هدية ولو توقعت النتيجة صح هتكسب جيجابايتس اكتر لحد 24 جيجابايت طول البطولة. الشروط والأحكام: - العرض متاح لجميع عملاء الدفع المسبق ما عدا خطوط الطلاب وخطوط البيانات. - للاشتراك في العرض اطلب #501* او عن طريق My WE قبل شحن خطك. - كل مرة فريقك يكسب ليك هتاخد جيجابايتس هدية و في حالة توقعت النتيجة صح هتكسب جيجابايتس اكتر. - بعد الإشتراك عن طريق #501* او My WE اشحن بـ10 جنيه أو أكثر لتحصل على فرصة تختار فريقك المفضل و توقع نتائجه. - يمكنك عند الشحن توقع مباريات نفس يوم الشحن فقط. - في حالة الشحن في يوم لا توجد فيه مباريات، يمكنك توقع نتائج مباريات أول يوم به مباريات. - في حالة خروج فريقك المفضل يمكنك اختيار فريق بحد اقصي مرة واحدة في كل دور من ادوار كأس العالم. - لا يتم تحويل أو ترحيل الميجابايتس الهديه. - الميجابايتس الهديه صالحه حتى نهاية اليوم. - كل ما منتخب مصر يكسب, هتكسب 500 ميجابايت حتى لو مختار فريق تانى. شجع مصر!",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 165,
+        "sentence_count": 14,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "كيفية الإشتراك في العرض؟",
+        "topic_keywords": [
+          "كأس العالم",
+          "شحن",
+          "جيجابايت",
+          "#501*",
+          "My WE"
+        ],
+        "start_position": 0,
+        "end_position": 720
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "كيفية الإشتراك في العرض؟ اطلب #501* او عن طريق تطبيق My WE ثم ادخل على قسم العروض. اختَر عرض الشحن ثم اضغط اشترك. اشحن خطك بـ 10 جنيه أو أكتر. اختار فريقك المفضل و توقع نتيجته من خلال اللينك المرسل اليك.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 40,
+        "sentence_count": 5,
+        "has_overlap": true,
+        "overlap_with_prev": "كيفية الإشتراك في العرض؟",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "خطوات",
+          "اشتراك",
+          "#501*",
+          "My WE",
+          "شحن"
+        ],
+        "start_position": 660,
+        "end_position": 860
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 102,
+    "total_tokens": 205,
+    "processing_time": "2026-07-17T14:50:48Z"
+  }
+}

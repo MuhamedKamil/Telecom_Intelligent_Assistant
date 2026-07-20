@@ -1,0 +1,45 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/web/guest/personal/devices/usb-modems",
+    "title": "WE USB Modems | Portable 4G Internet Devices for Laptops & PCs - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:39:11Z",
+    "screenshot": "output_screenshots/en_web_guest_personal_devices_usb_modems_2b40108a.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "Available Devices: - LTE Wingle (Wi-Fi USB Modem) ZTE MF79U: 635 EGP - Manufactured by ZTE.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 14,
+        "sentence_count": 2,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "USB modem",
+          "ZTE",
+          "MF79U",
+          "4G"
+        ],
+        "start_position": 0,
+        "end_position": 80
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 14,
+    "total_tokens": 14,
+    "processing_time": "2026-07-17T14:50:16Z"
+  }
+}

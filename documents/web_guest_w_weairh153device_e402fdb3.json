@@ -1,0 +1,46 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/guest/w/weairh153device",
+    "title": "WE Air 5G Routers offer - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:37:19Z",
+    "screenshot": "output_screenshots/web_guest_w_weairh153device_e402fdb3.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "عرض الخصم على أجهزة الإنترنت الهوائي (WE Air 5G): أستمتع بخصم علي أجهزة الراوتر الهوائي 5G كالتالي: - 5G Router (H153): السعر الأساسي 5,000 جنيه، سعر العرض 2,500 جنيه. الشروط و الأحكام: لمزيد من المعلومات عن الراوتر: اضغط هنا.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 48,
+        "sentence_count": 5,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "WE Air",
+          "5G",
+          "راوتر",
+          "H153",
+          "خصم"
+        ],
+        "start_position": 0,
+        "end_position": 240
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 48,
+    "total_tokens": 48,
+    "processing_time": "2026-07-17T14:45:15Z"
+  }
+}

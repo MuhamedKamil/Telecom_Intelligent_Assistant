@@ -1,0 +1,70 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/guest/personal/we-pay",
+    "title": "WE Pay | محفظة إلكترونية لتحويل الأموال ودفع الفواتير في مصر - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:38:23Z",
+    "screenshot": "output_screenshots/web_guest_personal_we_pay_9f4663a3.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "WE Pay هي محفظة إلكترونية بتوفرلك مجموعة من الخدمات لتسهيل معاملاتك المالية مثل إيداع وسحب الأموال ودفع خدمات WE والمرافق (الكهرباء و المياه و الغاز) والتبرعات وغيرها، وتقدر تستخدمها في أي وقت و في أي مكان بسهولة وأمان. خدمات WE Pay تشمل: - إدارة الحساب (تفعيل الحساب والاستعلام عن الرصيد) عبر *7#. - تحويل الأموال لأي محفظة إلكترونية داخل مصر. - خدمات WE: سداد فواتير الموبايل والإنترنت والتليفون الأرضي. - المدفوعات: دفع التبرعات وسداد فواتير المياه والكهرباء والغاز. - سحب وإيداع الأموال من خلال فروع WE وفوري وماكينات ATM والتجار. - استقبال الحوالات الدولية على WE Pay.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 108,
+        "sentence_count": 7,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "الشروط العامة:",
+        "topic_keywords": [
+          "WE Pay",
+          "محفظة إلكترونية",
+          "تحويل",
+          "فواتير",
+          "*7#"
+        ],
+        "start_position": 0,
+        "end_position": 540
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "الشروط العامة: - أن تكون حاملا لبطاقة رقم قومي سارية وخط WE بإسمك. - يحق لكل بطاقة رقم قومي فتح 3 محافظ على 3 أرقام مختلفة. - الحد الأقصى لرصيد حساب المحفظة 200,000 جنيه مصري. - في حالة ضياع أو سرقة الخط بإمكانك وقف الخدمة عن طريق الإتصال بـ 565 أو زيارة أحد فروع WE. الخدمة تشمل أيضا دفع فواتير الكهرباء والمياه والغاز، إشتراكات النقابات والأندية، مصاريف المدارس والجامعات، أقساط وخدمات التأمينات، التبرعات للمؤسسات الخيرية، دفع التذاكر وخدمات السياحة، ومدفوعات مالية وبنكية أخرى.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 87,
+        "sentence_count": 7,
+        "has_overlap": true,
+        "overlap_with_prev": "الشروط العامة:",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "شروط",
+          "بطاقة رقم قومي",
+          "رصيد",
+          "565",
+          "فواتير"
+        ],
+        "start_position": 480,
+        "end_position": 860
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 97,
+    "total_tokens": 195,
+    "processing_time": "2026-07-17T14:48:44Z"
+  }
+}

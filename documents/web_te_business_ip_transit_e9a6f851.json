@@ -1,0 +1,69 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/te-business/ip-transit",
+    "title": "IP Transit | Fully Managed Dedicated Internet for Enterprises | Telecom Egypt - TE Business - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:24Z",
+    "screenshot": "output_screenshots/web_te_business_ip_transit_e9a6f851.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "The IP Transit service provides worldwide admittance to the worldwide Web networks utilizing IP connectivity of high quality, without contention and with low latency, connected directly to the main international backbones of the Internet through the international cables submarine systems and terrestrial transmission systems. WE IP Transit Internet is a fully managed, scalable, dedicated internet connection that is tailored to meet high-quality business needs. WE's leadership in dedicated Internet services continues to deliver seamless access to the internet, designed to give always-on, reliable, and exceptional performance for mission-critical applications at competitive prices.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 86,
+        "sentence_count": 4,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "- IP Transit service is a fully managed Internet connection",
+        "topic_keywords": [
+          "IP Transit",
+          "dedicated internet",
+          "low latency",
+          "managed service"
+        ],
+        "start_position": 0,
+        "end_position": 460
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "- IP Transit service is a fully managed Internet connection with guaranteed quality, continuous stability. - We offer IP Transit at competitive prices, with variable connection speeds, the circuit capacity ranges from 64 Kbps to tens of gigabits per second. - The service is provided through a variety of the latest fiber optic technologies in addition to WiMAX and satellite Transmission solutions. Features & Benefits: - Fully Managed Service. - Symmetric connection speed for consistent upload/download without any sharing. - Highest levels of security for data and information.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 76,
+        "sentence_count": 8,
+        "has_overlap": true,
+        "overlap_with_prev": "- IP Transit service is a fully managed Internet connection",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "managed service",
+          "fiber optic",
+          "WiMAX",
+          "symmetric speed",
+          "security"
+        ],
+        "start_position": 400,
+        "end_position": 720
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 81,
+    "total_tokens": 162,
+    "processing_time": "2026-07-17T14:51:14Z"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/web/guest/w/nitromifiworldcuppromo",
+    "title": "Nitro MiFi World Cup Promo - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:37:21Z",
+    "screenshot": "output_screenshots/en_web_guest_w_nitromifiworldcuppromo_c23907a9.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "Nitro MiFi World Cup Promo: Choose your team, predict the results and win up to 24 GBs. Get bonus MBs every time your chosen team wins, and earn extra MBs for every correct match prediction. Terms and Conditions: - The offer is valid for Nitro MiFi customers. - You can subscribe, choose your team, and guess the matches results through My WE App. - You will get bonus MBs based on your chosen team's wins, plus additional MBs for every correct prediction. - New customers can participate automatically. - Existing customers must subscribe to the offer and renew their bundle during the tournament period to be eligible to participate. - Free MBs will be valid till the end of day. - No carry over or transfer is allowed for promotional MBs. - This Offer is valid from 11 June 2026 until 19 July 2026.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 130,
+        "sentence_count": 11,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "How to subscribe?",
+        "topic_keywords": [
+          "Nitro MiFi",
+          "World Cup",
+          "promo",
+          "bonus MBs",
+          "terms"
+        ],
+        "start_position": 0,
+        "end_position": 620
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "How to subscribe? 1. Renew or subscribe to your Nitro MiFi bundle. 2. Choose World Cup Promo – MiFi. 3. Renew your bundle. 4. Click on Subscribe. 5. Now, choose your team and guess the results through WE Sport link in the offer description.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 42,
+        "sentence_count": 6,
+        "has_overlap": true,
+        "overlap_with_prev": "How to subscribe?",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "subscription steps",
+          "Nitro MiFi",
+          "World Cup",
+          "WE Sport"
+        ],
+        "start_position": 560,
+        "end_position": 780
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 86,
+    "total_tokens": 172,
+    "processing_time": "2026-07-17T14:46:36Z"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/o/we-angular-custom-elements/styles.css?t=1782858316983",
+    "title": "",
+    "lang": "",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:39:40Z",
+    "screenshot": "output_screenshots/o_we_angular_custom_elements_styles_css_1be5a54e.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "This is a CSS file containing custom styles for WE's Angular elements. It includes font declarations, component styles, and custom loader animations.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 23,
+        "sentence_count": 2,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "CSS",
+          "Angular",
+          "styles",
+          "components"
+        ],
+        "start_position": 0,
+        "end_position": 140
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 23,
+    "total_tokens": 23,
+    "processing_time": "2026-07-17T14:50:42Z"
+  }
+}

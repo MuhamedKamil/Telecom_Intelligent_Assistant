@@ -1,0 +1,72 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/web/guest/personal/mobile/we-gold",
+    "title": "WE Gold Plans | Premium Mobile Packages, Calls & Internet in Egypt - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:39:29Z",
+    "screenshot": "output_screenshots/en_web_guest_personal_mobile_we_gold_6f8d7d8d.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "WE Gold Plans (Monthly): - WE Gold 300: 5.5 GB Mobile Internet, 1,200 Minutes/SMS, Family Sharing 1 member, 150 GB Home Internet/50% discount for WE Air 150, 1 GB Weekly Data Roaming (2x/Year), Handset Installments Up to 5000 EGP, Annual subscription to Shamel by Vezeeta, 20 Minutes for 140 EL-Dalil. - WE Gold 600: 20 GB Mobile Internet, 3,700 Minutes/SMS, Family Sharing 2 member, 150 GB Home Internet/WE Air 150, 25 International Minutes, 1.5 GB Weekly Data Roaming (2x/Year), 1000 EGP Annual Voucher, Handset Installments Up to 10,000 EGP. - WE Gold 890: 30 GB Mobile Internet, 6,000 Minutes/SMS, Family Sharing 3 member, 250 GB Home Internet/WE Air 150, 35 International Minutes, 1.5 GB Weekly Data Roaming (2x/Year), 1500 EGP Annual Voucher, iPhone 17 Installment: Up-To 30,000 EGP.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 160,
+        "sentence_count": 6,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "WE Gold 1200: 65 GB Mobile Internet, 8,000 Minutes/SMS",
+        "topic_keywords": [
+          "WE Gold",
+          "plans",
+          "mobile internet",
+          "minutes",
+          "family sharing",
+          "installments",
+          "vouchers"
+        ],
+        "start_position": 0,
+        "end_position": 820
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "WE Gold 1200: 65 GB Mobile Internet, 8,000 Minutes/SMS, Family Sharing 4 member, 250 GB Home Internet/WE Air 250, WE Ardy 20, 45 International Minutes, 2 GB Weekly Data Roaming (2x/Year), 2000 EGP Annual Voucher, iPhone 17 Installment: Up-To 40,000 EGP. - WE Gold 1500: 70 GB Mobile Internet, 9,000 Minutes/SMS, Family Sharing 5 member, 400 GB Home Internet/WE Air 250, WE Ardy 20, 60 International Minutes, 4 GB Weekly Data Roaming (2x/Year), WE Flight 4 Outgoing Minutes, 3000 EGP Annual Voucher, iPhone 17 Installment: Up-To 60,000 EGP. - WE Gold 2300: 130 GB Mobile Internet, 10,000 Minutes/SMS, Family Sharing 6 member, 750 GB Home Internet/WE Air 650, WE Ardy 20, 75 International Minutes, 6 GB Weekly Data Roaming (2x/Year), WE Flight 6 Outgoing Minutes, 5000 EGP Annual Voucher, iPhone 17 Installment: Up-To 80,000 EGP. All bundles include a TOD gift subscription, annual Shamel by Vezeeta subscription, and WE Bonus monthly points. Terms and conditions apply.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 200,
+        "sentence_count": 9,
+        "has_overlap": true,
+        "overlap_with_prev": "WE Gold 1200: 65 GB Mobile Internet, 8,000 Minutes/SMS",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "WE Gold 1200",
+          "WE Gold 1500",
+          "WE Gold 2300",
+          "TOD",
+          "Shamel",
+          "WE Bonus"
+        ],
+        "start_position": 740,
+        "end_position": 1500
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_plan_tier",
+    "avg_chunk_size": 180,
+    "total_tokens": 360,
+    "processing_time": "2026-07-17T14:25:45Z"
+  }
+}

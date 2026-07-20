@@ -1,0 +1,48 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/ar/web/guest/personal/services/other-services",
+    "title": "خدمات WE الأخرى | MY WE، WE Pay، Apple Pay، نقل رقم، تموين | تليكوم مصر - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:54Z",
+    "screenshot": "output_screenshots/ar_web_guest_personal_services_other_services_323d204d.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "الخدمات المتاحة: - Apple Pay: دلوقتى لعملاء WE إشحن أو إدفع فاتورتك أو جدد باقتك بسهولة و أمان مع Apple Pay. - تطبيق My WE: يمكنك إكمال جميع معاملات حسابك لخط الموبايل والانترنت الارضي عبر التطبيق وقتما تشاء وأينما كنت. - WE Pay: هي خدمة مقدمة من WE بالتعاون مع بنك مصر لتمكن عملائها من التحكم في تعاملاتهم الماليه المختلفة. - خدمة نقل الأرقام: هي خدمه تتيح لك تغير شبكة الموبايل دون الحاجه إلى تغيير رقمك الشخصي. - خدمات البرقيات: يمكنك الآن إرسال أي برقية محلية عن طريق الاتصال بـ 124 أو زيارة أحد مكاتب التلغراف في فروع WE. - التبرعات: يمكنك التبرع فى اى وقت ومن اى مكان من خلال هاتفك المحمول بطريقة سهلة. - التموين: يمكنك الآن تفعيل بطاقة التموين من خلال هاتفك المحمول. - خدمة الإيقاف المؤقت للخط: خدمة جديدة لعملاء الفاتورة.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 131,
+        "sentence_count": 9,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "Apple Pay",
+          "My WE",
+          "WE Pay",
+          "نقل الأرقام",
+          "برقيات",
+          "تبرعات"
+        ],
+        "start_position": 0,
+        "end_position": 640
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_service_type",
+    "avg_chunk_size": 131,
+    "total_tokens": 131,
+    "processing_time": "2026-07-17T14:48:02Z"
+  }
+}

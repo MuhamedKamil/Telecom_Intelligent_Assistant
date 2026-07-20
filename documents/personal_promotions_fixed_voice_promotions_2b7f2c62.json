@@ -1,0 +1,43 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/personal/promotions/fixed-voice-promotions",
+    "title": "عروض الخط الأرضي WE | خصومات المكالمات والخط الأرضي - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:36:57Z",
+    "screenshot": "output_screenshots/personal_promotions_fixed_voice_promotions_2b7f2c62.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "لا توجد عروض حالية.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 4,
+        "sentence_count": 1,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "عروض",
+          "خط أرضي"
+        ],
+        "start_position": 0,
+        "end_position": 20
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 4,
+    "total_tokens": 4,
+    "processing_time": "2026-07-17T14:48:07Z"
+  }
+}

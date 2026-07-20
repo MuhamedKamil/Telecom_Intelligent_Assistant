@@ -1,0 +1,71 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/te-business/e-invoice",
+    "title": "E-Invoice | Automated Tax-Compliant Invoicing for Egyptian Tax Authority | Telecom Egypt - TE Business - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:03Z",
+    "screenshot": "output_screenshots/web_te_business_e_invoice_00ac7186.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "WE E-Invoice offers: - Flexible plans, full of features. - Invoice Management. - Invoice Digital Approval. - Cloud-Based E-Invoices. - Product Lists. - Dashboards & Analytics. - Automatic Tax Calculation. - Email & SMS Notifications. - Downloadable Reports. - Integrated automatic invoice submission to the Egyptian Tax Authority. - Create, Revise & Send Invoices. - Clients & Product Manager. - Multi Level approvals.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 70,
+        "sentence_count": 14,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "Packages: - E-Invoice Essentials: Up to 600 invoices, Monthly fees 500 EGP.",
+        "topic_keywords": [
+          "E-Invoice",
+          "tax",
+          "Egyptian Tax Authority",
+          "invoice management",
+          "cloud-based",
+          "digital approval"
+        ],
+        "start_position": 0,
+        "end_position": 460
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "Packages: - E-Invoice Essentials: Up to 600 invoices, Monthly fees 500 EGP. - E-Invoice Efficiency: Up to 2000 invoices, Monthly fees 1400 EGP. - E-Invoice Power Up: Up to 4000 invoices, Monthly fees 2500 EGP. Terms & Conditions: - Any Add-on(User) cost 100 EGP Monthly. - All prices are tax exclusive. - Implementation fees 1200 EGP. - For more information call 19776.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 78,
+        "sentence_count": 9,
+        "has_overlap": true,
+        "overlap_with_prev": "Packages: - E-Invoice Essentials: Up to 600 invoices, Monthly fees 500 EGP.",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "packages",
+          "pricing",
+          "Essentials",
+          "Efficiency",
+          "Power Up",
+          "implementation fees"
+        ],
+        "start_position": 400,
+        "end_position": 780
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 74,
+    "total_tokens": 148,
+    "processing_time": "2026-07-17T14:25:50Z"
+  }
+}

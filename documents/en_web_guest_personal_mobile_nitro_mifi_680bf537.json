@@ -1,0 +1,72 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/web/guest/personal/mobile/nitro-mifi",
+    "title": "WE Nitro MiFi | Portable Wi-Fi, MiFi Internet & Data Packages in Egypt - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:39:01Z",
+    "screenshot": "output_screenshots/en_web_guest_personal_mobile_nitro_mifi_680bf537.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "Nitro MiFi Plans: - 15 EGP/Month: 625 MBs, 28 Days validity - 29 EGP/Month: 1,375 MBs, 28 Days validity - 58 EGP/Month: 3,250 MBs, 28 Days validity - 105 EGP/Month: 6,250 MBs, 28 Days validity - 150 EGP/Month: 10,000 MBs, 28 Days validity - 300 EGP/Month: 23,500 MBs, 28 Days validity - 675 EGP/3 Months: 50,000 MBs, 90 Days validity Prices are excluding taxes. Subscription through: For new customers, visit the nearest WE store; for existing customers, through MyWe App.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 110,
+        "sentence_count": 10,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "MiFi devices available for WE Gold customers with 12-month installments with 0% interest.",
+        "topic_keywords": [
+          "Nitro MiFi",
+          "plans",
+          "data packages",
+          "MBs",
+          "validity",
+          "subscription"
+        ],
+        "start_position": 0,
+        "end_position": 460
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "MiFi devices available for WE Gold customers with 12-month installments with 0% interest. Check WE Gold installment program for details. Latest Devices: - ZTE CAT4 Router K10 Home 4G: 850 EGP - ZTE MF927U: 700 EGP - LTE CAT6 MiFi MF971R: 1400 EGP - 4G MiFi ZTE MF937: 700 EGP",
+      "lang": "en",
+      "metadata": {
+        "token_count": 59,
+        "sentence_count": 6,
+        "has_overlap": true,
+        "overlap_with_prev": "MiFi devices available for WE Gold customers with 12-month installments with 0% interest.",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "MiFi devices",
+          "installments",
+          "WE Gold",
+          "ZTE",
+          "routers",
+          "prices"
+        ],
+        "start_position": 400,
+        "end_position": 720
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 84,
+    "total_tokens": 169,
+    "processing_time": "2026-07-17T14:25:30Z"
+  }
+}

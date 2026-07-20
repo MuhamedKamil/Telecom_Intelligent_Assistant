@@ -1,0 +1,93 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/web/guest/about-te",
+    "title": "Telecom Egypt | About the Company, Vision & Telecommunications Leadership - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:32:48Z",
+    "screenshot": "output_screenshots/en_web_guest_about_te_18e0a3b3.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 3,
+      "text": "Mission and Vision: - OUR VISION: To shape the future of telecommunication services in the region through world-class customer centricity, attraction and retention of highly talented people while maximizing shareholder value. - OUR MISSION: Telecom Egypt is committed to being the best source of total communication solutions, while dedicating its resources to build a better tomorrow for its employees and community through responsive services and honest business practices.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 62,
+        "sentence_count": 4,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "Employee Value proposition:",
+        "topic_keywords": [
+          "vision",
+          "mission",
+          "customer centricity",
+          "shareholder value",
+          "communication solutions"
+        ],
+        "start_position": 0,
+        "end_position": 380
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 3,
+      "text": "Employee Value proposition: Telecom Egypt's Employee Value Proposition (EVP) is designed to attract and retain top talent. We pride ourselves on being a customer-centric organization, fostering innovation in our workplace. This enables employees to contribute to cutting-edge solutions and shape the future of the industry. We prioritize career growth and development by offering continuous learning opportunities. Our commitment to work-life balance is evident through flexible arrangements and comprehensive well-being programs.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 77,
+        "sentence_count": 5,
+        "has_overlap": true,
+        "overlap_with_prev": "Employee Value proposition:",
+        "overlap_with_next": "As part of Telecom Egypt, you'll have the opportunity to engage with state-of-the-art technology",
+        "topic_keywords": [
+          "EVP",
+          "talent attraction",
+          "innovation",
+          "career growth",
+          "work-life balance"
+        ],
+        "start_position": 320,
+        "end_position": 740
+      }
+    },
+    {
+      "chunk_id": "chunk_003",
+      "chunk_index": 2,
+      "total_chunks": 3,
+      "text": "As part of Telecom Egypt, you'll have the opportunity to engage with state-of-the-art technology, thrive in a collaborative and diverse culture, and enjoy competitive compensation and benefits, including performance bonuses. Furthermore, we place great emphasis on social responsibility and sustainability, encouraging employees to participate in meaningful initiatives. With our inclusive and diverse culture, Telecom Egypt values differences, creating a workplace where every individual is respected and empowered. Join Telecom Egypt for a fulfilling career journey at the forefront of the telecommunications industry, where your skills and aspirations will be recognized and nurtured.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 96,
+        "sentence_count": 5,
+        "has_overlap": true,
+        "overlap_with_prev": "As part of Telecom Egypt, you'll have the opportunity to engage with state-of-the-art technology",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "technology",
+          "diversity",
+          "compensation",
+          "social responsibility",
+          "sustainability",
+          "career journey"
+        ],
+        "start_position": 680,
+        "end_position": 1100
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 78,
+    "total_tokens": 235,
+    "processing_time": "2026-07-17T14:35:32Z"
+  }
+}

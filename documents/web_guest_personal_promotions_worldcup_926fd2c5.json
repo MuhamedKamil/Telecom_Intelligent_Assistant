@@ -1,0 +1,70 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/guest/personal/promotions/worldcup",
+    "title": "عروض كأس العالم من WE | المصرية للاتصالات - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:38:15Z",
+    "screenshot": "output_screenshots/web_guest_personal_promotions_worldcup_926fd2c5.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "عروض كأس العالم المتاحة: - عرض كأس العالم لعملاء ال IPTV: إستمتع بخصم 50% و إتفرج علي أقوي ماتشات كأس العالم. - عرض كاس العالم للموبايل مع beIN STREAM: استمتع بكأس العالم 2026 كما لم تشاهده من قبل مع beIN Stream وWE. - عرض شحن كأس العالم: اشحن، شجع فريقك، واكسب لحد 24 جيجا مع كل توقع صح. - عرض تجديد كأس العالم: جدد ، شجع فريقك، واكسب لحد 24 جيجا مع كل توقع صح. - عرض كاس العالم للإنترنت المنزلى مع beIN STREAM: حصريا من WE، إشترك في باقة كاس العالم من beIN بخصم 50% و احصل علي جهاز beIN STREAM هدية. - عرض كأس العالم لعملاء WE Air: اشترك أو جدد باقة WE AIR، واختر فريقك، واكسب ميجابايت مع كل فوز، وميجابايت إضافية مع كل توقع صحيح لنتيجة المباراة، حتى 24,000 ميجابايت. - عرض كأس العالم لعملاء Nitro MiFi: اشترك أو جدد باقة Nitro MiFi، واختر فريقك، واكسب ميجابايت مع كل فوز، وميجابايت إضافية مع كل توقع صحيح لنتيجة المباراة، حتى 24,000 ميجابايت.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 180,
+        "sentence_count": 9,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "عرض TOD كأس العالم من WE GOLD: حصريا لعملاء WE GOLD",
+        "topic_keywords": [
+          "كأس العالم",
+          "عروض",
+          "IPTV",
+          "beIN STREAM",
+          "WE Air",
+          "Nitro MiFi"
+        ],
+        "start_position": 0,
+        "end_position": 760
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "عرض TOD كأس العالم من WE GOLD: حصريا لعملاء WE GOLD استمتع بماتشات كأس العالم على TOD. - عرض كاس العالم مع WE GOLD: احصل علي جوائز حصرية عند الاشتراك، اختيار فريقك المفضل وتوقع النتيجة الصحيحة لمبارياته طوال بطولة كأس العالم.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 45,
+        "sentence_count": 3,
+        "has_overlap": true,
+        "overlap_with_prev": "عرض TOD كأس العالم من WE GOLD: حصريا لعملاء WE GOLD",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "TOD",
+          "WE GOLD",
+          "كأس العالم",
+          "جوائز"
+        ],
+        "start_position": 700,
+        "end_position": 920
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_promotion_type",
+    "avg_chunk_size": 112,
+    "total_tokens": 225,
+    "processing_time": "2026-07-17T14:50:57Z"
+  }
+}

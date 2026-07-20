@@ -1,0 +1,48 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/te-business/business-sitemap",
+    "title": "Business Sitemap - TE Business - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:42Z",
+    "screenshot": "output_screenshots/web_te_business_business_sitemap_c4ee9bda.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "الأقسام: - Mobile Services: Mobile Rate Plans, WE Business, WE Business Value, WE Business Prepaid, WE Business Internet, 4G & 5G Solutions, We Data Hub, M2M Solutions, Smart Meters, We Business SMS, Fleet Tracking Service, WE Business FWA. - Data & Connectivity: Business ADSL, IP Transit, IP VPN, Transmission Media. - Voice Services: Business Landline, Voice Plans, Short Number, Toll Free Numbers, Voice Service 0900, PRI Circuit, SIP Trunk Service, Marketing Calls. - Hosting & Data Center: Data Center co-location, Dedicated Hosting, Infrastructure as a Service (IaaS), Shared Hosting. - Digital Solutions: We Access, Managed DDOS Protection. - Collaboration Services: Hosted Call Center, Managed IP Telephony, Video Conferencing - Meet Me. - Smart Solutions: Cloud ERP, E-Invoice, WE Cloud ERP, WE FinTech. - Wholesale.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 119,
+        "sentence_count": 9,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "business sitemap",
+          "mobile",
+          "data",
+          "voice",
+          "hosting",
+          "digital"
+        ],
+        "start_position": 0,
+        "end_position": 600
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_category",
+    "avg_chunk_size": 119,
+    "total_tokens": 119,
+    "processing_time": "2026-07-17T14:47:45Z"
+  }
+}

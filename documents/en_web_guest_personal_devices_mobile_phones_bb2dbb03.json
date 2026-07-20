@@ -1,0 +1,70 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/web/guest/personal/devices/mobile-phones",
+    "title": "WE Mobile Phones | Latest Smartphones & Installment Offers in Egypt - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:39:18Z",
+    "screenshot": "output_screenshots/en_web_guest_personal_devices_mobile_phones_bb2dbb03.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "Available Phones: - iPhone 17 Air 512 GB: 94000 EGP - Apple - Redmi Note 13 8+128GB: 9299 EGP - Xiaomi - Motorola G35 5G 8+256GB: 7999 EGP - Motorola - Samsung Galaxy A35 5G 256G/8G: 17099 EGP - Samsung - Samsung Galaxy A25 5G 256G/8G: 12890 EGP - Samsung - Samsung Galaxy A25 5G 128G/6G: 11350 EGP - Samsung - Samsung Galaxy M33: 11111 EGP - Samsung - Samsung Galaxy A35 5G 128G/8G: 15499 EGP - Samsung - Samsung Galaxy A34 8/256GB: 14444 EGP - Samsung - Samsung Galaxy A14 4/64GB: 5599 EGP - Samsung - Samsung Galaxy A15 4G 128G/6G: 8270 EGP - Samsung - Samsung Galaxy A15 4G 128GB/4G: 7600 EGP - Samsung - Samsung Galaxy A15 4G 256G/8G: 10270 EGP - Samsung - Samsung Galaxy A23 4-128 GB: 6666 EGP - Samsung",
+      "lang": "en",
+      "metadata": {
+        "token_count": 175,
+        "sentence_count": 15,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "Samsung Galaxy A33 5G: 10099 EGP - Samsung",
+        "topic_keywords": [
+          "mobile phones",
+          "iPhone",
+          "Samsung",
+          "Xiaomi",
+          "prices"
+        ],
+        "start_position": 0,
+        "end_position": 680
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "Samsung Galaxy A33 5G: 10099 EGP - Samsung - Samsung Galaxy A72: 10999 EGP - Samsung - Samsung A13 4/64 GB: 5399 EGP - Samsung - Samsung Galaxy A04s 32GB: 4499 EGP - Samsung - iPhone 17 Pro 256 GB: 94000 EGP - Apple - iPhone 17 Pro Max 512 GB: 117000 EGP - Apple - iPhone 17 Pro Max 256 GB: 102000 EGP - Apple - iPhone 17 256 GB: 68500 EGP - Apple - iPhone 17 Air 256 GB: 75000 EGP - Apple - iPhone 17 Pro 512 GB: 112500 EGP - Apple - Nokia C10 2/32GB: 2888 EGP - Nokia - Oppo A74: 7700 EGP - Oppo - Redmi 12 8+128GB: 7399 EGP - Xiaomi - Redmi 13C 4+128GB: 5499 EGP - Xiaomi - Redmi A3 3+64GB: 4499 EGP - Xiaomi - Redmi A3 4+128GB: 4999 EGP - Xiaomi - Samsung A13 128 GB: 5799 EGP - Samsung - Samsung Galaxy A04s 128 GB: 6666 EGP - Samsung - Samsung Galaxy A04s 64 GB: 5949 EGP - Samsung - Samsung Galaxy A14 4/128GB: 6099 EGP - Samsung",
+      "lang": "en",
+      "metadata": {
+        "token_count": 220,
+        "sentence_count": 21,
+        "has_overlap": true,
+        "overlap_with_prev": "Samsung Galaxy A33 5G: 10099 EGP - Samsung",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "Samsung",
+          "iPhone",
+          "Nokia",
+          "Xiaomi",
+          "prices"
+        ],
+        "start_position": 600,
+        "end_position": 1400
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_manufacturer",
+    "avg_chunk_size": 197,
+    "total_tokens": 395,
+    "processing_time": "2026-07-17T14:45:26Z"
+  }
+}

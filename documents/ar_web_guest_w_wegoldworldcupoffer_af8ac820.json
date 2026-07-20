@@ -1,0 +1,93 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/ar/web/guest/w/wegoldworldcupoffer",
+    "title": "عرض كاس العالم مع WE GOLD - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:37:34Z",
+    "screenshot": "output_screenshots/ar_web_guest_w_wegoldworldcupoffer_af8ac820.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 3,
+      "text": "عرض كاس العالم مع WE GOLD: اشترك، اختار فريقك المفضل وتوقع نتيجة الماتش صح لكل مباريات كأس العالم عشان تكسب جوائز حصرية مع كل فوز. اكسب جيجابايتس مع كل فوز لفريقك في كاس العالم: - Group Stage: 1 GB - Round of 32: 1 GB - Round of 16: 2 GB - Quarter Finals: 2 GB - Semi Finals: 2 GB - Final Match: 2 GB اكسب جوائز زيادة مع كل فوز لفريقك مع توقعك لنتيجة المباراة الصحيح: - Group Stage: 1 GB - Round of 32: 1 GB - Round of 16: EGP 100 Voucher - Quarter Finals: EGP 100 Voucher - Semi Finals: EGP 200 Voucher - Final Match: EGP 500 Voucher",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 137,
+        "sentence_count": 8,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "الشروط والأحكام:",
+        "topic_keywords": [
+          "WE GOLD",
+          "كأس العالم",
+          "جوائز",
+          "جيجابايت",
+          "فوز"
+        ],
+        "start_position": 0,
+        "end_position": 640
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 3,
+      "text": "الشروط والأحكام: - العرض متاح لعملاء WE GOLD. - للاشتراك في العرض عن طريق فتح تطبيق My WE والدخول إلى Promotions Section او عن طريق كود *2026#. - يمكنك اختيار منتخب وطني واحد فقط، و في حال خروج المنتخب المختار من البطولة يمكنك اختيار منتخب جديد مع بداية المرحلة التالية من البطولة. - في حالة خسارة منتخبك، لن تحصل على جائزة حتى إذا كان توقعك صحيحا. يجب أن يفوز منتخبك أولا. - سيتم إضافة الجيجابايت في خلال 24 ساعة من انتهاء مباريات اليوم. - الجيجابايت صالحة حتى نهاية اليوم. - لا يمكن تحويل أو ترحيل الجيجابايت الهدية. - العرض ساري من 11 يونيو 2025 حتى 19 يوليو 2026.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 120,
+        "sentence_count": 10,
+        "has_overlap": true,
+        "overlap_with_prev": "الشروط والأحكام:",
+        "overlap_with_next": "كيفية الاشتراك في العرض؟",
+        "topic_keywords": [
+          "شروط",
+          "أحكام",
+          "WE GOLD",
+          "My WE",
+          "*2026#"
+        ],
+        "start_position": 580,
+        "end_position": 1080
+      }
+    },
+    {
+      "chunk_id": "chunk_003",
+      "chunk_index": 2,
+      "total_chunks": 3,
+      "text": "كيفية الاشتراك في العرض؟ عن طريق كود *2026# او فتح تطبيق MY WE والدخول على Promotions Section. اختر عرض WORLD CUP. اضغط على اشترك. اختر منتخبك المفضل وخمن النتيجة الصح لكل مبارياته في كاس العالم عشان تكسب جوائز حصرية مع كل فوز وتوقع صحيح.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 45,
+        "sentence_count": 5,
+        "has_overlap": true,
+        "overlap_with_prev": "كيفية الاشتراك في العرض؟",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "خطوات",
+          "اشتراك",
+          "*2026#",
+          "My WE",
+          "WORLD CUP"
+        ],
+        "start_position": 1020,
+        "end_position": 1200
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 100,
+    "total_tokens": 302,
+    "processing_time": "2026-07-17T14:48:25Z"
+  }
+}

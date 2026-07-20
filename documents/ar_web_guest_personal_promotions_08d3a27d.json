@@ -1,0 +1,99 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/ar/web/guest/personal/promotions",
+    "title": "عروض WE | أحدث الباقات والعروض والخصومات على الموبايل والإنترنت - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:34:58Z",
+    "screenshot": "output_screenshots/ar_web_guest_personal_promotions_08d3a27d.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 3,
+      "text": "العروض المتاحة: - عرض الجيجابيتس من WE Pay: إفتح محفظة WE Pay وليك 3.25 جيجابيتس موبايل إنترنت. - عرض كأس العالم لعملاء ال IPTV: إستمتع بخصم 50% و إتفرج علي أقوي ماتشات كأس العالم. - عرض كاس العالم للموبايل مع beIN STREAM: استمتع بكأس العالم 2026 كما لم تشاهده من قبل مع beIN Stream وWE. - عرض شحن كأس العالم: اشحن، شجع فريقك، واكسب لحد 24 جيجا مع كل توقع صح. - عرض تجديد كأس العالم: جدد، شجع فريقك، واكسب لحد 24 جيجا مع كل توقع صح. - عرض كاس العالم للإنترنت المنزلى مع beIN STREAM: حصريا من WE، إشترك في باقة كاس العالم من beIN بخصم 50% و احصل علي جهاز beIN STREAM هدية.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 155,
+        "sentence_count": 8,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "عرض كأس العالم لعملاء WE Air: اشترك أو جدد باقة WE AIR، واختر فريقك، واكسب ميجابايت مع كل فوز",
+        "topic_keywords": [
+          "عروض",
+          "WE Pay",
+          "كأس العالم",
+          "IPTV",
+          "beIN STREAM",
+          "شحن",
+          "تجديد"
+        ],
+        "start_position": 0,
+        "end_position": 620
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 3,
+      "text": "عرض كأس العالم لعملاء WE Air: اشترك أو جدد باقة WE AIR، واختر فريقك، واكسب ميجابايت مع كل فوز، وميجابايت إضافية مع كل توقع صحيح لنتيجة المباراة، حتى 24,000 ميجابايت. - عرض الخصم على أجهزة الإنترنت الهوائي (WE Air 5G): لعملاء WE Air ليك خصم على أجهزة الراوتر الهوائي 5G. - عرض الخصم على أجهزة الإنترنت الهوائي (WE Air 4G): لعملاء WE Air ليك خصم على أجهزة الراوتر الهوائي 4G. - عرض على أجهزة MiFi: لعملاء Nitro MiFi استمتع ب 50% خصم علي أجهزة Mifi. - عرض كأس العالم لعملاء Nitro MiFi: اشترك أو جدد باقة Nitro MiFi، واختر فريقك، واكسب ميجابايت مع كل فوز، وميجابايت إضافية مع كل توقع صحيح لنتيجة المباراة، حتى 24,000 ميجابايت. - عرض TOD كأس العالم من WE GOLD: حصريا لعملاء WE GOLD استمتع بماتشات كأس العالم على TOD.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 190,
+        "sentence_count": 8,
+        "has_overlap": true,
+        "overlap_with_prev": "عرض كأس العالم لعملاء WE Air: اشترك أو جدد باقة WE AIR، واختر فريقك، واكسب ميجابايت مع كل فوز",
+        "overlap_with_next": "عرض WE Space للعملاء الجدد: إشترك في باقات WE Space و ليك 50% زيادة علي الباقة لـمدة 3 شهور.",
+        "topic_keywords": [
+          "WE Air",
+          "Nitro MiFi",
+          "WE GOLD",
+          "TOD",
+          "كأس العالم",
+          "خصم",
+          "أجهزة"
+        ],
+        "start_position": 540,
+        "end_position": 1200
+      }
+    },
+    {
+      "chunk_id": "chunk_003",
+      "chunk_index": 2,
+      "total_chunks": 3,
+      "text": "عرض WE Space للعملاء الجدد: إشترك في باقات WE Space و ليك 50% زيادة علي الباقة لـمدة 3 شهور. - باقات WE Space السنوية: إدفع 10 شهور و ليك راوتر هدية مع باقات WE SPACE السنوية. - عرض الأبطال: ضعف الباقة او 50% خصم علي لكنترول و Nitro. - خدمة التقسيط عن طريق فاليو: أشتري أي موبايل من وي وقسط علي 60 شهر بدون مقدم. - استبدل نقاطك من فروعنا مع WE BONUS: استبدل نقاط WE Bonus من فروع WE بأي من الأجهزة والإكسسوارات المتاحه لدينا. - عروض *015#: اطلب الكود واتدلع بعروض. - عرض كاس العالم مع WE GOLD: احصل علي جوائز حصرية عند الاشتراك، اختيار فريقك المفضل وتوقع النتيجة الصحيحة لمبارياته طوال بطولة كأس العالم.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 145,
+        "sentence_count": 8,
+        "has_overlap": true,
+        "overlap_with_prev": "عرض WE Space للعملاء الجدد: إشترك في باقات WE Space و ليك 50% زيادة علي الباقة لـمدة 3 شهور.",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "WE Space",
+          "فاليو",
+          "تقسيط",
+          "WE BONUS",
+          "*015#",
+          "عرض الأبطال",
+          "WE GOLD"
+        ],
+        "start_position": 1120,
+        "end_position": 1720
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_promotion_category",
+    "avg_chunk_size": 163,
+    "total_tokens": 490,
+    "processing_time": "2026-07-17T14:30:10Z"
+  }
+}

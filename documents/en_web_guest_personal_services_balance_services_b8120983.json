@@ -1,0 +1,47 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/web/guest/personal/services/balance-services",
+    "title": "WE Balance Services | Credit Transfer, Borrowing & Mobile Balance Tools in Egypt - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:39:25Z",
+    "screenshot": "output_screenshots/en_web_guest_personal_services_balance_services_b8120983.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "Services available: - Salefny Extra: Now you can borrow up to 48 EGP with lowest service fees. - Call Me: You can send an SMS to another number asking him to call you. To subscribe, dial *515*other party's number#. - Balance Transfer: Now, you can transfer from 30Pts to 100 EGP at a time. To subscribe, dial *551*number*Amount#. - Call Completion Services: Running out of balance! No worries. Now with WE you can complete your call normally. - Auto Call Collect: Now you can create a list of WE numbers and you will pay the calls.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 90,
+        "sentence_count": 7,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "balance",
+          "Salefny",
+          "transfer",
+          "Call Me",
+          "Auto Call Collect"
+        ],
+        "start_position": 0,
+        "end_position": 460
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_service",
+    "avg_chunk_size": 90,
+    "total_tokens": 90,
+    "processing_time": "2026-07-17T14:50:26Z"
+  }
+}

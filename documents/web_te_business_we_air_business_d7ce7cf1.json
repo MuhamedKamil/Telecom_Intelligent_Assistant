@@ -1,0 +1,74 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/te-business/we-air-business",
+    "title": "WE Business FWA | 4G & 5G Fixed Wireless Internet for Corporates | Telecom Egypt - TE Business - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:35Z",
+    "screenshot": "output_screenshots/web_te_business_we_air_business_d7ce7cf1.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "WE Business FWA Bundles: - WE Business FWA 290: Quota 40,000 MBs, Price/month 290 EGP. - WE Business FWA 460: Quota 105,000 MBs, Price/month 460 EGP. - WE Business FWA 690: Quota 200,000 MBs, Price/month 690 EGP. - WE Business FWA 1040: Quota 325,000 MBs, Price/month 1040 EGP. - WE Business FWA 1270: Quota 400,000 MBs, Price/month 1270 EGP. Add-on Bundles: - WE Business FWA ADD-ON 17: 3000 MBs, Price 17 EGP. - WE Business FWA ADD-ON 52: 9,500 MBs, Price 52 EGP. - WE Business FWA ADD-ON 80: 12,000 MBs, Price 80 EGP. - WE Business FWA ADD-ON 115: 20,000 MBs, Price 115 EGP.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 120,
+        "sentence_count": 11,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "Terms & Conditions:",
+        "topic_keywords": [
+          "FWA",
+          "business",
+          "bundles",
+          "quotas",
+          "MBs",
+          "add-ons",
+          "pricing"
+        ],
+        "start_position": 0,
+        "end_position": 540
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "Terms & Conditions: - WE Business FWA Router works on WE Network coverage and is locked on the WE data SIM. - To subscribe contact your account manager or call 522 for more details. - You can choose between 4G or 5G routers. - WE Business FWA 290 and 460 bundles are used in one location. - WE Business FWA 690, 1040 & 1270 bundles can be used in two locations. - You can add extra location with 40 EGP paid once life time. - Bundle automatically renews every 30 days. - Add-on packages are available on-demand and not automatically renewed. - Add-on packages are valid for 30 days. - Prices Excluding Taxes. - Change of location requests should be done through customer care 522.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 126,
+        "sentence_count": 12,
+        "has_overlap": true,
+        "overlap_with_prev": "Terms & Conditions:",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "terms",
+          "conditions",
+          "FWA router",
+          "coverage",
+          "locations",
+          "renewal",
+          "taxes"
+        ],
+        "start_position": 480,
+        "end_position": 1020
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 123,
+    "total_tokens": 246,
+    "processing_time": "2026-07-17T14:25:53Z"
+  }
+}

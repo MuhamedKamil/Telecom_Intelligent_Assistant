@@ -1,0 +1,48 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/web/guest/personal/services/other-services",
+    "title": "Other WE Services | My WE App, WE Pay, Apple Pay & MNP | Telecom Egypt - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:38:46Z",
+    "screenshot": "output_screenshots/en_web_guest_personal_services_other_services_48a9c6c3.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "Services available: - Apple Pay: Now Available For WE Customers. Make Recharge, Paying your Bill & renewing your Package Simple & Secure with Apple Pay. - My WE App: You can manage your mobile & home internet accounts, complete all your transactions online whenever you want and wherever you are. - WE Pay: WE Pay is a service provided by WE in cooperation with Banque Misr to enable its customers to control their various financial transactions. - Mobile Number Portability: Service allows you to change your mobile network to another one keeping same number. - Telegram Services: You can send any telegram by calling 124 or visiting one of telegraph offices in WE stores. - Donation: Now with WE you can donate anytime and anywhere through your mobile phone in an easy and secure way. - Tamween: Now you can activate the supply card from your mobile. - Park your Line: New service for postpaid customers.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 135,
+        "sentence_count": 9,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "Apple Pay",
+          "My WE",
+          "WE Pay",
+          "MNP",
+          "donation",
+          "Tamween"
+        ],
+        "start_position": 0,
+        "end_position": 640
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_service_type",
+    "avg_chunk_size": 135,
+    "total_tokens": 135,
+    "processing_time": "2026-07-17T14:46:43Z"
+  }
+}

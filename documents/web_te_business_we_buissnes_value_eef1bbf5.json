@@ -1,0 +1,70 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/te-business/we-buissnes-value",
+    "title": "WE Business Value Plans | Corporate Mobile Packages in Egypt - TE Business - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:13Z",
+    "screenshot": "output_screenshots/web_te_business_we_buissnes_value_eef1bbf5.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "WE Business Value bundles: - WE Business Value 58: Units 1250, Mobile Internet 1500 MB, Intra-Company Minutes 1000. - WE Business Value 80: Units 2000, Mobile Internet 2500 MB, Intra-Company Minutes 1500. - WE Business Value 175: Units 4000, Mobile Internet 6000 MB, Intra-Company Minutes 1500. - WE Business Value 345: Units 8000, Mobile Internet 13000 MB, Intra-Company Minutes 2000. - WE Business Value 520: Units 13000, Mobile Internet 20000 MB. - WE Business Value 780: Units 18000, Mobile Internet 32000 MB.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 82,
+        "sentence_count": 7,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "Terms & Conditions:",
+        "topic_keywords": [
+          "WE Business Value",
+          "bundles",
+          "units",
+          "MB",
+          "intra-company"
+        ],
+        "start_position": 0,
+        "end_position": 400
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "Terms & Conditions: - 1 minute or SMS to WE = 1 unit. - 1 minute to landline = 1 unit. - 1 minute or SMS to any other network = 5 units. - 1 MB = 1 unit. - Follow up rates for minutes and SMSs out of the bundle is 14 pt. - The roaming receiving minute rate only applies in certain countries, for more details call 522. - All prices are tax exclusive.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 60,
+        "sentence_count": 8,
+        "has_overlap": true,
+        "overlap_with_prev": "Terms & Conditions:",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "terms",
+          "units",
+          "rates",
+          "roaming",
+          "tax exclusive"
+        ],
+        "start_position": 340,
+        "end_position": 640
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 71,
+    "total_tokens": 142,
+    "processing_time": "2026-07-17T14:49:04Z"
+  }
+}

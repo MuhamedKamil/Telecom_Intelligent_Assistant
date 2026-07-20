@@ -1,0 +1,47 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/about-te/ma3ak",
+    "title": "معاك - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:39Z",
+    "screenshot": "output_screenshots/about_te_ma3ak_5eff8431.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "معاك هي خدمة متاحة لعملاء WE من الصم وضعاف السمع، حيث يقوم فريق من المختصين بالرد على استفساراتكم باستخدام لغة الإشارة من خلال مكالمة فيديو بين العميل وفريق خدمة عملاء معاك على موقع te.eg. للاستمتاع بخدمة متميزة، يرجى التحقق مما يلي: - السماح بتشغيل الكاميرا والميكروفون أثناء المحادثة. - الاتصال عبر أحد المتصفحات التي تدعم مكالمات الفيديو (Chrome، Firefox، Safari). - الاتصال بشبكة إنترنت قوية ومستقرة. - مواعيد العمل من 9 صباحا حتى 9 مساء. توفر الخدمة أيضا قائمة بالمحافظات التي تتوفر بها خدمة لغة الإشارة.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 98,
+        "sentence_count": 8,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "معاك",
+          "لغة الإشارة",
+          "صم",
+          "ضعاف السمع",
+          "خدمة العملاء"
+        ],
+        "start_position": 0,
+        "end_position": 480
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 98,
+    "total_tokens": 98,
+    "processing_time": "2026-07-17T14:48:54Z"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/guest/about-te/tv-ads",
+    "title": "الاعلانات التليفزيونية - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:38:13Z",
+    "screenshot": "output_screenshots/web_guest_about_te_tv_ads_f31d75b8.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "المصرية للإتصالات - أول مشغل إتصالات متكامل WE.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 8,
+        "sentence_count": 1,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "إعلانات",
+          "تليفزيونية",
+          "WE"
+        ],
+        "start_position": 0,
+        "end_position": 60
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 8,
+    "total_tokens": 8,
+    "processing_time": "2026-07-17T14:35:50Z"
+  }
+}

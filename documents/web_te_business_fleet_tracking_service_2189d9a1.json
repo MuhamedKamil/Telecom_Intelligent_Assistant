@@ -1,0 +1,47 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/te-business/fleet-tracking-service",
+    "title": "WE Fleet Tracking Service | GPS Vehicle Monitoring & Fleet Management | Telecom Egypt - TE Business - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:06Z",
+    "screenshot": "output_screenshots/web_te_business_fleet_tracking_service_2189d9a1.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "Fleet Tracking Service: Fleet management tools can help fleet managers gain real-time visibility, ensure fleet safety, and includes Location tracking and monitoring speed tracking, monitoring violation alerts, Geo-fencing areas, point of interest into their operations while increasing driver satisfaction and decreasing fuel usage through predictive analytics and accurate reporting. Fleet Tracking Bundles: - 135 EGP/month - 170 EGP/month - 200 EGP/month",
+      "lang": "en",
+      "metadata": {
+        "token_count": 64,
+        "sentence_count": 4,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "fleet tracking",
+          "GPS",
+          "vehicle monitoring",
+          "fleet management",
+          "bundles"
+        ],
+        "start_position": 0,
+        "end_position": 340
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 64,
+    "total_tokens": 64,
+    "processing_time": "2026-07-17T14:47:33Z"
+  }
+}

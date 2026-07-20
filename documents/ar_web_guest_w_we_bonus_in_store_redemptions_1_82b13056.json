@@ -1,0 +1,69 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/ar/web/guest/w/we-bonus-in-store-redemptions-1",
+    "title": "استبدل نقاطك من فروعنا مع WE BONUS - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:36:50Z",
+    "screenshot": "output_screenshots/ar_web_guest_w_we_bonus_in_store_redemptions_1_82b13056.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "استبدل نقاطك من فروعنا مع WE BONUS: دلوقتي تقدر تستبدل نقاط WE Bonus في فروع WE، تقدر تستخدم نقاطك في دفع جزء أو كل قيمة الجهاز المتاح للشراء. الشروط والأحكام: - إمكانية استخدام النقاط بالكامل أو جزء منها لدفع قيمة شراء الجهاز. - لا يوجد حد أدنى لاستبدال النقاط، 100 نقطة تساوي 5 جنيه. - يمكن معرفه رصيد النقاط عن طريق MY WE App أو E-Care. - الخدمه متاحه داخل فروع محدده فقط في الوقت الحالي، يمكن الاطلاع عليها عن طريق MY WE App. - يمكن دفع جزء من قيمه الجهاز بالنقاط علي أن يتم دفع الجزء المتبقي نقدأ أو بكارت الإئتمان. - غير متاح دفع جزء من الجهاز بالنقاط في حالة التقسيط. - في حالة إعادة الجهاز المدفوع عن طريق النقاط، فإن عملية استرداد النقاط تكون خلال 2 أيام. - استبدال النقاط متاح فقط للأجهزه المتاحه في الفروع وغير متاح للشحن أو دفع الفواتير أو كروت الشحن.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 155,
+        "sentence_count": 11,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "كيفية استبدال النقاط داخل فروع WE:",
+        "topic_keywords": [
+          "WE BONUS",
+          "نقاط",
+          "استبدال",
+          "فروع",
+          "شروط"
+        ],
+        "start_position": 0,
+        "end_position": 700
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "كيفية استبدال النقاط داخل فروع WE: 1. معرفه رصيد النقاط عن طريق MY WE App أو E-care. 2. اطلب من مقدم الخدمه دفع قيمة الجهاز كاملا او جزء منه مقابل النقاط. 3. سوف تستقبل رساله علي الرقم المسجل لدى الشركه لتأكيد وإتمام عملية الإستبدال. 4. سيصلك رساله أخرى بعد إتمام عملية الإستبدال بالنقاط المستبدله و رصيد النقاط المتبقيه.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 75,
+        "sentence_count": 6,
+        "has_overlap": true,
+        "overlap_with_prev": "كيفية استبدال النقاط داخل فروع WE:",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "خطوات",
+          "استبدال",
+          "نقاط",
+          "MY WE",
+          "E-care"
+        ],
+        "start_position": 620,
+        "end_position": 980
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 115,
+    "total_tokens": 230,
+    "processing_time": "2026-07-17T14:48:05Z"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/store-locator",
+    "title": "فروع وسنترالات - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:47Z",
+    "screenshot": "output_screenshots/store_locator_15fa8ff7.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "يمكن للعملاء استخدام هذه الصفحة لتحديد موقع أقرب فرع أو سنترال WE لتقديم الخدمات المختلفة.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 15,
+        "sentence_count": 1,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "فروع",
+          "سنترالات",
+          "خريطة",
+          "مواقع"
+        ],
+        "start_position": 0,
+        "end_position": 100
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 15,
+    "total_tokens": 15,
+    "processing_time": "2026-07-17T14:50:59Z"
+  }
+}

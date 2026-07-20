@@ -1,0 +1,73 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/te-business/data-center-co-location",
+    "title": "Data Center Co-location | Host Your Servers at WE's Certified Data Center | Telecom Egypt - TE Business - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:11Z",
+    "screenshot": "output_screenshots/web_te_business_data_center_co_location_7d01810d.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "Co-Location Hosting: Co-location hosting offers the best hosting facilities and remote management tools for the customers owned hardware to ensure professional service operation. Based on your requirements, you can start with 1 rack unit. Co-location hosting service provides the customer with the appropriate environment to accommodate hardware and to have all the operational requirements easily accessible, and maintenance technicians readily available. You can host your dedicated servers at WE's Data center to guarantee 24/7 experienced monitoring against hardware failures, software failures, and security vulnerabilities.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 85,
+        "sentence_count": 5,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "Features & Benefits:",
+        "topic_keywords": [
+          "co-location",
+          "hosting",
+          "servers",
+          "data center",
+          "monitoring",
+          "hardware",
+          "security"
+        ],
+        "start_position": 0,
+        "end_position": 500
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "Features & Benefits: - State of The Art Data Center. - 99.9% Network Availability. - Hardware Redundancy. - Climate Control. - 24/7 Technical Support. - High Receivable Dedicated and Shared IP Connectivity Services.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 36,
+        "sentence_count": 7,
+        "has_overlap": true,
+        "overlap_with_prev": "Features & Benefits:",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "features",
+          "benefits",
+          "availability",
+          "redundancy",
+          "support",
+          "IP connectivity"
+        ],
+        "start_position": 440,
+        "end_position": 640
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 60,
+    "total_tokens": 121,
+    "processing_time": "2026-07-17T14:35:48Z"
+  }
+}

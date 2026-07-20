@@ -1,0 +1,71 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/guest/personal/devices/5g-devices/mobile",
+    "title": "موبايلات 5G من WE | أحدث الهواتف الداعمة لشبكات الجيل الخامس - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:37:51Z",
+    "screenshot": "output_screenshots/web_guest_personal_devices_5g_devices_mobile_96e00f76.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "الهواتف المتاحة: - iPhone 15 128GB: 55500 جنيه - Apple - iPhone 15 Plus 128GB: 63300 جنيه - Apple - iPhone 16 128GB: 59900 جنيه - Apple - iPhone 16 256GB: 72900 جنيه - Apple - iPhone 16 Pro 128GB: 77700 جنيه - Apple - iPhone 16 Pro Max 256GB: 95500 جنيه - Apple - Samsung Galaxy A34 8/128GB: 13999 جنيه - Samsung - Samsung Galaxy A35 5G 128G/8G: 15499 جنيه - Samsung - Samsung Galaxy A33 5G: 10099 جنيه - Samsung - Samsung Galaxy M33: 11111 جنيه - Samsung - Samsung Galaxy A34 8/256GB: 14444 جنيه - Samsung - Samsung Galaxy A25 5G 128G/6G: 11350 جنيه - Samsung",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 150,
+        "sentence_count": 14,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "Samsung Galaxy A25 5G 256G/8G: 12890 جنيه - Samsung",
+        "topic_keywords": [
+          "5G",
+          "هواتف",
+          "iPhone",
+          "Samsung",
+          "أسعار",
+          "موبايلات"
+        ],
+        "start_position": 0,
+        "end_position": 580
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "Samsung Galaxy A25 5G 256G/8G: 12890 جنيه - Samsung - Samsung Galaxy A35 5G 256G/8G: 17099 جنيه - Samsung - Motorola G35 5G 8+256GB: 7999 جنيه - Motorola - Redmi Note 13 8+128GB: 9299 جنيه - Xiaomi",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 38,
+        "sentence_count": 5,
+        "has_overlap": true,
+        "overlap_with_prev": "Samsung Galaxy A25 5G 256G/8G: 12890 جنيه - Samsung",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "Samsung",
+          "Motorola",
+          "Xiaomi",
+          "5G",
+          "أسعار"
+        ],
+        "start_position": 520,
+        "end_position": 720
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_manufacturer",
+    "avg_chunk_size": 94,
+    "total_tokens": 188,
+    "processing_time": "2026-07-17T14:35:53Z"
+  }
+}

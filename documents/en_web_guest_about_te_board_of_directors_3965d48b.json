@@ -1,0 +1,68 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/web/guest/about-te/board-of-directors",
+    "title": "Board Of Directors - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:39:30Z",
+    "screenshot": "output_screenshots/en_web_guest_about_te_board_of_directors_3965d48b.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "The Board of Directors includes: - Lobna Helal: Chair of the Board of Directors. She has over 30 years of experience in the banking sector and was the first woman to serve as Deputy Governor of the Central Bank of Egypt for Monetary Stability Policies. - Tamer El Mahdi: Managing Director and Chief Executive Officer. He brings more than three decades of experience in leading strategic transformation and telecommunications networks. - Ahmed Abdelrahman: Non-Executive Board Member, representing the government. He is a Major General with extensive experience in the Egyptian Armed Forces. - Tarek Aboualam: Non-Executive Board Member, representing the government. He has over 25 years of experience in the ICT sector. - Tarek Tantawy: Non-Executive Board Member, representing the government. He has over 24 years of experience in investment and financial services. - Hany Elsamra: Non-Executive Board Member, representing the government. He has over 26 years of human resources leadership experience.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 140,
+        "sentence_count": 8,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "Islam Zekry: Non-Executive Board Member",
+        "topic_keywords": [
+          "Board of Directors",
+          "Lobna Helal",
+          "Tamer El Mahdi",
+          "government representatives"
+        ],
+        "start_position": 0,
+        "end_position": 740
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "Islam Zekry: Non-Executive Board Member, representing the government. He has over 20 years of experience in the banking sector and serves as Group Chief Financial Officer at CIB. - Mohamed Hanafy: Board Member Representing Employees. He is an active labor union leader. - Mohamed Barakat: Independent Board Member. He has over 40 years of experience in the banking sector. - Girgis Abd El-Shahid: Independent Board Member. He has extensive expertise in corporate law and dispute resolution. - Akef El Maghraby: Independent Board Member. He has over 25 years of experience in banking and finance. - Hossam Seifeldin: Independent Board Member. He has nearly 30 years of experience in the technology sector.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 105,
+        "sentence_count": 7,
+        "has_overlap": true,
+        "overlap_with_prev": "Islam Zekry: Non-Executive Board Member",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "board members",
+          "independent",
+          "employee representative",
+          "CIB"
+        ],
+        "start_position": 680,
+        "end_position": 1100
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_member_category",
+    "avg_chunk_size": 122,
+    "total_tokens": 245,
+    "processing_time": "2026-07-17T14:48:30Z"
+  }
+}

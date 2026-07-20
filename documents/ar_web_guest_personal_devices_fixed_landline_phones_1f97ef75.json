@@ -1,0 +1,44 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/ar/web/guest/personal/devices/fixed-landline-phones",
+    "title": "هواتف أرضية WE | أجهزة تليفون أرضي لاسلكية ومنزلية في مصر - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:36:14Z",
+    "screenshot": "output_screenshots/ar_web_guest_personal_devices_fixed_landline_phones_1f97ef75.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "الأجهزة المتاحة: - DEX Cordless D1005: 1499 جنيه - صنع بواسطة DEX.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 11,
+        "sentence_count": 2,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "هواتف أرضية",
+          "DEX",
+          "Cordless"
+        ],
+        "start_position": 0,
+        "end_position": 60
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 11,
+    "total_tokens": 11,
+    "processing_time": "2026-07-17T14:49:13Z"
+  }
+}

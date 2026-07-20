@@ -1,0 +1,71 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/te-business/shared-hosting",
+    "title": "Shared Hosting | Affordable Web Hosting | Telecom Egypt - TE Business - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:04Z",
+    "screenshot": "output_screenshots/web_te_business_shared_hosting_d40e906f.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "Shared Hosting provides a world-class web hosting performance at affordable prices. The service utilizes cutting edge high availability servers that are connected directly to WE's redundant backbone network guaranteeing world-class performance and up time. WE offers customers the opportunity to benefit from WE Data's dynamic Data Center services without bearing the hardships and complexities of investment and management of hardware and servers while having vast, easily accessible hosting features. Features & Benefits: - Full Site Management and Control Security. - Close Performance Monitoring. - 24/7 Support. - Smarter Mail: full-featured email designed to provide the functionality businesses need.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 91,
+        "sentence_count": 6,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "Linux (Cpanel) plans:",
+        "topic_keywords": [
+          "shared hosting",
+          "web hosting",
+          "Data Center",
+          "performance",
+          "support"
+        ],
+        "start_position": 0,
+        "end_position": 480
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "Linux (Cpanel) plans: - Basic: 225 EGP/Year, 500 MB Space, 3 GB Bandwidth. - Bronze: 620 EGP/Year, 2 GB Space, 6 GB Bandwidth, 1 domain. - Silver: 1110 EGP/Year, 4GB Space, 12GB Bandwidth, 1 domain. - Gold: 2225 EGP/Year, 8GB Space, 35GB Bandwidth, 1 domain. - Platinum: 4630 EGP/Year, 12GB Space, 80GB Bandwidth, 2 domain. Plesk plans: - Basic: 305 EGP/Year, 0.5 GB Space, 3 GB Bandwidth. - Bronze: 985 EGP/Year, 2 GB Space, 6 GB Bandwidth, 1 domain. - Silver: 1810 EGP/Year, 4GB Space, 12GB Bandwidth, 1 domain. - Gold: 3280 EGP/Year, 8GB Space, 24GB Bandwidth, 1 domain. - Platinum: 5650 EGP/Year, 12GB Space, 48GB Bandwidth, 2 domain.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 110,
+        "sentence_count": 13,
+        "has_overlap": true,
+        "overlap_with_prev": "Linux (Cpanel) plans:",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "Linux",
+          "Cpanel",
+          "Plesk",
+          "plans",
+          "pricing",
+          "hosting"
+        ],
+        "start_position": 420,
+        "end_position": 820
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 100,
+    "total_tokens": 201,
+    "processing_time": "2026-07-17T14:50:51Z"
+  }
+}

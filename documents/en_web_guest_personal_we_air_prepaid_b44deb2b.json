@@ -1,0 +1,69 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/web/guest/personal/we-air-prepaid",
+    "title": "WE Air Prepaid | Portable 5G Internet & Mobile Wi-Fi in Egypt - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:39:34Z",
+    "screenshot": "output_screenshots/en_web_guest_personal_we_air_prepaid_b44deb2b.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "WE Air Prepaid Plans: - WE Air 290: 290 EGP/Month, 40 GB. - WE Air 460: 460 EGP/Month, 105 GB. - WE Air 690: 690 EGP/Month, 200 GB. - WE Air 1040: 1040 EGP/Month, 325 GB. - WE Air 1270: 1270 EGP/Month, 400 GB. - WE Air 1600: 1600 EGP/Month, 500 GB. Extra Quotas (valid for 30 days): - WE Air Add-On 23: 23 EGP, 3 GB. - WE Air Add-On 69: 69 EGP, 9.5 GB. - WE Air Add-On 105: 105 EGP, 12 GB. - WE Air Add-On 150: 150 EGP, 20 GB. Prices Excluding Taxes. Main packages renew every 30 days automatically with sufficient balance. Add-on packages are not automatically renewed.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 120,
+        "sentence_count": 12,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "FAQ includes information about devices, location determination",
+        "topic_keywords": [
+          "WE Air",
+          "prepaid",
+          "plans",
+          "GB",
+          "add-ons"
+        ],
+        "start_position": 0,
+        "end_position": 520
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "FAQ includes information about devices, location determination, consumption rules, and package management through My WE app.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 20,
+        "sentence_count": 1,
+        "has_overlap": true,
+        "overlap_with_prev": "FAQ includes information about devices, location determination",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "FAQ",
+          "devices",
+          "consumption",
+          "My WE"
+        ],
+        "start_position": 460,
+        "end_position": 580
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 70,
+    "total_tokens": 140,
+    "processing_time": "2026-07-17T14:51:11Z"
+  }
+}

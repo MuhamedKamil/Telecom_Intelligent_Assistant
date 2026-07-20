@@ -1,0 +1,69 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/ar/web/guest/personal/mobile/we-gold",
+    "title": "باقات WE Gold | باقات موبايل مميزة ومكالمات ونت شهرية في مصر - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:36:04Z",
+    "screenshot": "output_screenshots/ar_web_guest_personal_mobile_we_gold_f5edfabd.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "باقات WE Gold (شهرية): - WE Gold 300: 5.5 جيجا موبايل إنترنت، 1,200 دقيقة/رسالة، 1 خط عيلة، 150 جيجا إنترنت أرضى أو 50% خصم على WE Air 150، 1 جيجا إنترنت تجوال أسبوعية (مرتين في السنة)، تقسيط موبايل يصل إلى 5000 جنيه، اشتراك سنوي على شامل من Vezeeta، 20 دقيقة 140 الدليل. - WE Gold 600: 20 جيجا موبايل إنترنت، 3,700 دقيقة/رسالة، 2 خطوط عيلة، 150 جيجا إنترنت أرضى أو WE Air 150، 25 دقيقة دولية، 1.5 جيجا إنترنت تجوال أسبوعية (مرتين في السنة)، 1000 جنية قسيمة شراء سنوية، تقسيط موبايل يصل إلى 10,000 جنيه. - WE Gold 890: 30 جيجا موبايل إنترنت، 6,000 دقيقة/رسالة، 3 خطوط عيلة، 250 جيجا إنترنت أرضى أو WE Air 150، 35 دقيقة دولية، 1.5 جيجا إنترنت تجوال أسبوعية (مرتين في السنة)، 1500 جنية قسيمة شراء سنوية، تقسيط موبايل iPhone 17 يصل إلى 30,000 جنيه.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 170,
+        "sentence_count": 6,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "WE Gold 1200: 65 جيجا موبايل إنترنت",
+        "topic_keywords": [
+          "WE Gold",
+          "باقات",
+          "موبايل إنترنت",
+          "دقائق",
+          "خطوط عيلة"
+        ],
+        "start_position": 0,
+        "end_position": 840
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "WE Gold 1200: 65 جيجا موبايل إنترنت، 8,000 دقيقة/رسالة، 4 خطوط عيلة، 250 جيجا إنترنت أرضى أو WE Air 250، WE Ardy 20، 45 دقيقة دولية، 2 جيجا إنترنت تجوال أسبوعية (مرتين في السنة)، 2000 جنية قسيمة شراء سنوية، تقسيط موبايل iPhone 17 يصل إلى 40,000 جنيه. - WE Gold 1500: 70 جيجا موبايل إنترنت، 9,000 دقيقة/رسالة، 5 خطوط عيلة، 400 جيجا إنترنت أرضى أو WE Air 250، WE Ardy 20، 60 دقيقة دولية، 4 جيجا إنترنت تجوال أسبوعية (مرتين في السنة)، 4 دقيقة WE Flight، 3000 جنية قسيمة شراء سنوية، تقسيط موبايل iPhone 17 يصل إلى 60,000 جنيه. - WE Gold 2300: 130 جيجا موبايل إنترنت، 10,000 دقيقة/رسالة، 6 خطوط عيلة، 750 جيجا إنترنت أرضى أو WE Air 650، WE Ardy 20، 75 دقيقة دولية، 6 جيجا إنترنت تجوال أسبوعية (مرتين في السنة)، 6 دقيقة WE Flight، 5000 جنية قسيمة شراء سنوية، تقسيط موبايل iPhone 17 يصل إلى 80,000 جنيه. جميع الباقات تشمل اشتراك TOD هدية، اشتراك سنوي على شامل من Vezeeta، ونقاط WE Bonus الشهرية. تطبق الشروط والأحكام.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 210,
+        "sentence_count": 9,
+        "has_overlap": true,
+        "overlap_with_prev": "WE Gold 1200: 65 جيجا موبايل إنترنت",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "WE Gold 1200",
+          "WE Gold 1500",
+          "WE Gold 2300",
+          "TOD",
+          "WE Bonus"
+        ],
+        "start_position": 760,
+        "end_position": 1540
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_plan_tier",
+    "avg_chunk_size": 190,
+    "total_tokens": 380,
+    "processing_time": "2026-07-17T14:50:21Z"
+  }
+}

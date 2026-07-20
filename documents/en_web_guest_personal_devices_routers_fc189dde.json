@@ -1,0 +1,50 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/web/guest/personal/devices/routers",
+    "title": "WE Routers | Wi-Fi, Mesh, Routers for Home Internet - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:39:08Z",
+    "screenshot": "output_screenshots/en_web_guest_personal_devices_routers_fc189dde.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "Available Devices: - AC1300 Whole Home Mesh Wi-Fi System (Pack of 1): 3100 EGP - TP Link - AC1300 Whole Home Mesh Wi-Fi System (Pack of 2): 4999 EGP - TP Link - AC1300 Whole Home Mesh Wi-Fi System (Pack of 3): 7777 EGP - TP Link - AC1750 Dual Band Mesh Wi-Fi Range Extender: 2799 EGP - TP Link - Nokia Wi-Fi Mesh Beacon (B1.1): 1999 EGP - Nokia - Set Top Box (STB): 1350 EGP - Huawie - AC750 Wi-Fi Range Extender: 1199 EGP - TP Link - PREMIUM Router: 1500 EGP - ZTE",
+      "lang": "en",
+      "metadata": {
+        "token_count": 110,
+        "sentence_count": 9,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "routers",
+          "mesh",
+          "Wi-Fi",
+          "TP Link",
+          "Nokia",
+          "ZTE",
+          "prices",
+          "EGP"
+        ],
+        "start_position": 0,
+        "end_position": 440
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_product_list",
+    "avg_chunk_size": 110,
+    "total_tokens": 110,
+    "processing_time": "2026-07-17T14:30:18Z"
+  }
+}

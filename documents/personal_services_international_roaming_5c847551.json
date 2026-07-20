@@ -1,0 +1,47 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/personal/services/international-roaming",
+    "title": "خدمة التجوال الدولي WE | باقات الإنترنت والمكالمات أثناء السفر - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:36:19Z",
+    "screenshot": "output_screenshots/personal_services_international_roaming_5c847551.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "الخدمات: - خدمة عالم واحد للمكالمات الدولية: استمتع بأرخص سعر للإشتراك الشهري في مصر. - التجوال: يمكنك الإختيار بين الباقات اليومية والأسبوعية والشهرية، واستخدم الإنترنت طوال الرحلة. - Mobile Egypt: الآن مع نظام Mobile Egypt، استمتع بأقامتك في مصر مع أفضل سعر للمكالمات المحلية والدولية. - WE flight service: انت واصل وانت طاير مع خدمة WE Flight. - المكالمات الدوليه: خليك علي إتصال بأهلك وأصحابك في أي مكان بالعالم.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 78,
+        "sentence_count": 6,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "تجوال دولي",
+          "مكالمات دولية",
+          "Mobile Egypt",
+          "WE Flight",
+          "باقات سفر"
+        ],
+        "start_position": 0,
+        "end_position": 440
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_service",
+    "avg_chunk_size": 78,
+    "total_tokens": 78,
+    "processing_time": "2026-07-17T14:35:23Z"
+  }
+}

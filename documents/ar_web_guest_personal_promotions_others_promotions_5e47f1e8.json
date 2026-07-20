@@ -1,0 +1,47 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/ar/web/guest/personal/promotions/others-promotions",
+    "title": "عروض WE الأخرى | أفضل عروض الإنترنت والموبايل من WE مصر - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:36:01Z",
+    "screenshot": "output_screenshots/ar_web_guest_personal_promotions_others_promotions_5e47f1e8.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "العروض المتاحة: - عرض الجيجابيتس من WE Pay: إفتح محفظة WE Pay وليك 3.25 جيجابيتس موبايل إنترنت. - عرض كاس العالم للموبايل مع beIN STREAM: استمتع بكأس العالم 2026 كما لم تشاهده من قبل مع beIN Stream وWE. - عرض الأبطال: ضعف الباقة او 50% خصم علي لكنترول و Nitro. - خدمة التقسيط عن طريق فاليو: أشتري أي موبايل من وي وقسط علي 60 شهر بدون مقدم. - استبدل نقاطك من فروعنا مع WE BONUS: استبدل نقاط WE Bonus من فروع WE بأي من الأجهزة والإكسسوارات المتاحه لدينا.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 114,
+        "sentence_count": 6,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "عروض",
+          "WE Pay",
+          "beIN STREAM",
+          "فاليو",
+          "WE BONUS"
+        ],
+        "start_position": 0,
+        "end_position": 480
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_promotion_type",
+    "avg_chunk_size": 114,
+    "total_tokens": 114,
+    "processing_time": "2026-07-17T14:50:14Z"
+  }
+}

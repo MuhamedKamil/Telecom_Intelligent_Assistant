@@ -1,0 +1,47 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/te-business/marketing-calls",
+    "title": "Marketing Calls CNAM | Display Your Company Name Instead of Phone Number | Telecom Egypt - TE Business - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:36Z",
+    "screenshot": "output_screenshots/web_te_business_marketing_calls_ce443f8f.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "Marketing calls (CNAM) service enables you to register your company's Name or company's Name + short number when calling your customers instead of land line number. Features: - Show company Name only instead of land line number. - Or Show company Name + short number. Channels to Get Marketing calls service: - For commercial individual land line customer: Subscription from WE Stores. - For short number subscribers: VIP customers service center at 2 New Nady st., New Maadi. For more information, please call 111. Prices are Tax-exclusive.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 76,
+        "sentence_count": 8,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "CNAM",
+          "marketing calls",
+          "company name",
+          "short number",
+          "VIP"
+        ],
+        "start_position": 0,
+        "end_position": 400
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 76,
+    "total_tokens": 76,
+    "processing_time": "2026-07-17T14:50:28Z"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/ar/web/guest/corporate-sustainability/climate-change",
+    "title": "تغير المناخ - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:36:11Z",
+    "screenshot": "output_screenshots/ar_web_guest_corporate_sustainability_climate_change_6dee6cd6.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "تغير المناخ: يعد تغير المناخ تحديا عالميا ملحا، وتدرك الشركة المصرية للاتصالات دورها في مواجهته. نحن لا نقتصر على تشغيل أعمالنا فحسب، بل نسهم باستمرار في بناء مستقبل أكثر استدامة؛ ومن خلال اتخاذ إجراءات استباقية تهدف إلى تقليل الانبعاثات، تبرهن المصرية للاتصالات على التزامها الراسخ بتهيئة بيئة أكثر خضرة. وبصفتها مشغل اتصالات متكامل، كانت المصرية للاتصالات لاعبا رئيسيا في السوق المصري، وهي اليوم، برؤية مستقبلية، تطلق أول تقرير للبصمة الكربونية، كخطوة مهمة تجسد التزامها بالاستدامة. ومن خلال الالتزام بالمعايير الدولية، تهدف المصرية للاتصالات إلى تقديم صورة شاملة لانبعاثاتها الكربونية وتحديد المصادر الرئيسية للتحسين المستقبلي.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 110,
+        "sentence_count": 5,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "تقارير تغير المناخ:",
+        "topic_keywords": [
+          "تغير المناخ",
+          "الاستدامة",
+          "البصمة الكربونية",
+          "انبعاثات"
+        ],
+        "start_position": 0,
+        "end_position": 560
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "تقارير تغير المناخ: - تقرير البصمة الكربونية 2021-2022 - تقرير المناخ 2023-2024",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 14,
+        "sentence_count": 3,
+        "has_overlap": true,
+        "overlap_with_prev": "تقارير تغير المناخ:",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "تقارير",
+          "البصمة الكربونية",
+          "تقرير المناخ"
+        ],
+        "start_position": 500,
+        "end_position": 640
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 62,
+    "total_tokens": 124,
+    "processing_time": "2026-07-17T14:46:33Z"
+  }
+}

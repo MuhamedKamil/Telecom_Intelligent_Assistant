@@ -1,0 +1,92 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/ar/web/guest/personal/home/we-int",
+    "title": "باقات WE Home Internet | إنترنت منزلي وواي فاي منزلي في مصر - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:58Z",
+    "screenshot": "output_screenshots/ar_web_guest_personal_home_we_int_86ffd5a4.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 3,
+      "text": "WE Space: تقدم لك SPACE مجموعة من الباقات بسعات تصل الى 1500 جيجابايت وسرعات مختلفة تصل الى 500 ميجابت/ث من خلال باقات شهرية مع إمكانية الدفع بشكل سنوي مع تخفيض على الإشتراك.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 38,
+        "sentence_count": 2,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "WE LIFE بتقدم لك أفضل خدمة انترنت، إشتراك خط أرضي وقنوات ترفيهية بلا حدود في فاتورة واحدة.",
+        "topic_keywords": [
+          "WE Space",
+          "إنترنت منزلي",
+          "باقات",
+          "جيجابايت",
+          "سرعات"
+        ],
+        "start_position": 0,
+        "end_position": 190
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 3,
+      "text": "WE LIFE بتقدم لك أفضل خدمة انترنت، إشتراك خط أرضي وقنوات ترفيهية بلا حدود في فاتورة واحدة.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 19,
+        "sentence_count": 1,
+        "has_overlap": true,
+        "overlap_with_prev": "WE LIFE بتقدم لك أفضل خدمة انترنت، إشتراك خط أرضي وقنوات ترفيهية بلا حدود في فاتورة واحدة.",
+        "overlap_with_next": "WE Sonic: ليك 2x الجيجابايتس في الجيمينج والستريمينج بالإضافة الى سعة أساسية للإستخدام.",
+        "topic_keywords": [
+          "WE LIFE",
+          "إنترنت",
+          "خط أرضي",
+          "قنوات ترفيهية"
+        ],
+        "start_position": 150,
+        "end_position": 280
+      }
+    },
+    {
+      "chunk_id": "chunk_003",
+      "chunk_index": 2,
+      "total_chunks": 3,
+      "text": "WE Sonic: ليك 2x الجيجابايتس في الجيمينج والستريمينج بالإضافة الى سعة أساسية للإستخدام. استمتع بأقصى سرعة إنترنت بأعلى Upload وأقل lag وأنت بتلعب واستمتع بأقصى سرعة ممكنة للخط أثناء الجيمنج على أي جهاز.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 40,
+        "sentence_count": 3,
+        "has_overlap": true,
+        "overlap_with_prev": "WE Sonic: ليك 2x الجيجابايتس في الجيمينج والستريمينج بالإضافة الى سعة أساسية للإستخدام.",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "WE Sonic",
+          "جيمنج",
+          "ستريمينج",
+          "سرعة",
+          "Upload",
+          "lag"
+        ],
+        "start_position": 230,
+        "end_position": 420
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_product_line",
+    "avg_chunk_size": 32,
+    "total_tokens": 97,
+    "processing_time": "2026-07-17T14:30:13Z"
+  }
+}

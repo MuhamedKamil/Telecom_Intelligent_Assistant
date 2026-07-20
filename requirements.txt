@@ -1,0 +1,12 @@
+beautifulsoup4
+faster_whisper
+flagembedding
+langchain_community
+playwright
+streamlit
+torch
+transformers
+onnxruntime-gpu
+streamlit
+streamlit-mic-recorder
+pyngrok

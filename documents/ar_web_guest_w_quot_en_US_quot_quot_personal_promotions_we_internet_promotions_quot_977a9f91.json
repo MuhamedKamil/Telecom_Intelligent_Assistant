@@ -1,0 +1,43 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/ar/web/guest/w/{&quot;en_US&quot;:&quot;/personal/promotions/we-internet-promotions&quot",
+    "title": "Request Rejected",
+    "lang": null,
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:37:09Z",
+    "screenshot": "output_screenshots/ar_web_guest_w_quot_en_US_quot_quot_personal_promotions_we_internet_promotions_quot_977a9f91.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "The requested URL was rejected. Please consult with your administrator. Your support ID is: 13130082828496198772",
+      "lang": "en",
+      "metadata": {
+        "token_count": 18,
+        "sentence_count": 2,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "error",
+          "rejected",
+          "support ID"
+        ],
+        "start_position": 0,
+        "end_position": 100
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 18,
+    "total_tokens": 18,
+    "processing_time": "2026-07-17T14:46:27Z"
+  }
+}

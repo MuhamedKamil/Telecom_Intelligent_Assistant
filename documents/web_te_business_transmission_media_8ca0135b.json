@@ -1,0 +1,47 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/te-business/transmission-media",
+    "title": "Transmission Media | Fiber, WiMAX, VSAT & MSAN Connectivity Solutions | Telecom Egypt - TE Business - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:21Z",
+    "screenshot": "output_screenshots/web_te_business_transmission_media_8ca0135b.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "Transmission Media: We provide Connectivity services through a variety of the latest Transmission media technologies to suit the requirements of different customers in terms of price, Connectivity speed, security and reliability. In data communication terminology, a transmission medium is a physical path between the transmitter and the receiver i.e. it is the channel through which data is sent from one place to another. Transmission Media is broadly classified into the following types: - MSAN: Ensures consistency of service and reasonable price for small and medium businesses. - Fiber cables: Supporting faster speeds of tens of gigabits per second. - Pre-WiMAX: Ensures stable service access to areas that are not equipped with landlines networks. - V-SAT: Ensures service access via satellite to areas that are not equipped with exchanges or any communication networks.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 117,
+        "sentence_count": 8,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "transmission media",
+          "MSAN",
+          "fiber",
+          "WiMAX",
+          "VSAT"
+        ],
+        "start_position": 0,
+        "end_position": 580
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 117,
+    "total_tokens": 117,
+    "processing_time": "2026-07-17T14:46:14Z"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/personal/services/balance-services",
+    "title": "خدمات الرصيد WE | تحويل الرصيد وسلفني شكراً وإدارة الرصيد في مصر - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:36:28Z",
+    "screenshot": "output_screenshots/personal_services_balance_services_3b8eeee6.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "الخدمات المتاحة: - سلفنى Extra: دلوقتي هتقدر تستلف لحد 48 جنيه بأقل سعر للخدمة. - من فضلك كلمني: يمكنك ارسال رسالة نصية لموبايل آخر ليتصل بك. للإشتراك اطلب *515*رقم الموبايل#. - تحويل الرصيد: يمكنك الآن تحويل رصيد من 30 قرش إلى 100 جنيه فى المرة الواحدة. للإشتراك اطلب *551*الرقم*المبلغ#. - خدمات نفاذ الرصيد: رصيدك خلص!! ميهمكش، دلوقتى مع خدمات نفاذ الرصيد من WE هتقدر تكمل مكالمتك. - ادفعلهم: دلوقتي تقدر تكون قائمة من اصحابك وقرايبك وهيكلموك علي حسابك.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 85,
+        "sentence_count": 6,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "سلفنى",
+          "تحويل الرصيد",
+          "نفاذ الرصيد",
+          "ادفع لهم",
+          "خدمات الرصيد"
+        ],
+        "start_position": 0,
+        "end_position": 420
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_service",
+    "avg_chunk_size": 85,
+    "total_tokens": 85,
+    "processing_time": "2026-07-17T14:50:38Z"
+  }
+}

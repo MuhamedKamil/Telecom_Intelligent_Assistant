@@ -1,0 +1,47 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/about-te/live-chat",
+    "title": "محادثة خدمة العملاء - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:37Z",
+    "screenshot": "output_screenshots/about_te_live_chat_7d1b0f42.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "محادثة خدمة العملاء: هل تريد التحدث إلى خدمة العملاء؟ هنا يتم الرد على استفساراتك بطريقة أسرع وأسهل. يمكنك اختيار أي من الدعم الفني أو خدمة العملاء. طرق التواصل: - البريد الإلكتروني: Customer.care@te.eg - الدعم: 111 أو 01555000111 أو 19777 - يمكنك إرسال مشكلتك أو استفسارك عبر البريد الإلكتروني.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 48,
+        "sentence_count": 7,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "محادثة",
+          "خدمة العملاء",
+          "Customer.care@te.eg",
+          "111",
+          "19777"
+        ],
+        "start_position": 0,
+        "end_position": 280
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 48,
+    "total_tokens": 48,
+    "processing_time": "2026-07-17T14:48:52Z"
+  }
+}

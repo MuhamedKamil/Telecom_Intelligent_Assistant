@@ -1,0 +1,44 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/web/guest/store-locator",
+    "title": "Store locator - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:39:39Z",
+    "screenshot": "output_screenshots/en_web_guest_store_locator_73a48e73.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "Customers can use this page to locate the nearest WE branch or central office for various services.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 15,
+        "sentence_count": 1,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "store locator",
+          "branches",
+          "central offices"
+        ],
+        "start_position": 0,
+        "end_position": 100
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 15,
+    "total_tokens": 15,
+    "processing_time": "2026-07-17T14:50:12Z"
+  }
+}

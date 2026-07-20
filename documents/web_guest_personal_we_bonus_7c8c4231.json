@@ -1,0 +1,47 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/web/guest/personal/we-bonus",
+    "title": "برنامج المكافآت WE Bonus - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:39:35Z",
+    "screenshot": "output_screenshots/web_guest_personal_we_bonus_7c8c4231.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "برنامج نقاط WE Bonus: - يمكن للعملاء المؤهلين تجميع نقاط واستبدالها من مجموعة كبيرة من الشركاء. - يتم احتساب النقاط طبقا لأربع فئات مختلفة بمعدلات تجميع من 0.33 إلى 2 نقطة لكل 100 جنيه. - صلاحية النقاط المضافة هي سنة واحدة. - يتم استبدال كل 100 نقطة بقيمة 5 جنيهات. - يمكن الاستعلام عن رصيد النقاط من خلال تطبيق My WE أو الموقع الإلكتروني. برنامج Bonus Deals: يقدم خصومات وعروض في فئات متعددة (مطاعم، ازياء، صحة وجمال، الكترونيات). يمكن الاطلاع على العروض من خلال تطبيق My WE. كما توفر الصفحة قائمة بفروع WE المتاح فيها استبدال النقاط مع العناوين.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 102,
+        "sentence_count": 9,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "WE Bonus",
+          "نقاط",
+          "مكافآت",
+          "خصومات",
+          "My WE"
+        ],
+        "start_position": 0,
+        "end_position": 500
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 102,
+    "total_tokens": 102,
+    "processing_time": "2026-07-17T14:51:21Z"
+  }
+}

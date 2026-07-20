@@ -1,0 +1,70 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/ar/web/guest/personal",
+    "title": "WE مصر | باقات الإنترنت والموبايل وخدمات الاتصالات - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:36:27Z",
+    "screenshot": "output_screenshots/ar_web_guest_personal_207dfa0a.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "الخدمات السريعة: - احجز رقم WE Gold - جدد إشتراك WE إنترنت - دفع فاتورة التليفون الأرضى - شحن / دفع فاتورة الموبايل الخدمات المميزة: - WE Innovate: Think..Develop..Accelerate - WE Sports: خدمة جديدة من وي تقدم محتوى لكرة القدم وأحدث الأخبار للبطولات المحلية والعالمية لحظة بلحظة. - مسابقة العب واكسب: وقت التحدي اللي بجد خلاص بدأ اشترك دلوقتى ف مسابقة ألعب و أكسب. - فروع WE: الشهر العقاري. - We Pay: خدمة المحفظة الالكترونيه. - Tazkarti: استلم تذاكر مباريات دوري WE المصري. - خدمة 140 دليل: إعرف اي معلومة تهمك. - الحماية الأبوية: احمي طفلك من المحتوى الضار على الإنترنت بأعلى مستوى من الحماية. - Apple Pay: اشحن أو ادفع فاتورتك أو جدد باقتك بسهوله وأمان.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 127,
+        "sentence_count": 12,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "الدعم و المساعدة: - معاك - دوت مصر - أسئلة متكررة - فروع وسنترالات",
+        "topic_keywords": [
+          "خدمات سريعة",
+          "WE Gold",
+          "WE Sports",
+          "We Pay",
+          "Tazkarti",
+          "Apple Pay"
+        ],
+        "start_position": 0,
+        "end_position": 580
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "الدعم و المساعدة: - معاك - دوت مصر - أسئلة متكررة - فروع وسنترالات برنامج المكافأت WE BONUS: جمع و استبدل نقاطك واستمتع بكوبونات خصم و شراء من شركاء.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 35,
+        "sentence_count": 6,
+        "has_overlap": true,
+        "overlap_with_prev": "الدعم و المساعدة: - معاك - دوت مصر - أسئلة متكررة - فروع وسنترالات",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "الدعم",
+          "المساعدة",
+          "WE BONUS",
+          "نقاط"
+        ],
+        "start_position": 520,
+        "end_position": 680
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 81,
+    "total_tokens": 162,
+    "processing_time": "2026-07-17T14:45:29Z"
+  }
+}

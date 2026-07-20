@@ -1,0 +1,48 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/web/guest/personal/mobile/nitro-mobile-internet/prime",
+    "title": "WE Nitro Prime Mobile Internet | Data Plans & Monthly Internet Packages in Egypt - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:38:44Z",
+    "screenshot": "output_screenshots/en_web_guest_personal_mobile_nitro_mobile_internet_prime_ba6405be.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "Nitro Prime Plans: - Nitro Prime 15: 15 EGP/Month, 781 MBs (625 MBs if Super Kix is not active), 28 Days validity. Prepaid: *999*15#, Postpaid: *888*15#. - Nitro Prime 29: 29 EGP/Month, 1,718 MBs (1,375 MBs if Super Kix is not active), 28 Days validity. Prepaid: *999*29#, Postpaid: *888*29#. - Nitro Prime 58: 58 EGP/Month, 4,062 MBs (3,250 MBs if Super Kix is not active), 28 Days validity. Prepaid: *999*58#, Postpaid: *888*58#. - Nitro Prime 105: 105 EGP/Month, 7,812 MBs (6,250 MBs if Super Kix is not active), 28 Days validity. Prepaid: *999*105#, Postpaid: *888*105#. - Nitro Prime 150: 150 EGP/Month, 12,500 MBs (10,000 MBs if Super Kix is not active), 28 Days validity. Prepaid: *999*150#, Postpaid: *888*150#. - Nitro Prime 300: 300 EGP/Month, 29,375 MBs (23,500 MBs if Super Kix is not active), 28 Days validity. Prepaid: *999*300#, Postpaid: *888*300#. - Nitro Prime 675: 675 EGP/3 Months, 62,500 MBs (50,000 MBs if Super Kix is not active), 90 Days validity. Prepaid: *999*675#, Postpaid: *888*675#. Prices are excluding taxes.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 190,
+        "sentence_count": 9,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "Nitro Prime",
+          "plans",
+          "MBs",
+          "validity",
+          "Super Kix",
+          "prices"
+        ],
+        "start_position": 0,
+        "end_position": 800
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_plan",
+    "avg_chunk_size": 190,
+    "total_tokens": 190,
+    "processing_time": "2026-07-17T14:48:50Z"
+  }
+}

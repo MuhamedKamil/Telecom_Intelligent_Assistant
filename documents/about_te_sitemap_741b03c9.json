@@ -1,0 +1,94 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/about-te/sitemap/",
+    "title": "خريطة الموقع عن المصرية للاتصالات - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:38:33Z",
+    "screenshot": "output_screenshots/about_te_sitemap_741b03c9.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 3,
+      "text": "الأقسام الرئيسية: - عنا: أعضاء مجلس الادارة، الإدارة التنفيذية، متحف الاتصالات، التاريخ، الجوائز. - الاستراتيجية المؤسسية. - المركز الاعلامي: اصدارات الصحافة، الاعلانات التليفزيونية. - الوظائف و التدريبات. - تواصل معنا. شخصي: - عروض WE - الخدمات - الاجهزة - المنزل - موبايل - الشهر العقاري - استلم تذاكر مباريات دوري WE المصري - 5G موبايل - 5G لعملاء الإنترنت - 5G لعملاء الفاتورة - 5G لعملاء الكارت و الكنترول - مرحبا مسبق الدفع - باقة كلامي 40 مسبق الدفع - دورية الفواتير للعميل التجارى اجل الدفع - الحماية الأبوية",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 94,
+        "sentence_count": 8,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "الاستدامة: - الجودة المؤسسية - تغير المناخ",
+        "topic_keywords": [
+          "خريطة الموقع",
+          "أقسام",
+          "شخصي",
+          "عنا",
+          "المركز الاعلامي",
+          "الوظائف"
+        ],
+        "start_position": 0,
+        "end_position": 580
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 3,
+      "text": "الاستدامة: - الجودة المؤسسية - تغير المناخ أعمال: - خريطة الموقع أعمال",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 15,
+        "sentence_count": 3,
+        "has_overlap": true,
+        "overlap_with_prev": "الاستدامة: - الجودة المؤسسية - تغير المناخ",
+        "overlap_with_next": "خدمات: - خدمة 140 دليل - خدمة الفاتورة التفصيلية",
+        "topic_keywords": [
+          "الاستدامة",
+          "الجودة المؤسسية",
+          "تغير المناخ",
+          "أعمال"
+        ],
+        "start_position": 520,
+        "end_position": 640
+      }
+    },
+    {
+      "chunk_id": "chunk_003",
+      "chunk_index": 2,
+      "total_chunks": 3,
+      "text": "خدمات: - خدمة 140 دليل - خدمة الفاتورة التفصيلية - بنود التعاقد - Internal Wiring Service - معاك - أسئلة متكررة - محادثة خدمة العملاء - برنامج المكافآت WE Bonus - LTE Stores - Other Payment Channels - Device reservation - FAQ - App - We Pay",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 39,
+        "sentence_count": 7,
+        "has_overlap": true,
+        "overlap_with_prev": "خدمات: - خدمة 140 دليل - خدمة الفاتورة التفصيلية",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "خدمات",
+          "140 دليل",
+          "WE Bonus",
+          "LTE",
+          "FAQ",
+          "We Pay"
+        ],
+        "start_position": 580,
+        "end_position": 820
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 49,
+    "total_tokens": 148,
+    "processing_time": "2026-07-17T14:25:40Z"
+  }
+}

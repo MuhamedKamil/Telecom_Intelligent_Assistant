@@ -1,0 +1,46 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/ar/web/guest/personal/devices",
+    "title": "أجهزة WE | موبايلات وراوترات وإكسسوارات وإنترنت منزلي في مصر - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:36:41Z",
+    "screenshot": "output_screenshots/ar_web_guest_personal_devices_62659624.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "الأجهزة المتاحة تشمل هواتف من Apple، Samsung، Xiaomi، Motorola، Nokia، Oppo، وغيرها. كما تشمل راوترات من TP Link، Nokia، ZTE، Huawei، وإكسسوارات من SIA، Riversong، Philips، Lanex، وغيرها. الأسعار مدرجة بالجنيه المصري (EGP). يمكن إضافة الأجهزة للمقارنة لعرض المواصفات والأسعار جنبا إلى جنب.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 49,
+        "sentence_count": 4,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "أجهزة",
+          "موبايلات",
+          "راوترات",
+          "إكسسوارات",
+          "أسعار"
+        ],
+        "start_position": 0,
+        "end_position": 300
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 49,
+    "total_tokens": 49,
+    "processing_time": "2026-07-17T14:46:19Z"
+  }
+}

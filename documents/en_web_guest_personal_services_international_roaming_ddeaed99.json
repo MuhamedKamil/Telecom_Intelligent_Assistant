@@ -1,0 +1,47 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/web/guest/personal/services/international-roaming",
+    "title": "WE International Roaming | Travel Internet, Calls & Roaming Packages - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:39:09Z",
+    "screenshot": "output_screenshots/en_web_guest_personal_services_international_roaming_ddeaed99.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "Services: - One world service for international calls: Enjoy the lowest price for monthly subscription in Egypt with one world service. - Roaming: You can choose between our daily, weekly & monthly bundles and enjoy your trip online. - Mobile Egypt: With the new Mobile Egypt plan, enjoy your visit to Egypt with the best rates for Local & International calls. - WE flight service: Stay connected on-board with WE Flight. - International Calling: Stay connected with all the people you know around the world with our international calling.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 75,
+        "sentence_count": 6,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "roaming",
+          "international calls",
+          "One World",
+          "Mobile Egypt",
+          "WE Flight",
+          "travel"
+        ],
+        "start_position": 0,
+        "end_position": 440
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_service",
+    "avg_chunk_size": 75,
+    "total_tokens": 75,
+    "processing_time": "2026-07-17T14:25:34Z"
+  }
+}

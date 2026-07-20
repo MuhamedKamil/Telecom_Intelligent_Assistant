@@ -1,0 +1,45 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/o/classic-theme/css/clay.css?browserId=edge&amp;themeId=classic_WAR_classictheme&amp;minifierType=css&amp;languageId=en_US&amp;t=1778720040000",
+    "title": "",
+    "lang": "",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:38:57Z",
+    "screenshot": "output_screenshots/o_classic_theme_css_clay_css_etc_000d0849.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "This is a CSS file containing the Clay CSS framework styles. It defines global styling rules for the website, including typography, colors, layout, components (buttons, forms, cards, tables, etc.), and responsive design utilities.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 35,
+        "sentence_count": 2,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "CSS",
+          "styles",
+          "framework",
+          "typography",
+          "layout"
+        ],
+        "start_position": 0,
+        "end_position": 200
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 35,
+    "total_tokens": 35,
+    "processing_time": "2026-07-17T14:48:36Z"
+  }
+}

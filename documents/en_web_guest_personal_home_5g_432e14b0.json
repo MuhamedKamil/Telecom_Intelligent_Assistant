@@ -1,0 +1,69 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/en/web/guest/personal/home-5g",
+    "title": "WE Home 5G | Fast Wireless Home Internet & 5G Router in Egypt - Telecom Egypt",
+    "lang": "en-US",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:39:24Z",
+    "screenshot": "output_screenshots/en_web_guest_personal_home_5g_432e14b0.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "Stay ahead of everyone with 5G technology from WE. Be the First to Experience the Future with WE 5G Now for the first time. 5G Benefits: - Ultra-fast Internet Speeds - Top-notch Performance - Flawless Connectivity - Highest response and interaction 5G is now in Egypt. Faster speeds, better performance, and a whole new experience with your bundles to enjoy your Internet without limits.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 55,
+        "sentence_count": 6,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "FAQ: - What is the new 5G Technology?",
+        "topic_keywords": [
+          "5G",
+          "technology",
+          "ultra-fast",
+          "performance",
+          "connectivity"
+        ],
+        "start_position": 0,
+        "end_position": 360
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "FAQ: - What is the new 5G Technology? 5G is the fifth generation of cellular technology, designed to enhance speed, lower latency, and provide greater flexibility for wireless services. - Do I need to be in a 5G coverage area to use it? Yes, to experience 5G speeds, you need to be in a location with WE's 5G coverage. - What do I need to use 5G Technology? You will need to be in an area covered by 5G network and have a 5G enabled mobile handset. - Should I change my tariff or pay extra fees to use 5G services? No need as WE is providing the 5G benefits with no extra fees or subscription. All existing tariffs will enjoy 5G service for free. - What happens if I leave a 5G coverage area? Your device will automatically switch to the best available network, such as 4G or 3G, to keep you connected without interruption. - How can I check if my device supports 5G? Check your device's specifications or call customer care or visit the nearest WE store. - Do I need to activate 5G on my device? Majority of 5G Devices supports the service automatically. However, some devices need manual setup. Check the device-specific steps provided.",
+      "lang": "en",
+      "metadata": {
+        "token_count": 195,
+        "sentence_count": 12,
+        "has_overlap": true,
+        "overlap_with_prev": "FAQ: - What is the new 5G Technology?",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "5G FAQ",
+          "coverage",
+          "device support",
+          "tariff",
+          "activation"
+        ],
+        "start_position": 300,
+        "end_position": 1060
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 125,
+    "total_tokens": 250,
+    "processing_time": "2026-07-17T14:46:17Z"
+  }
+}

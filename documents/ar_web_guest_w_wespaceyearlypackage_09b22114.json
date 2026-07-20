@@ -1,0 +1,71 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/ar/web/guest/w/wespaceyearlypackage",
+    "title": "باقات WE Space السنوية - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:37:09Z",
+    "screenshot": "output_screenshots/ar_web_guest_w_wespaceyearlypackage_09b22114.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 2,
+      "text": "باقات WE Space السنوية: إشترك الآن في الباقات السنوية من WE SPACE وادفع 10 شهور فقط. الراوتر هدية للعملاء الجدد. استمتع بأسهل تجربة اشتراك، حيث تدفع مرة واحدة سنويا بخصم يصل إلى شهرين، ويمكنك استخدام سعة الباقة طوال العام. السرعة والسعة السنوية والاشتراك السنوي: - سرعة Super تصل إلى 30 ميجابت/ث: 3,000 جيجابايت (4,345 جنيه)، 4,800 جيجابايت (6,380 جنيه)، 9,000 جيجابايت (9,715 جنيه)، 18 تيرابايت (16,500 جنيه). - سرعة Mega تصل إلى 70 ميجابت/ث: 3,000 جيجابايت (6,490 جنيه)، 9,000 جيجابايت (12,340 جنيه)، 18 تيرابايت (20,000 جنيه). - سرعة Ultra تصل إلى 100 ميجابت/ث: 3,000 جيجابايت (8,635 جنيه)، 9,000 جيجابايت (14,965 جنيه). - سرعة Max تصل إلى 200 ميجابت/ث: 18 تيرابايت (23,500 جنيه).",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 158,
+        "sentence_count": 9,
+        "has_overlap": true,
+        "overlap_with_prev": null,
+        "overlap_with_next": "الشروط والأحكام: - العملاء الجدد بدءا من باقة سوبر 4800 جيجابايت يحصلون على راوتر هدية عند الاشتراك.",
+        "topic_keywords": [
+          "WE Space",
+          "سنوي",
+          "باقات",
+          "سرعات",
+          "أسعار",
+          "تيرابايت",
+          "جيجابايت"
+        ],
+        "start_position": 0,
+        "end_position": 680
+      }
+    },
+    {
+      "chunk_id": "chunk_002",
+      "chunk_index": 1,
+      "total_chunks": 2,
+      "text": "الشروط والأحكام: - العملاء الجدد بدءا من باقة سوبر 4800 جيجابايت يحصلون على راوتر هدية عند الاشتراك. - يحق للعميل الحصول على راوتر واحد فقط خلال فترة العرض عند التعاقد.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 38,
+        "sentence_count": 3,
+        "has_overlap": true,
+        "overlap_with_prev": "الشروط والأحكام: - العملاء الجدد بدءا من باقة سوبر 4800 جيجابايت يحصلون على راوتر هدية عند الاشتراك.",
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "شروط",
+          "أحكام",
+          "راوتر هدية",
+          "عملاء جدد"
+        ],
+        "start_position": 600,
+        "end_position": 820
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection_by_section",
+    "avg_chunk_size": 98,
+    "total_tokens": 196,
+    "processing_time": "2026-07-17T14:30:16Z"
+  }
+}

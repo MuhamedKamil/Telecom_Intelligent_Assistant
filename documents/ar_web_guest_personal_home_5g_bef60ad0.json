@@ -1,0 +1,47 @@
+{
+  "original_document": {
+    "url": "https://www.te.eg/ar/web/guest/personal/home-5g",
+    "title": "WE 5G للإنترنت المنزلي | راوتر 5G ونت منزلي سريع في مصر - Telecom Egypt",
+    "lang": "ar-SA",
+    "sources": "te.eg",
+    "scraped_at": "2026-07-15T22:35:52Z",
+    "screenshot": "output_screenshots/ar_web_guest_personal_home_5g_bef60ad0.png"
+  },
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "text": "استمتع بأسرع انترنت وأنقى مكالمات صوتية مع تقنية الجيل الخامس من WE لأول مرة في مصر. مميزات 5G: - إنترنت بسرعات غير مسبوقة. - مستوي أداء مختلف وتجربة انترنت جديدة تماما. - سهولة الاتصال بالإنترنت بلا انقطاع. - سرعة استجابة وتواصل سريع. 5G وصلت مصر مع WE! سرعات أعلى، أداء أفضل، وتجربة جديدة تماما مع باقاتك للاستمتاع بالإنترنت بلا حدود. الأسئلة المتكررة تشمل معلومات عن تقنية الجيل الخامس، مناطق التغطية، متطلبات الاستخدام، تفعيل الخدمة، وإجراءات الضبط للأجهزة المختلفة.",
+      "lang": "ar",
+      "metadata": {
+        "token_count": 80,
+        "sentence_count": 9,
+        "has_overlap": false,
+        "overlap_with_prev": null,
+        "overlap_with_next": null,
+        "topic_keywords": [
+          "5G",
+          "إنترنت منزلي",
+          "سرعات",
+          "تغطية",
+          "تفعيل"
+        ],
+        "start_position": 0,
+        "end_position": 420
+      }
+    }
+  ],
+  "processing_metadata": {
+    "cleaning_applied": [
+      "whitespace_removal",
+      "unicode_normalization",
+      "list_preservation",
+      "emoji_removal"
+    ],
+    "chunking_strategy": "semantic_boundary_detection",
+    "avg_chunk_size": 80,
+    "total_tokens": 80,
+    "processing_time": "2026-07-17T14:47:42Z"
+  }
+}
