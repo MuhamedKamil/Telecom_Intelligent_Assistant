@@ -265,9 +265,8 @@ Telecom_Intelligent_Assistant/
 │   ├── screenshot.py            # Screenshot capture utility
 │   └── spidering.py             # Crawls te.eg and extracts clean page text (see "Data Collection" section)
 ├── documents/                    # Pre-scraped Telecom Egypt (WE) knowledge base (JSON chunks)
-├── input/                        # Sample reference audio (Female.wav, Male.wav) and input_text.txt
+├── input_audios/                 # Sample AR/EN audio for testing
 ├── outputs/                      # Generated TTS responses (.wav) and saved session data
-├── Test/                         # Sample test audio (Arabic/English) and screenshots
 ├── app_gradio.py                 # Gradio web app entry point
 ├── colab.py                      # Google Colab setup/install script
 ├── reference_audio.wav           # Default TTS voice-cloning reference audio
