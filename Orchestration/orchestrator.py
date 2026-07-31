@@ -16,8 +16,17 @@ from TTS.tts_model import TTS
 
 
 class Orchestrator:
-    """Orchestrator for voice-enabled RAG with ASR, RAG, and TTS."""
-
+    """
+    Main orchestrator for a voice-enabled RAG (Retrieval-Augmented Generation) system.
+    
+    This class integrates three core components:
+        1. ASR (Automatic Speech Recognition): Converts speech to text
+        2. RAG Pipeline: Retrieves relevant documents and generates responses
+        3. TTS (Text-to-Speech): Converts responses back to speech
+    
+    The orchestrator manages document ingestion, multi-turn conversations,
+    source tracking, and end-to-end voice interaction.
+    """
     def __init__(
         self,
         # ASR
@@ -41,6 +50,57 @@ class Orchestrator:
         output_dir: str = "outputs",
         verbose: bool = True,
     ):
+        """
+        Initialize the Orchestrator with all necessary components.
+        
+        Args:
+            # ASR Parameters
+            asr_model_name (str): Whisper model size ("base", "small", "medium", "large").
+                Defaults to "base".
+            asr_device (str): Device for ASR ("cuda", "cpu"). Defaults to "cuda".
+            asr_compute_type (str): Precision for ASR ("float32", "float16", "int8").
+                Defaults to "float32".
+            
+            # RAG Parameters
+            embedder_model (str): HuggingFace model for embeddings.
+                Defaults to "BAAI/bge-m3".
+            llm_model (str): HuggingFace model for response generation.
+                Defaults to "meta-llama/Llama-3.2-1B-Instruct".
+            max_turns (int): Maximum conversation turns to keep in context.
+                Defaults to 5.
+            top_k (int): Number of document chunks to retrieve per query.
+                Defaults to 5.
+            system_prompt (Optional[str]): Custom system prompt for LLM.
+                If None, uses Telecom Egypt-specific default prompt.
+            
+            # TTS Parameters
+            tts_reference_audio (Optional[str]): Path to reference audio for voice cloning.
+                If None, TTS is disabled. Defaults to None.
+            tts_reference_text (Optional[str]): Text corresponding to reference audio.
+                Required if tts_reference_audio is provided.
+            
+            # Document Pipeline Parameters
+            max_characters (int): Maximum characters per chunk. Defaults to 1000.
+            new_after_n_chars (int): Characters before creating new chunk. Defaults to 800.
+            overlap (int): Overlap characters between chunks. Defaults to 100.
+            
+            # General Parameters
+            output_dir (str): Directory for saving outputs (audio, sessions).
+                Defaults to "outputs".
+            verbose (bool): Whether to print detailed logs. Defaults to True.
+        
+        Attributes:
+            verbose (bool): Logging verbosity flag.
+            output_dir (Path): Path to output directory.
+            asr (ASR): Speech recognition component.
+            rag (RAGSystem): RAG pipeline component.
+            document_pipeline (Optional): Document processing pipeline.
+            tts (Optional[TTS]): Text-to-speech component.
+            conversation_id (int): Auto-incrementing ID for audio responses.
+            source_history (List[Dict]): History of all loaded sources.
+            total_chunks_loaded (int): Total number of chunks in system.
+            document_mapping (Dict): Maps chunk IDs to source metadata.
+        """
         self.verbose = verbose
         self._log("Initializing Orchestrator...")
 
@@ -101,14 +161,26 @@ Answer in the same language as the question."""
         self._log("Orchestrator initialized successfully!")
 
     def _log(self, message: str):
+        """Log message if verbose mode is enabled."""
         if self.verbose:
             print(message)
 
     def _is_audio_file(self, path: str) -> bool:
+        """Check if a file path is an audio file based on extension."""
         return Path(path).suffix.lower() in {'.wav', '.mp3', '.flac', '.m4a', '.ogg', '.aac'}
 
     def _init_document_pipeline(self, max_characters, new_after_n_chars, overlap):
-        """Initialize document pipeline with fallback options."""
+        """
+        Initialize document processing pipeline with fallback options.
+        
+        Attempts to use 'unstructured' library for advanced document parsing.
+        If not available, uses a fallback pipeline.
+        
+        Args:
+            max_characters (int): Maximum characters per chunk.
+            new_after_n_chars (int): Characters before new chunk.
+            overlap (int): Overlap between chunks.
+        """        
         try:
             from unstructured.partition.auto import partition
             from unstructured.chunking.title import chunk_by_title
@@ -166,7 +238,16 @@ Answer in the same language as the question."""
             return json.load(f)
 
     def _prepare_chunks_for_rag(self, chunks: List[Dict], doc_meta: Dict) -> List[Dict]:
-        """Prepare chunks for RAG with proper metadata."""
+        """
+        Prepare document chunks for ingestion into RAG system.
+        
+        Args:
+            chunks (List[Dict]): Raw chunks from document processing.
+            doc_meta (Dict): Document metadata (title, url, source, etc.).
+            
+        Returns:
+            List[Dict]: Formatted chunks ready for RAG ingestion.
+        """
         rag_chunks = []
         doc_title = doc_meta.get("title", "Website Document")
         doc_url = doc_meta.get("url", "unknown")
@@ -197,8 +278,20 @@ Answer in the same language as the question."""
 
     def add_web_data(self, source: Union[str, List[str], List[Dict], Dict]) -> None:
         """
-        Add web data from various sources.
-        All documents are loaded in ONE batch to prevent overwrite.
+        Add website data from various sources (JSON files or dictionaries).
+        
+        Supports multiple input formats:
+            - Single JSON file path
+            - Directory path containing JSON files
+            - Glob pattern (e.g., "*.json")
+            - List of file paths or dictionaries
+            - Single dictionary with document data
+        
+        All documents are loaded in one batch to optimize embedding generation.
+        
+        Args:
+            source (Union[str, List[str], List[Dict], Dict]): Source data to add.
+            
         """
         # Normalize to list
         if isinstance(source, dict):
@@ -279,7 +372,16 @@ Answer in the same language as the question."""
         self._log(f"Total chunks in system: {self.total_chunks_loaded}")
 
     def add_uploaded_file(self, file_path: str) -> None:
-        """Add uploaded document."""
+        """
+        Add a single uploaded document file (PDF, DOCX, TXT, etc.) to the system.
+        
+        Uses the document pipeline to extract and chunk the document content.
+        Supports various formats through the unstructured library.
+        
+        Args:
+            file_path (str): Path to the document file.
+            
+        """
         if self.document_pipeline is None:
             self._log(" Document pipeline not available")
             return
@@ -350,7 +452,28 @@ Answer in the same language as the question."""
     # ============ Processing ============
 
     def process(self, input_data: str, return_audio: bool = True) -> Dict:
-        """Process input (text or audio) through the pipeline."""
+        """
+        Main entry point for processing user input (text or audio).
+        
+        Automatically detects input type and routes to appropriate processor.
+        
+        Args:
+            input_data (str): Text question or path to audio file.
+            return_audio (bool): Whether to generate audio response. Defaults to True.
+            
+        Returns:
+            Dict: Processing results containing:
+                - input_type (str): "text" or "audio"
+                - question (str): The processed question
+                - response (str): Generated answer
+                - sources (List[Dict]): Sources used for answer
+                - sources_text (str): Formatted sources for display
+                - elapsed_time (float): Processing time in seconds
+                - audio_path (Optional[str]): Path to generated audio (if TTS enabled)
+                - language (str): Detected language (for audio input)
+                - confidence (float): ASR confidence score (for audio input)
+                
+        """
         is_audio = self._is_audio_file(input_data) and Path(input_data).exists()
 
         self._log("=" * 60)
@@ -363,7 +486,15 @@ Answer in the same language as the question."""
         return self._process_text(input_data)
 
     def _process_text(self, question: str) -> Dict:
-        """Process text input."""
+        """
+        Process text input through the RAG pipeline.
+        
+        Args:
+            question (str): User's question text.
+            
+        Returns:
+            Dict: Processing results (see process() for structure).
+        """
         start = time.time()
 
         if self.total_chunks_loaded == 0:
@@ -419,7 +550,16 @@ Answer in the same language as the question."""
         }
 
     def _process_audio(self, audio_path: str, return_audio: bool) -> Dict:
-        """Process audio input."""
+        """
+        Process audio input through ASR → RAG → (optional) TTS pipeline.
+        
+        Args:
+            audio_path (str): Path to audio file.
+            return_audio (bool): Whether to generate audio response.
+            
+        Returns:
+            Dict: Processing results (see process() for structure).
+        """
         start = time.time()
 
         if self.total_chunks_loaded == 0:
@@ -499,7 +639,15 @@ Answer in the same language as the question."""
     # ============ Formatting ============
 
     def _format_sources(self, sources: List[Dict]) -> str:
-        """Format sources for display."""
+        """
+        Format sources for human-readable display.
+        
+        Args:
+            sources (List[Dict]): List of source dictionaries.
+            
+        Returns:
+            str: Formatted source string.
+        """
         if not sources:
             return "No sources available."
 
@@ -528,7 +676,18 @@ Answer in the same language as the question."""
     # ============ Source Info ============
 
     def get_sources(self) -> Dict:
-        """Get source summary."""
+        """
+        Get a summary of all loaded sources.
+        
+        Returns:
+            Dict: Source summary containing:
+                - total_sources (int): Total number of sources
+                - website_sources (int): Number of website sources
+                - uploaded_sources (int): Number of uploaded sources
+                - total_chunks (int): Total chunks across all sources
+                - details (List[Dict]): Detailed source information
+        
+        """
         web_count = sum(1 for s in self.source_history if s["type"] == "website")
         upload_count = sum(1 for s in self.source_history if s["type"] == "uploaded")
         total_chunks = sum(s.get("chunks", 0) for s in self.source_history)
@@ -564,7 +723,13 @@ Answer in the same language as the question."""
     # ============ Save ============
 
     def save(self, output_path: Optional[str] = None):
-        """Save conversation and sources."""
+        """
+        Save the current session including conversation and source history.
+        
+        Args:
+            output_path (Optional[str]): Path to save JSON file.
+                If None, saves to output_dir/session.json.
+        """
         if output_path is None:
             output_path = self.output_dir / "session.json"
 
@@ -582,7 +747,11 @@ Answer in the same language as the question."""
         self._log(f"Saved session: {output_path}")
 
     def debug_documents(self):
-        """Debug: Show loaded documents info."""
+        """
+        Print debug information about loaded documents.
+        
+        Useful for troubleshooting and verifying document ingestion.
+        """
         summary = self.get_sources()
         print("\n" + "=" * 60)
         print("DOCUMENT DEBUG INFO")

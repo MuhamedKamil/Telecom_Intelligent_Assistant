@@ -10,39 +10,55 @@ from .llm import LLM
 from .memory import ChatMemory
 
 class RAGSystem:
+    """
+    Retrieval-Augmented Generation (RAG) system that combines document retrieval with LLM generation.
+    
+    This class orchestrates the entire RAG pipeline including embedding generation,
+    document retrieval from multiple sources (website and uploaded), and response
+    generation using a language model with contextual information.
+    
+    """
 
     def __init__(
         self,
-        embedder_model: str    = "BAAI/bge-m3",
-        device: Optional[str]  = None,
-        use_fp16: bool         = True,
-
-
-        llm_model: str        = "meta-llama/Llama-3.2-1B-Instruct",
-        max_turns: int        = 5,
-        top_k: int            = 5,
-        max_new_tokens: int   = 512,
+        embedder_model: str          = "BAAI/bge-m3",
+        device: Optional[str]        = None,
+        use_fp16: bool               = True,
+        llm_model: str               = "meta-llama/Llama-3.2-1B-Instruct",
+        max_turns: int               = 5,
+        top_k: int                   = 5,
+        max_new_tokens: int          = 512,
         system_prompt: Optional[str] = None,
     ):
         """
-        Initialize the RAG system.
+        Initialize the RAG system with specified models and configuration.
         
         Args:
-            embedder_model: Name of the embedding model
-            llm_model: Name of the LLM model
-            max_turns: Maximum conversation turns to remember
-            top_k: Number of documents to retrieve
-            max_new_tokens: Maximum tokens to generate
-            system_prompt: Custom system prompt for LLM
-            device: Device to use ('cuda' or 'cpu')
-            use_fp16: Whether to use FP16 precision
+            embedder_model (str, optional): HuggingFace model name for embeddings.
+                Defaults to "BAAI/bge-m3".
+            device (Optional[str], optional): Device to run models on ("cpu", "cuda", "mps").
+                If None, auto-detects best available device. Defaults to None.
+            use_fp16 (bool, optional): Whether to use half-precision (FP16) for inference.
+                Reduces memory usage and speeds up computation. Defaults to True.
+            llm_model (str, optional): HuggingFace model name for the language model.
+                Defaults to "meta-llama/Llama-3.2-1B-Instruct".
+            max_turns (int, optional): Maximum conversation turns to keep in context.
+                Older turns are dropped to prevent context overflow. Defaults to 5.
+            top_k (int, optional): Number of relevant document chunks to retrieve.
+                Higher values provide more context but may include less relevant info.
+                Defaults to 5.
+            max_new_tokens (int, optional): Maximum tokens to generate per response.
+                Controls response length. Defaults to 512.
+            system_prompt (Optional[str], optional): Custom system prompt to guide
+                the LLM's behavior. If None, uses default RAG-specific prompt.
+                Defaults to None.
         """
         self.embedding_manager = EmbeddingManager(
             model_name  = embedder_model,
             device      = device,
             use_fp16    = use_fp16,
         )
-        self.website_store = WebsiteStore()
+        self.website_store  = WebsiteStore()
         self.uploaded_store = UploadedStore()
         
         self.retrieval_manager = RetrievalManager(
@@ -58,7 +74,7 @@ class RAGSystem:
         )
         
         self.memory = ChatMemory(max_turns=max_turns)
-        self.top_k = top_k
+        self.top_k  = top_k
     
     def add_website_documents(
         self,
@@ -69,8 +85,8 @@ class RAGSystem:
         Add website documents to the retriever.
         
         Args:
-            chunks: List of document chunks with metadata
-            embeddings: Pre-computed embeddings (optional)
+            chunks     : List of document chunks with metadata
+            embeddings : Pre-computed embeddings (optional)
         """
         if embeddings is None:
             texts = [chunk["text"] for chunk in chunks]
@@ -88,9 +104,9 @@ class RAGSystem:
         Add uploaded documents to the retriever.
         
         Args:
-            document: Document metadata
-            chunks: List of document chunks with metadata
-            embeddings: Pre-computed embeddings (optional)
+            document   : Document metadata
+            chunks     : List of document chunks with metadata
+            embeddings : Pre-computed embeddings (optional)
         """
         if embeddings is None:
             texts = [chunk["text"] for chunk in chunks]
@@ -113,8 +129,8 @@ class RAGSystem:
             top_k=self.top_k,
         )
         context_chunks = [chunk["text"] for chunk in retrieved_chunks]
-        history = self.memory.get_history()
-        response = self.llm.generate(
+        history        = self.memory.get_history()
+        response       = self.llm.generate(
             question       = question,
             context_chunks = context_chunks,
             chat_history   = history,
@@ -134,39 +150,39 @@ class RAGSystem:
             Dictionary with response and source documents
         """
         retrieved_chunks = self.retrieval_manager.retrieve(
-            query=question,
-            top_k=self.top_k,
+            query = question,
+            top_k = self.top_k,
         )
         
         context_chunks = []
-        sources = []
+        sources        = []
         for chunk in retrieved_chunks:
             context_chunks.append(chunk["text"])
             sources.append({
-                "text": chunk["text"],
-                "source": chunk.get("source", "unknown"),
-                "score": chunk.get("score", 0.0),
-                "title": chunk.get("title", "Untitled"),  # ← Add
-                "url": chunk.get("url", "N/A"),          # ← Add
-                "chunk_id": chunk.get("chunk_id", ""),   # ← Add
-                "chunk_index": chunk.get("chunk_index", 0),  # ← Add
-                "language": chunk.get("language", "unknown"),  # ← Add
+                "text"        : chunk["text"],
+                "source"      : chunk.get("source", "unknown"),
+                "score"       : chunk.get("score", 0.0),
+                "title"       : chunk.get("title", "Untitled"),
+                "url"         : chunk.get("url", "N/A"),         
+                "chunk_id"    : chunk.get("chunk_id", ""),
+                "chunk_index" : chunk.get("chunk_index", 0),
+                "language"    : chunk.get("language", "unknown"),
             })
         
         history = self.memory.get_history()
         
         response = self.llm.generate(
-            question=question,
-            context_chunks=context_chunks,
-            chat_history=history,
+            question       = question,
+            context_chunks = context_chunks,
+            chat_history   = history,
         )
         
         self.memory.add_turn(question, response)
         
         return {
-            "question": question,
-            "response": response,
-            "sources": sources,
+            "question"     : question,
+            "response"     : response,
+            "sources"      : sources,
             "total_sources": len(sources),
         }
         

@@ -10,8 +10,8 @@ class ChatMemory:
         Args:
             max_turns: Maximum number of conversation turns to store
         """
-        self._turns = deque(maxlen=max_turns)
-        self.max_turns = max_turns
+        self._turns     = deque(maxlen=max_turns)
+        self.max_turns  = max_turns
     
     def add_turn(self, user: str, assistant: str) -> None:
         """

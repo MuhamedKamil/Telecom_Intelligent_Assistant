@@ -16,7 +16,7 @@ class TTS:
       
         self.model = SilmaTTS()
         self.reference_audio = reference_audio
-        self.reference_text = reference_text
+        self.reference_text  = reference_text
 
     def generate(
         self,

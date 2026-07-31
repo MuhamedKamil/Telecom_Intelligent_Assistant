@@ -1,47 +1,48 @@
+import torch
 from faster_whisper import WhisperModel
 from faster_whisper.audio import decode_audio
-import torch
 from transformers import AutoProcessor, CohereAsrForConditionalGeneration
 from transformers.audio_utils import load_audio
 
 
 class ASR:
+    """
+    Detects the spoken language, then converts speech into text for the RAG/LLM pipeline    
+    """
+
     def __init__(
         self,
-        model_name: str    = "base",
-        device: str        = "cuda",
-        compute_type: str  = "int8",
-       
-
+        language_detector_name: str = "base",
+        device: str                 = "cuda",
+        compute_type: str           = "int8",
+        asr_model:str               = "namaa-space/cohere-transcribe-arabic-07-2026-int4",
     ):
-        self.processor = AutoProcessor.from_pretrained("namaa-space/cohere-transcribe-arabic-07-2026-int4"),
-        self.asr_model = CohereAsrForConditionalGeneration.from_pretrained("namaa-space/cohere-transcribe-arabic-07-2026-int4", device_map="auto")
-
  
-
         if device == "cuda" and not torch.cuda.is_available():
             print("CUDA is not available. Falling back to CPU.")
             device = "cpu"
 
-        self.device = device
-        self.compute_type = compute_type
+        self.language_detector = WhisperModel(language_detector_name,device=device,compute_type=compute_type,)
+        self.processor         = AutoProcessor.from_pretrained(asr_model),
+        self.asr_model         = CohereAsrForConditionalGeneration.from_pretrained(asr_model, device_map=device)
 
-        self.model = WhisperModel(
-            model_name,
-            device=device,
-            compute_type=compute_type,
-        )
-
-        print(f"Loaded Faster-Whisper model: {model_name}")
-        print(f"Device: {device}")
-        print(f"Compute Type: {compute_type}")
+        print(f"Loaded Faster-Whisper Language Detector: {language_detector_name}")
+        print(f"Loaded ASR MODEL : {asr_model}")
 
         if device == "cuda":
             print(f"GPU: {torch.cuda.get_device_name(0)}")
 
     def detect_language(self,audio_path):
-        audio = decode_audio(audio_path,sampling_rate=self.model.feature_extractor.sampling_rate,)
-        language, language_probability, all_language_probs = self.model.detect_language(audio)
+        """
+        Detect language in audio
+        Args:
+            audio_path: path to audio.
+            Returns:
+                selected_lang(str): string represent the language.
+                selected_prob(float): number represent the prob.
+        """
+        audio = decode_audio(audio_path,sampling_rate=self.language_detector.feature_extractor.sampling_rate,)
+        language, language_probability, all_language_probs = self.language_detector.detect_language(audio)
         lang_probs = dict(all_language_probs)
         en_prob = lang_probs.get("en", 0.0)
         ar_prob = lang_probs.get("ar", 0.0)
@@ -52,28 +53,37 @@ class ASR:
             selected_lang = "en"
             selected_prob = en_prob
        
-        return selected_lang
+        return selected_lang, selected_prob
 
     def transcribe(
         self,
-        audio_path: str,
-        beam_size: int = 5,
+        audio_path     :str,
+        sampling_rate  :int = 16000,
+        max_new_tokens :int = 256
     ):
-        language = self.detect_language(audio_path)
+        """
+        Transcribe speech from an audio file into text using the ASR (Automatic Speech Recognition) model.
+        Args:
+            audio_path (str): 
+                Path to the audio file to be transcribed.
+                
+            sampling_rate (int): 
+                Target sampling rate in Hz. Default: 16000.
+                Controls audio quality and processing speed.
+                
+            max_new_tokens (int): 
+                Maximum length of generated transcription. Default: 256.
+                Controls how long the output text can be.
+        """
+        language, prob = self.detect_language(audio_path)
+        inputs = self.processor(audio_path, sampling_rate = sampling_rate, language= language, return_tensors="pt").to(
+            device = self.asr_model.device, 
+            dtype  = self.asr_model.dtype) 
 
-        inputs = self.processor(audio_path, sampling_rate=16000, language="en", return_tensors="pt").to(
-            device=self.asr_model.device, 
-            dtype=self.asr_model.dtype)
-
-        outputs = self.asr_model.generate(**inputs, max_new_tokens=256)
-
+        outputs = self.asr_model.generate(**inputs, max_new_tokens= max_new_tokens)
 
         return {
-            "language": language,
-            "language_probability": 100,
-            "segments": outputs,
+            "language"             : language,
+            "language_probability" : prob,
+            "segments"             : outputs,
         }
-
-  
-test_asr = ASR()
-out = ASR.transcribe("")

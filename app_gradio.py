@@ -18,6 +18,22 @@ from Orchestration.orchestrator import Orchestrator
 
 
 class AppState:
+    """
+    Application state container for the Gradio interface.
+    
+    This class maintains all global state across the web application,
+    including the orchestrator instance, initialization status, logs,
+    conversation history, and tracking metrics.
+    
+    Attributes:
+        orchestrator (Orchestrator): The main RAG orchestrator instance.
+        initialized (bool): Whether the system has been initialized.
+        total_chunks (int): Total number of document chunks loaded.
+        source_count (int): Number of document sources loaded.
+        init_logs (List[str]): Log messages from initialization and operations.
+        history (List[Dict]): Conversation history with user/assistant turns.
+        conversation_id (int): Auto-incrementing ID for tracking turns.
+    """
     def __init__(self):
         self.orchestrator = None
         self.initialized = False
@@ -31,6 +47,15 @@ state = AppState()
 
 
 def log_message(msg):
+    """
+    Log a message with timestamp and store in application state.
+    
+    Args:
+        msg (str): Message to log.
+        
+    Returns:
+        str: The formatted log entry with timestamp.
+    """
     timestamp = datetime.now().strftime("%H:%M:%S")
     log_entry = f"[{timestamp}] {msg}"
     state.init_logs.append(log_entry)
@@ -39,6 +64,19 @@ def log_message(msg):
 
 
 def initialize_system():
+    """
+    Initialize the RAG system with documents from the documents directory.
+    
+    This function:
+        1. Scans the 'documents' folder for JSON files
+        2. Loads and validates document data
+        3. Initializes the Orchestrator with all components
+        4. Loads documents into the RAG system
+        5. Performs debug verification of loaded chunks
+    
+    Returns:
+        str: Status message indicating initialization success or failure.
+    """
     log_message("🚀 Starting Orchestrator Initialization...")
     
     docs_dir = Path("documents")
@@ -137,7 +175,15 @@ Be concise and accurate.""",
 
 
 def process_text_query(question):
-    """Process text query - returns text + optional audio"""
+    """
+    Process a text query through the RAG pipeline with optional audio output.
+    
+    Args:
+        question (str): The user's question text.
+        
+    Returns:
+        tuple: (response_text, audio_filepath) where audio_filepath may be None.
+    """
     if not state.initialized or state.orchestrator is None:
         return "System not initialized.", None
     
@@ -177,7 +223,15 @@ def process_text_query(question):
 
 
 def process_audio_query(audio_file):
-    """Process audio query - returns text + audio response"""
+    """
+    Process an audio query through ASR → RAG → TTS pipeline.
+    
+    Args:
+        audio_file: Audio file from Gradio Audio component.
+        
+    Returns:
+        tuple: (response_text, audio_output_path, history_html, conversation_id)
+    """
     if audio_file is None:
         return "Please record or upload an audio file.", None, get_history_html(), state.conversation_id
     
@@ -220,7 +274,12 @@ def process_audio_query(audio_file):
 
 
 def reset_conversation():
-    """Reset conversation history."""
+    """
+    Reset the conversation history and clear RAG memory.
+    
+    Returns:
+        tuple: (status_message, history_html, conversation_id)
+    """
     if state.orchestrator:
         state.orchestrator.clear_memory()
     state.history = []
@@ -230,7 +289,12 @@ def reset_conversation():
 
 
 def get_history_html():
-    """Return conversation history as HTML."""
+    """
+    Generate HTML representation of conversation history.
+    
+    Returns:
+        str: HTML string for displaying conversation history in Gradio.
+    """
     if not state.history:
         return """
         <div style="text-align: center; color: #888; padding: 40px;">
@@ -257,7 +321,15 @@ def get_history_html():
 
 
 def upload_file(file):
-    """Handle file upload."""
+    """
+    Handle file upload and process document.
+    
+    Args:
+        file: Uploaded file from Gradio File component.
+        
+    Returns:
+        tuple: (status_message, total_chunks_display)
+    """
     if file is None:
         return "No file uploaded", ""
     
@@ -364,6 +436,7 @@ with gr.Blocks(title="🎙️ WE Voice Assistant", theme=gr.themes.Soft()) as de
     # ========================================================================
     
     def on_init():
+        """Handle initialization button click."""
         status_text = initialize_system()
         log_text = "\n".join(state.init_logs[-15:])
         history = get_history_html()
@@ -376,6 +449,7 @@ with gr.Blocks(title="🎙️ WE Voice Assistant", theme=gr.themes.Soft()) as de
     
     # Text input handler
     def on_text_send(msg):
+        """Handle text message submission."""
         if not msg or msg.strip() == "":
             return "", "Please enter a question.", None, get_history_html(), state.conversation_id
         
@@ -396,6 +470,7 @@ with gr.Blocks(title="🎙️ WE Voice Assistant", theme=gr.themes.Soft()) as de
     
     # Audio input handler
     def on_audio_send(audio):
+        """Handle audio submission."""
         if audio is None:
             return "Please record or upload audio.", None, get_history_html(), state.conversation_id
         
@@ -410,6 +485,7 @@ with gr.Blocks(title="🎙️ WE Voice Assistant", theme=gr.themes.Soft()) as de
     
     # Quick questions (text)
     def on_quick(q):
+        """Handle quick question button clicks."""
         response, audio = process_text_query(q)
         history = get_history_html()
         return q, response, audio, history, state.conversation_id
@@ -421,6 +497,7 @@ with gr.Blocks(title="🎙️ WE Voice Assistant", theme=gr.themes.Soft()) as de
     
     # Reset conversation
     def on_reset():
+        """Handle conversation reset."""
         status_msg, history, turns = reset_conversation()
         return status_msg, history, turns
     
@@ -431,6 +508,7 @@ with gr.Blocks(title="🎙️ WE Voice Assistant", theme=gr.themes.Soft()) as de
     
     # Upload file
     def on_upload(file):
+        """Handle document upload."""
         status_text, stats = upload_file(file)
         log_text = "\n".join(state.init_logs[-8:])
         return status_text, stats, log_text

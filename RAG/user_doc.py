@@ -7,42 +7,58 @@ from unstructured.chunking.title import chunk_by_title
 
 
 class DocumentFormatter:
+    """
+    Formats document chunks into a structured output with metadata.
+    Takes raw chunks from a file and organizes them with position tracking,
+    text statistics, and file information.
+    """
 
     def format(self, file_path: str, chunks: list) -> dict:
-
+        """
+        Process and structure document chunks.
+        
+        Args:
+            file_path (str): Path to the source document
+            chunks (list): List of document chunk objects with text and metadata
+        
+        Returns:
+            dict: Contains:
+                - document: File info (name, type, total chunks)
+                - chunks: List of formatted chunks with text, language, and stats
+                - processing_metadata: Processing details (strategy, timestamp)
+        """
         path = Path(file_path)
 
         mime_type, _ = mimetypes.guess_type(path)
 
-        formatted_chunks = []
-        current_position = 0
-        total_chunks = len(chunks)
+        formatted_chunks  = []
+        current_position  = 0
+        total_chunks      = len(chunks)
 
         for idx, chunk in enumerate(chunks):
 
-            text = chunk.text.strip()
-
+            text  = chunk.text.strip()
             start = current_position
-            end = start + len(text)
+            end   = start + len(text)
 
             formatted_chunks.append({
-                "chunk_id": f"chunk_{idx + 1:03d}",
-                "chunk_index": idx,
-                "total_chunks": total_chunks,
-                "text": text,
-                "lang": chunk.metadata.languages[0] if chunk.metadata.languages else "unknown",
+                "chunk_id"     : f"chunk_{idx + 1:03d}",
+                "chunk_index"  : idx,
+                "total_chunks" : total_chunks,
+                "text"         : text,
+                "lang"         : chunk.metadata.languages[0] if chunk.metadata.languages else "unknown",
                 "metadata": {
-                    "page_number": getattr(chunk.metadata, "page_number", None),
-                    "token_count": len(text.split()),
-                    "word_count": len(text.split()),
-                    "char_count": len(text),
+                    "page_number" : getattr(chunk.metadata, "page_number", None),
+                    "token_count" : len(text.split()),
+                    "word_count"  : len(text.split()),
+                    "char_count"  : len(text),
                     "sentence_count": (
                         text.count(".")
                         + text.count("!")
                         + text.count("?")
                     ),
-                    "start_position": start,
-                    "end_position": end,
+                    "start_position" : start,
+                    "end_position"   : end,
                 },
             })
 
@@ -50,9 +66,9 @@ class DocumentFormatter:
 
         return {
             "document": {
-                "source": "uploaded",
-                "file_name": path.name,
-                "file_type": mime_type,
+                "source"       : "uploaded",
+                "file_name"    : path.name,
+                "file_type"    : mime_type,
                 "last_modified": datetime.fromtimestamp(
                     path.stat().st_mtime
                 ).isoformat(),
@@ -61,12 +77,18 @@ class DocumentFormatter:
             "chunks": formatted_chunks,
             "processing_metadata": {
                 "chunking_strategy": "unstructured_chunk_by_title",
-                "processed_at": datetime.utcnow().isoformat(),
+                "processed_at"     : datetime.utcnow().isoformat(),
             },
         }
 
 
 class DocumentPipeline:
+    """
+    A pipeline for processing documents: extracts text from files, splits it into chunks,
+    and formats the output with metadata.
+    
+    Supports PDF, DOCX, TXT, PNG, JPG, and JPEG files.
+    """
 
     SUPPORTED_EXTENSIONS = {
         ".pdf",
@@ -80,18 +102,39 @@ class DocumentPipeline:
 
     def __init__(
         self,
-        max_characters=1000,
-        new_after_n_chars=800,
-        overlap=100,
+        max_characters    = 1000,
+        new_after_n_chars = 800,
+        overlap           = 100,
     ):
+        """
+        Initialize the pipeline with chunking parameters.
+        
+        Args:
+            max_characters (int): Maximum characters per chunk. Default: 1000
+            new_after_n_chars (int): Start new chunk after this many chars. Default: 800
+            overlap (int): Character overlap between chunks. Default: 100
+        """
 
-        self.max_characters = max_characters
-        self.new_after_n_chars = new_after_n_chars
-        self.overlap = overlap
+        self.max_characters      = max_characters
+        self.new_after_n_chars   = new_after_n_chars
+        self.overlap             = overlap
 
         self.formatter = DocumentFormatter()
 
     def process(self, file_path: str) -> dict:
+        """
+        Process a document file and return formatted chunks.
+        
+        Args:
+            file_path (str): Path to the document file
+            
+        Returns:
+            dict: Formatted document data with chunks and metadata
+            
+        Raises:
+            FileNotFoundError: If file doesn't exist
+            ValueError: If file type is not supported
+        """
 
         path = Path(file_path)
 
@@ -103,14 +146,13 @@ class DocumentPipeline:
                 f"Unsupported file type: {path.suffix}"
             )
 
-        # Automatically detects the document type
         elements = partition(filename=str(path))
 
         chunks = chunk_by_title(
             elements,
-            max_characters=self.max_characters,
-            new_after_n_chars=self.new_after_n_chars,
-            overlap=self.overlap,
+            max_characters    = self.max_characters,
+            new_after_n_chars = self.new_after_n_chars,
+            overlap           = self.overlap,
         )
 
         return self.formatter.format(str(path), chunks)

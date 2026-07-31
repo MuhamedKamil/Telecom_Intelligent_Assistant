@@ -62,32 +62,32 @@ The included example knowledge base is built around **Telecom Egypt ("WE")** cus
 
 ```mermaid
 flowchart TD
-    A[User Text] --> B[Knowledge Retrieval - RAG]
-    B --> C[Relevant Chunks]
-    C --> D[Large Language Model]
-    D --> E[Generated Answer]
+    T1[User Text] --> T2[Knowledge Retrieval - RAG]
+    T2 --> T3[Relevant Chunks]
+    T3 --> T4[Large Language Model]
+    T4 --> T5[Generated Answer]
 ```
 
 ### 2. Voice Pipeline
 
 ```mermaid
 flowchart TD
-    A[User Voice] --> B[Automatic Speech Recognition - ASR]
-    B --> C[Knowledge Retrieval - RAG]
-    C --> D[Relevant Chunks]
-    D --> E[Large Language Model]
-    E --> F[Generated Answer]
-    F --> G[Text-to-Speech - TTS]
-    G --> H[Voice Response]
+    V1[User Voice] --> V2[Automatic Speech Recognition - ASR]
+    V2 --> V3[Knowledge Retrieval - RAG]
+    V3 --> V4[Relevant Chunks]
+    V4 --> V5[Large Language Model]
+    V5 --> V6[Generated Answer]
+    V6 --> V7[Text-to-Speech - TTS]
+    V7 --> V8[Voice Response]
 ```
 
 ### 3. Conversation Memory
 
 ```mermaid
 flowchart TD
-    A[Conversation] --> B[Memory Storage]
-    B --> C[Store Last N Conversation Turns]
-    C --> D[Used During Future Retrieval / Generation]
+    M1[Conversation] --> M2[Memory Storage]
+    M2 --> M3[Store Last N Conversation Turns]
+    M3 --> M4[Used During Future Retrieval / Generation]
 ```
 
 The assistant keeps a rolling window of recent conversation turns (question + answer pairs) and feeds them back into the LLM as chat history, so follow-up questions stay context-aware.
