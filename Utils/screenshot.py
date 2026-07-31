@@ -24,6 +24,37 @@ def process_300_links(
     viewport_height=1080,
     timeout=45000           
 ):
+    """
+    Process JSON files containing URLs and capture screenshots of each webpage.
+    
+    Args:
+        input_folder (str): Path to folder containing JSON files with URL data.
+        output_folder (str, optional): Path to save updated JSON files.
+            If None, saves to input_folder.
+        screenshots_folder (str, optional): Path to save screenshots.
+            If None, saves to input_folder/screenshots.
+        max_retries (int): Maximum number of retry attempts per URL. Defaults to 2.
+        full_page (bool): Whether to capture full page screenshot. Defaults to True.
+        viewport_width (int): Browser viewport width in pixels. Defaults to 1920.
+        viewport_height (int): Browser viewport height in pixels. Defaults to 1080.
+        timeout (int): Navigation timeout in milliseconds. Defaults to 45000.
+    
+    Behavior:
+        - Reads JSON files from input_folder
+        - Each JSON should contain a 'url' field
+        - Captures screenshot for each URL
+        - Updates JSON with 'screenshot' field
+        - Saves updated JSON to output_folder
+        - Implements retry logic with cool-down periods for blocked IPs
+        - Uses random user-agent rotation and human-like delays
+    
+    Example:
+        >>> process_300_links(
+        ...     input_folder="./WebData",
+        ...     output_folder="./updated_jsons",
+        ...     screenshots_folder="./screenshots"
+        ... )
+    """
     input_path = Path(input_folder)
     output_path = Path(output_folder) if output_folder else input_path
     output_path.mkdir(parents=True, exist_ok=True)

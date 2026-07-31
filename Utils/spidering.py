@@ -42,7 +42,19 @@ OUTPUT_DIR = Path("scraped")
 
 
 def check_robots_allowed(base_url: str, user_agent: str) -> robotparser.RobotFileParser:
-    """Load and parse robots.txt once, so every fetch can be checked against it."""
+    """
+    Load and parse robots.txt to respect website crawling rules.
+    
+    Args:
+        base_url (str): Base URL to get robots.txt from.
+        user_agent (str): User agent string to check against robots.txt.
+        
+    Returns:
+        robotparser.RobotFileParser: Configured parser with robots.txt loaded.
+        
+    Note:
+        If robots.txt is unreachable, proceeds with defaults (allow all).
+    """
     rp = robotparser.RobotFileParser()
     parsed = urlparse(base_url)
     rp.set_url(f"{parsed.scheme}://{parsed.netloc}/robots.txt")
@@ -55,8 +67,19 @@ def check_robots_allowed(base_url: str, user_agent: str) -> robotparser.RobotFil
 
 def extract_clean_text(html: str) -> dict:
     """
-    Strip nav/header/footer boilerplate and return the main content text,
-    plus a title and detected language.
+    Extract clean main content from HTML by removing boilerplate elements.
+    
+    Strips navigation, headers, footers, scripts, and other non-content elements.
+    Focuses on the main content region using Liferay's #main-content ID.
+    
+    Args:
+        html (str): Raw HTML content of the page.
+        
+    Returns:
+        dict: Contains:
+            - 'text' (str): Cleaned text content.
+            - 'title' (str): Page title from <title> tag.
+            - 'lang' (str): Language code from <html lang> attribute.
     """
     soup = BeautifulSoup(html, "lxml")
 
@@ -88,6 +111,17 @@ def extract_clean_text(html: str) -> dict:
 
 
 def save_document(url: str, extracted: dict, out_dir: Path) -> None:
+    """
+    Save scraped document as JSON file in the output directory.
+    
+    Args:
+        url (str): Source URL of the document.
+        extracted (dict): Extracted content with 'text', 'title', 'lang' fields.
+        out_dir (Path): Directory to save the JSON file.
+        
+    Note:
+        Filename is derived from the URL path, sanitized for filesystem safety.
+    """
     out_dir.mkdir(parents=True, exist_ok=True)
     # filesystem-safe filename derived from the URL path
     slug = re.sub(r"[^a-zA-Z0-9]+", "_", urlparse(url).path).strip("_") or "index"
@@ -104,6 +138,22 @@ def save_document(url: str, extracted: dict, out_dir: Path) -> None:
 
 
 def crawl(seed_url: str, rp: robotparser.RobotFileParser) -> list[dict]:
+    """
+    Recursively crawl from a seed URL and save all discovered pages.
+    
+    Uses LangChain's RecursiveUrlLoader for the crawling loop with:
+        - Maximum depth limiting
+        - Robots.txt compliance
+        - Custom content extraction
+        - Polite request delays
+    
+    Args:
+        seed_url (str): Starting URL for the crawl.
+        rp (robotparser.RobotFileParser): Parsed robots.txt for domain.
+        
+    Returns:
+        list[dict]: List of extracted document records.
+    """
     def link_filter(url: str) -> bool:
         parsed = urlparse(url)
         if parsed.netloc not in ALLOWED_NETLOCS:
@@ -143,6 +193,7 @@ def crawl(seed_url: str, rp: robotparser.RobotFileParser) -> list[dict]:
 
 
 if __name__ == "__main__":
+    """Main execution: crawl all seed URLs and save scraped pages."""
     rp = check_robots_allowed(SEED_URLS[0], USER_AGENT)
     total = 0
     for seed in SEED_URLS:
