@@ -31,9 +31,12 @@ class Orchestrator:
     def __init__(
         self,
         # ASR
-        asr_model_name: str     = "base",
-        asr_device: str         = "cuda",
-        asr_compute_type: str   = "float32",
+        language_detector_name:str = "base",
+        asr_device: str            = "cuda",
+        asr_compute_type: str      = "int8",
+        asr_model_name: str        = "namaa-space/cohere-transcribe-arabic-07-2026-int4",
+
+
         # RAG
         embedder_model: str     = "BAAI/bge-m3",
         llm_model: str          = "meta-llama/Llama-3.2-1B-Instruct",
@@ -108,9 +111,10 @@ class Orchestrator:
         # Initialize ASR
         self._log("🎤 Initializing ASR...")
         self.asr = ASR(
-            model_name=asr_model_name,
-            device=asr_device,
-            compute_type=asr_compute_type,
+            language_detector_name = language_detector_name,
+            device                 = asr_device,
+            compute_type           = asr_compute_type,
+            asr_model              = asr_model_name
         )
         self._log("ASR initialized")
 
