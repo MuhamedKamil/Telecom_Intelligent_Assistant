@@ -181,7 +181,6 @@ Answer in the same language as the question."""
         self.document_pipeline = DocumentPipeline(max_characters, new_after_n_chars, overlap)
         self._log("Document Pipeline initialized with unstructured")
 
-
     def _load_json(self, file_path: str) -> Dict:
         """Load JSON file."""
         with open(file_path, 'r', encoding='utf-8') as f:
@@ -226,6 +225,101 @@ Answer in the same language as the question."""
 
         return rag_chunks
 
+    def _update_document_mapping(self, chunks: List[Dict], source_info: Dict) -> None:
+        """
+        Update document mapping for a list of chunks.
+        
+        Args:
+            chunks (List[Dict]): List of chunk dictionaries with chunk_id.
+            source_info (Dict): Source information to map to each chunk.
+        """
+        for chunk in chunks:
+            chunk_id = chunk.get("chunk_id", "")
+            if chunk_id:
+                self.document_mapping[chunk_id] = source_info
+
+    def _add_rag_chunks_to_system(self, rag_chunks: List[Dict], source_info: Dict) -> None:
+        """
+        Add RAG chunks to the system and update tracking.
+        
+        Args:
+            rag_chunks (List[Dict]): Formatted chunks ready for RAG ingestion.
+            source_info (Dict): Source information for the chunks.
+        """
+        if not rag_chunks:
+            return
+            
+        self.rag.add_website_documents(rag_chunks)
+        self.total_chunks_loaded += len(rag_chunks)
+        self._update_document_mapping(rag_chunks, source_info)
+        self.source_history.append(source_info)
+
+    def _build_error_response(self, input_type: str, question: str = "", 
+                             elapsed_time: float = 0) -> Dict:
+        """
+        Build a consistent error response when no documents are loaded.
+        
+        Args:
+            input_type (str): "text" or "audio"
+            question (str): The user's question
+            elapsed_time (float): Processing time elapsed
+            
+        Returns:
+            Dict: Error response with consistent structure.
+        """
+        response = {
+            "input_type": input_type,
+            "question": question,
+            "response": "No documents loaded. Please add documents to the knowledge base first.",
+            "sources": [],
+            "sources_text": "No documents available.",
+            "elapsed_time": elapsed_time,
+            "audio_path": None,
+        }
+        
+        if input_type == "audio":
+            response.update({
+                "language": "unknown",
+                "confidence": 0,
+            })
+            
+        return response
+
+    def _enrich_sources(self, sources: List[Dict]) -> List[Dict]:
+        """
+        Enrich sources with full metadata from document mapping.
+        
+        Args:
+            sources (List[Dict]): Raw sources from RAG system.
+            
+        Returns:
+            List[Dict]: Enriched sources with full metadata.
+        """
+        enriched_sources = []
+        
+        for src in sources:
+            chunk_id = src.get("chunk_id", "")
+            if chunk_id in self.document_mapping:
+                stored = self.document_mapping[chunk_id]
+                enriched_src = {**src, **stored}
+                enriched_sources.append(enriched_src)
+                continue
+                
+            # Try to find by title match
+            title = src.get("title", "")
+            if title:
+                for source_info in self.source_history:
+                    if source_info.get("title") == title:
+                        enriched_src = {**src, **source_info}
+                        enriched_sources.append(enriched_src)
+                        break
+                else:
+                    enriched_sources.append(src)
+            else:
+                enriched_sources.append(src)
+                
+        return enriched_sources
+
     def add_web_data(self, source: Union[str, List[str], List[Dict], Dict]) -> None:
         """
         Add website data from various sources (JSON files or dictionaries).
@@ -261,6 +355,7 @@ Answer in the same language as the question."""
         total_chunks = 0
         total_files = 0
         all_rag_chunks = []
+        source_infos = []
 
         for item in sources:
             try:
@@ -293,7 +388,7 @@ Answer in the same language as the question."""
                     "file": Path(item).name if isinstance(item, str) else "direct",
                     "added_at": datetime.now().isoformat(),
                 }
-                self.source_history.append(source_info)
+                source_infos.append(source_info)
 
                 all_rag_chunks.extend(rag_chunks)
                 total_chunks += len(rag_chunks)
@@ -305,16 +400,49 @@ Answer in the same language as the question."""
 
         # Load ALL chunks in ONE batch
         if all_rag_chunks:
+            # Use first source info as the mapping source (they all share the same chunk structure)
+            # but we need to map each chunk to its specific source
+            for rag_chunk, source_info in zip(all_rag_chunks, source_infos * len(all_rag_chunks)):
+                # This is handled differently - we need to match chunks to their sources
+                pass
+            
+            # Actually we need to properly batch load with correct mapping
+            # We'll use a simpler approach: load all chunks with a combined source tracking
+            combined_source_info = {
+                "type": "batch",
+                "total_files": total_files,
+                "total_chunks": len(all_rag_chunks),
+                "added_at": datetime.now().isoformat(),
+            }
+            
+            # But we want per-chunk mapping, so we'll map each chunk individually
+            # We need to track which chunks belong to which source
+            chunk_to_source = {}
+            for idx, source_info in enumerate(source_infos):
+                # Find which chunks belong to this source by checking their title
+                source_title = source_info.get("title")
+                chunk_count = 0
+                for chunk in all_rag_chunks:
+                    if chunk.get("title") == source_title:
+                        chunk_to_source[chunk.get("chunk_id", "")] = source_info
+                        chunk_count += 1
+                
             self.rag.add_website_documents(all_rag_chunks)
             self.total_chunks_loaded += len(all_rag_chunks)
             
+            # Update document mapping for each chunk
             for chunk in all_rag_chunks:
                 chunk_id = chunk.get("chunk_id", "")
-                if chunk_id:
-                    for source_info in self.source_history:
+                if chunk_id and chunk_id in chunk_to_source:
+                    self.document_mapping[chunk_id] = chunk_to_source[chunk_id]
+                elif chunk_id:
+                    # Fallback: find by title
+                    for source_info in source_infos:
                         if source_info.get("title") == chunk.get("title"):
                             self.document_mapping[chunk_id] = source_info
                             break
+            
+            self.source_history.extend(source_infos)
 
             self._log(f"\nBatch loaded {len(all_rag_chunks)} chunks from {total_files} file(s)")
 
@@ -388,17 +516,12 @@ Answer in the same language as the question."""
                 "added_at": datetime.now().isoformat(),
             }
             self.source_history.append(source_info)
-
-            for chunk in rag_chunks:
-                chunk_id = chunk.get("chunk_id", "")
-                if chunk_id:
-                    self.document_mapping[chunk_id] = source_info
+            self._update_document_mapping(rag_chunks, source_info)
 
             self._log(f"Added {len(rag_chunks)} chunks from: {file_name}")
 
         except Exception as e:
             self._log(f"Failed to process file: {e}")
-
 
     def process(self, input_data: str, return_audio: bool = True) -> Dict:
         """
@@ -448,40 +571,11 @@ Answer in the same language as the question."""
 
         if self.total_chunks_loaded == 0:
             self._log("No documents loaded! Please add documents first.")
-            return {
-                "input_type": "text",
-                "question": question,
-                "response": "No documents loaded. Please add documents to the knowledge base first.",
-                "sources": [],
-                "sources_text": "No documents available.",
-                "elapsed_time": time.time() - start,
-                "audio_path": None,
-            }
+            return self._build_error_response("text", question, time.time() - start)
 
         rag_result = self.rag.ask_with_sources(question)
         
-        # Enrich sources with full metadata from our mapping
-        enriched_sources = []
-        for src in rag_result.get("sources", []):
-            chunk_id = src.get("chunk_id", "")
-            if chunk_id in self.document_mapping:
-                stored = self.document_mapping[chunk_id]
-                enriched_src = {**src, **stored}
-                enriched_sources.append(enriched_src)
-            else:
-                # Try to find by title match
-                title = src.get("title", "")
-                if title:
-                    for source_info in self.source_history:
-                        if source_info.get("title") == title:
-                            enriched_src = {**src, **source_info}
-                            enriched_sources.append(enriched_src)
-                            break
-                    else:
-                        enriched_sources.append(src)
-                else:
-                    enriched_sources.append(src)
-
+        enriched_sources = self._enrich_sources(rag_result.get("sources", []))
         sources_text = self._format_sources(enriched_sources)
 
         self._log(f"Q: {question[:100]}...")
@@ -513,47 +607,17 @@ Answer in the same language as the question."""
 
         if self.total_chunks_loaded == 0:
             self._log("No documents loaded! Please add documents first.")
-            return {
-                "input_type": "audio",
-                "question": "No documents loaded",
-                "response": "No documents loaded. Please add documents to the knowledge base first.",
-                "sources": [],
-                "sources_text": "No documents available.",
-                "language": "unknown",
-                "confidence": 0,
-                "audio_path": None,
-                "elapsed_time": time.time() - start,
-            }
+            return self._build_error_response("audio", "", time.time() - start)
 
         asr_result = self.asr.transcribe(audio_path)
         question = asr_result["text"]
-
 
         self._log(f"Transcribed: {question[:100]}...")
         self._log(f"   Language: {asr_result.get('language', 'en')}")
 
         rag_result = self.rag.ask_with_sources(question)
         
-        enriched_sources = []
-        for src in rag_result.get("sources", []):
-            chunk_id = src.get("chunk_id", "")
-            if chunk_id in self.document_mapping:
-                stored = self.document_mapping[chunk_id]
-                enriched_src = {**src, **stored}
-                enriched_sources.append(enriched_src)
-            else:
-                title = src.get("title", "")
-                if title:
-                    for source_info in self.source_history:
-                        if source_info.get("title") == title:
-                            enriched_src = {**src, **source_info}
-                            enriched_sources.append(enriched_src)
-                            break
-                    else:
-                        enriched_sources.append(src)
-                else:
-                    enriched_sources.append(src)
-
+        enriched_sources = self._enrich_sources(rag_result.get("sources", []))
         response = rag_result["response"]
 
         audio_path_out = None
