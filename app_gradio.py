@@ -97,7 +97,7 @@ def initialize_system():
             embedder_model="BAAI/bge-m3",
             llm_model="meta-llama/Llama-3.2-1B-Instruct",
             max_turns=5,
-            top_k=10,
+            top_k=5,
             verbose=True,  # Enable verbose to see loading
             system_prompt="""You are a helpful assistant for Telecom Egypt (WE).
 Answer questions using ONLY the provided context.
