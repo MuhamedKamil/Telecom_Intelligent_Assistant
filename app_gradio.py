@@ -361,9 +361,9 @@ def upload_file(file):
 # UI
 # ============================================================================
 
-with gr.Blocks(title="🎙️ WE Voice Assistant", theme=gr.themes.Soft()) as demo:
+with gr.Blocks(title="🎙️ WE AI Assistant", theme=gr.themes.Soft()) as demo:
     gr.Markdown("""
-    # 🎙️ WE Voice Assistant
+    # 🎙️ WE AI Assistant
     Ask questions via **text** or **audio**. Get responses as **text** or **audio**.
     """)
     
