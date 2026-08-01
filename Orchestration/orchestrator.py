@@ -12,6 +12,7 @@ import glob
 
 from ASR.asr_model import ASR
 from RAG.rag import RAGSystem
+from RAG.user_doc import DocumentPipeline
 from TTS.tts_model import TTS
 
 
@@ -30,25 +31,22 @@ class Orchestrator:
     def __init__(
         self,
         # ASR
-        asr_model_name: str = "base",
-        asr_device: str = "cuda",
-        asr_compute_type: str = "float32",
+        asr_model_name: str     = "base",
+        asr_device: str         = "cuda",
+        asr_compute_type: str   = "float32",
         # RAG
-        embedder_model: str = "BAAI/bge-m3",
-        llm_model: str = "meta-llama/Llama-3.2-1B-Instruct",
-        max_turns: int = 5,
-        top_k: int = 5,
-        system_prompt: Optional[str] = None,
-        # TTS
+        embedder_model: str     = "BAAI/bge-m3",
+        llm_model: str          = "meta-llama/Llama-3.2-1B-Instruct",
+        max_turns: int          = 5,
+        top_k: int              = 5,
+        system_prompt: Optional[str]       = None,
         tts_reference_audio: Optional[str] = None,
-        tts_reference_text: Optional[str] = None,
-        # Document Pipeline
-        max_characters: int = 1000,
-        new_after_n_chars: int = 800,
-        overlap: int = 100,
-        # General
-        output_dir: str = "outputs",
-        verbose: bool = True,
+        tts_reference_text: Optional[str]  = None,
+        max_characters: int       = 1000,
+        new_after_n_chars: int    = 800,
+        overlap: int              = 100,
+        output_dir: str           = "outputs",
+        verbose: bool             = True,
     ):
         """
         Initialize the Orchestrator with all necessary components.
@@ -127,15 +125,14 @@ Answer in the same language as the question."""
 
         self._log("Initializing RAG...")
         self.rag = RAGSystem(
-            embedder_model=embedder_model,
-            llm_model=llm_model,
-            max_turns=max_turns,
-            top_k=top_k,
-            system_prompt=system_prompt,
+            embedder_model = embedder_model,
+            llm_model      = llm_model,
+            max_turns      = max_turns,
+            top_k          = top_k,
+            system_prompt  = system_prompt,
         )
         self._log("RAG initialized")
 
-        # Initialize Document Pipeline (with fallback)
         self._log("Initializing Document Pipeline...")
         self.document_pipeline = None
         self._init_document_pipeline(max_characters, new_after_n_chars, overlap)
@@ -144,19 +141,18 @@ Answer in the same language as the question."""
         if tts_reference_audio and tts_reference_text:
             self._log("Initializing TTS...")
             self.tts = TTS(
-                reference_audio=tts_reference_audio,
-                reference_text=tts_reference_text,
+                reference_audio = tts_reference_audio,
+                reference_text  = tts_reference_text,
             )
             self._log("TTS initialized with voice cloning")
         else:
             self.tts = None
             self._log(" TTS not initialized")
 
-        # Tracking
-        self.conversation_id = 0
-        self.source_history = []
-        self.total_chunks_loaded = 0
-        self.document_mapping = {}
+        self.conversation_id      = 0
+        self.source_history       = []
+        self.total_chunks_loaded  = 0
+        self.document_mapping     = {}
 
         self._log("Orchestrator initialized successfully!")
 
@@ -181,56 +177,10 @@ Answer in the same language as the question."""
             new_after_n_chars (int): Characters before new chunk.
             overlap (int): Overlap between chunks.
         """        
-        try:
-            from unstructured.partition.auto import partition
-            from unstructured.chunking.title import chunk_by_title
+        
+        self.document_pipeline = DocumentPipeline(max_characters, new_after_n_chars, overlap)
+        self._log("Document Pipeline initialized with unstructured")
 
-            class DocumentPipeline:
-                def __init__(self, max_characters, new_after_n_chars, overlap):
-                    self.max_characters = max_characters
-                    self.new_after_n_chars = new_after_n_chars
-                    self.overlap = overlap
-
-                def process(self, file_path: str) -> Dict:
-                    elements = partition(filename=str(file_path))
-                    chunks = chunk_by_title(
-                        elements,
-                        max_characters=self.max_characters,
-                        new_after_n_chars=self.new_after_n_chars,
-                        overlap=self.overlap,
-                    )
-
-                    formatted_chunks = []
-                    for idx, chunk in enumerate(chunks):
-                        text = chunk.text.strip()
-                        formatted_chunks.append({
-                            "chunk_id": f"chunk_{idx + 1:03d}",
-                            "chunk_index": idx,
-                            "total_chunks": len(chunks),
-                            "text": text,
-                            "lang": getattr(chunk.metadata, "languages", ["unknown"])[0] if chunk.metadata else "unknown",
-                            "metadata": {
-                                "page_number": getattr(chunk.metadata, "page_number", None),
-                                "token_count": len(text.split()),
-                            },
-                        })
-
-                    return {
-                        "document": {
-                            "source": "uploaded",
-                            "file_name": Path(file_path).name,
-                            "file_type": Path(file_path).suffix,
-                            "total_chunks": len(formatted_chunks),
-                        },
-                        "chunks": formatted_chunks,
-                    }
-
-            self.document_pipeline = DocumentPipeline(max_characters, new_after_n_chars, overlap)
-            self._log("Document Pipeline initialized with unstructured")
-
-        except ImportError:
-            self._log("Unstructured not available - using fallback")
-            self._log("Using fallback document pipeline")
 
     def _load_json(self, file_path: str) -> Dict:
         """Load JSON file."""
@@ -449,7 +399,6 @@ Answer in the same language as the question."""
         except Exception as e:
             self._log(f"Failed to process file: {e}")
 
-    # ============ Processing ============
 
     def process(self, input_data: str, return_audio: bool = True) -> Dict:
         """
@@ -578,9 +527,6 @@ Answer in the same language as the question."""
 
         asr_result = self.asr.transcribe(audio_path)
         question = asr_result["text"]
-
-
-        # question = asr_result['text']
 
 
         self._log(f"Transcribed: {question[:100]}...")

@@ -156,3 +156,4 @@ class DocumentPipeline:
         )
 
         return self.formatter.format(str(path), chunks)
+
