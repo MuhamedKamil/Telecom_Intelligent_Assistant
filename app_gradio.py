@@ -95,7 +95,7 @@ def initialize_system():
         
         orchestrator = Orchestrator(
             embedder_model="BAAI/bge-m3",
-            llm_model="meta-llama/Llama-3.2-1B-Instruct",
+            llm_model="meta-llama/Llama-3.2-3B-Instruct",
             max_turns=5,
             top_k=5,
             verbose=True,  # Enable verbose to see loading
