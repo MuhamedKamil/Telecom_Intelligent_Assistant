@@ -10,7 +10,7 @@ class LLM:
     def __init__(
         self,
         model_name: str              = "meta-llama/Llama-3.2-3B-Instruct",
-        max_new_tokens: int          = 512,
+        max_new_tokens: int          = 768,
         max_context_chars: int       = 12000,
         system_prompt: Optional[str] = None,
         temperature: float           = 0.1,
