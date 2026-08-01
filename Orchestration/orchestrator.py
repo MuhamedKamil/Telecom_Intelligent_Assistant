@@ -36,7 +36,6 @@ class Orchestrator:
         asr_compute_type: str      = "int8",
         asr_model_name: str        = "namaa-space/cohere-transcribe-arabic-07-2026-int4",
 
-
         # RAG
         embedder_model: str     = "BAAI/bge-m3",
         llm_model: str          = "meta-llama/Llama-3.2-1B-Instruct",
@@ -56,11 +55,13 @@ class Orchestrator:
         
         Args:
             # ASR Parameters
-            asr_model_name (str): Whisper model size ("base", "small", "medium", "large").
+            language_detector_name (str): Language detector model.
                 Defaults to "base".
             asr_device (str): Device for ASR ("cuda", "cpu"). Defaults to "cuda".
             asr_compute_type (str): Precision for ASR ("float32", "float16", "int8").
-                Defaults to "float32".
+                Defaults to "int8".
+            asr_model_name (str): ASR model name.
+                Defaults to "namaa-space/cohere-transcribe-arabic-07-2026-int4".
             
             # RAG Parameters
             embedder_model (str): HuggingFace model for embeddings.
@@ -164,6 +165,14 @@ Answer in the same language as the question."""
         """Log message if verbose mode is enabled."""
         if self.verbose:
             print(message)
+
+    def _log_debug(self, message: str):
+        """Log debug message with clear formatting."""
+        print(f"\n🔍 DEBUG: {message}")
+
+    def _log_separator(self, char: str = "=", length: int = 80):
+        """Print a separator line for visual clarity."""
+        print(char * length)
 
     def _is_audio_file(self, path: str) -> bool:
         """Check if a file path is an audio file based on extension."""
@@ -324,6 +333,81 @@ Answer in the same language as the question."""
                 
         return enriched_sources
 
+    def _debug_retrieved_chunks(self, question: str, sources: List[Dict]):
+        """
+        Debug function to print detailed information about retrieved chunks.
+        
+        Args:
+            question (str): The question that was asked.
+            sources (List[Dict]): Retrieved sources/chunks from RAG.
+        """
+        self._log_separator("🔍")
+        self._log_debug(f"RETRIEVED CHUNKS ANALYSIS")
+        self._log_separator("🔍")
+        
+        self._log_debug(f"Question: {question}")
+        self._log_debug(f"Total chunks retrieved: {len(sources)}")
+        
+        if not sources:
+            self._log_debug("⚠️ No chunks retrieved!")
+            self._log_separator("🔍")
+            return
+        
+        # Print each retrieved chunk with details
+        for idx, src in enumerate(sources, 1):
+            self._log_separator("-", 60)
+            self._log_debug(f"Chunk #{idx}")
+            
+            # Basic info
+            title = src.get('title', 'No Title')
+            chunk_id = src.get('chunk_id', 'No ID')
+            url = src.get('url', 'No URL')
+            source_type = src.get('source', 'Unknown')
+            
+            self._log(f"  📄 Title: {title}")
+            self._log(f"  🆔 Chunk ID: {chunk_id}")
+            self._log(f"  🔗 Source Type: {source_type}")
+            self._log(f"  🌐 URL: {url}")
+            
+            # Chunk content (first 300 chars)
+            text = src.get('text', '')
+            if text:
+                text_preview = text[:300] + "..." if len(text) > 300 else text
+                self._log(f"  📝 Content Preview:\n     {text_preview}")
+            else:
+                self._log(f"  ⚠️ No text content in chunk")
+            
+            # Any additional metadata
+            metadata = src.get('metadata', {})
+            if metadata:
+                self._log(f"  📊 Metadata: {json.dumps(metadata, ensure_ascii=False)[:200]}")
+            
+            # Check if this chunk is from the 140 Guide
+            if "140" in title.lower() or "140" in text:
+                self._log(f"  🎯 THIS CHUNK IS FROM 140 GUIDE!")
+                
+        self._log_separator("🔍")
+        
+        # Additional analysis
+        self._log_debug("ANALYSIS SUMMARY")
+        self._log_separator("-", 40)
+        
+        # Check for 140 Guide chunks
+        guide_chunks = [s for s in sources if "140" in s.get('title', '').lower() or "140" in s.get('text', '')]
+        if guide_chunks:
+            self._log(f"✅ Found {len(guide_chunks)} chunks from 140 Guide")
+        else:
+            self._log(f"❌ NO chunks from 140 Guide found in retrieved results")
+            self._log(f"   This explains why the answer doesn't mention 140 Guide information")
+            
+        # Show what was actually retrieved
+        titles = [s.get('title', 'Unknown')[:50] for s in sources]
+        self._log(f"📋 Retrieved document titles:")
+        for i, title in enumerate(titles, 1):
+            self._log(f"   {i}. {title}")
+            
+        self._log_separator("🔍")
+
     def add_web_data(self, source: Union[str, List[str], List[Dict], Dict]) -> None:
         """
         Add website data from various sources (JSON files or dictionaries).
@@ -404,21 +488,6 @@ Answer in the same language as the question."""
 
         # Load ALL chunks in ONE batch
         if all_rag_chunks:
-            # Use first source info as the mapping source (they all share the same chunk structure)
-            # but we need to map each chunk to its specific source
-            for rag_chunk, source_info in zip(all_rag_chunks, source_infos * len(all_rag_chunks)):
-                # This is handled differently - we need to match chunks to their sources
-                pass
-            
-            # Actually we need to properly batch load with correct mapping
-            # We'll use a simpler approach: load all chunks with a combined source tracking
-            combined_source_info = {
-                "type": "batch",
-                "total_files": total_files,
-                "total_chunks": len(all_rag_chunks),
-                "added_at": datetime.now().isoformat(),
-            }
-            
             # But we want per-chunk mapping, so we'll map each chunk individually
             # We need to track which chunks belong to which source
             chunk_to_source = {}
@@ -577,9 +646,18 @@ Answer in the same language as the question."""
             self._log("No documents loaded! Please add documents first.")
             return self._build_error_response("text", question, time.time() - start)
 
+        # Log the question for debugging
+        self._log_debug(f"Processing question: {question}")
+        
+        # Get RAG result
         rag_result = self.rag.ask_with_sources(question)
         
-        enriched_sources = self._enrich_sources(rag_result.get("sources", []))
+        # DEBUG: Print retrieved chunks
+        raw_sources = rag_result.get("sources", [])
+        self._debug_retrieved_chunks(question, raw_sources)
+        
+        # Enrich sources
+        enriched_sources = self._enrich_sources(raw_sources)
         sources_text = self._format_sources(enriched_sources)
 
         self._log(f"Q: {question[:100]}...")
@@ -618,10 +696,17 @@ Answer in the same language as the question."""
 
         self._log(f"Transcribed: {question[:100]}...")
         self._log(f"   Language: {asr_result.get('language', 'en')}")
+        
+        # Log the question for debugging
+        self._log_debug(f"Processing audio transcribed question: {question}")
 
         rag_result = self.rag.ask_with_sources(question)
         
-        enriched_sources = self._enrich_sources(rag_result.get("sources", []))
+        # DEBUG: Print retrieved chunks
+        raw_sources = rag_result.get("sources", [])
+        self._debug_retrieved_chunks(question, raw_sources)
+        
+        enriched_sources = self._enrich_sources(raw_sources)
         response = rag_result["response"]
 
         audio_path_out = None
