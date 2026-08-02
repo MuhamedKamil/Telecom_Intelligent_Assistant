@@ -131,11 +131,11 @@ The pipeline is built from four specialized open-source models, orchestrated by 
 | **Purpose** | Generates the final answer from the user's question, retrieved context chunks, and recent conversation history |
 | **Input** | Question + retrieved context chunks + chat history |
 | **Output** | Natural language answer (Arabic or English) |
-| **Why this model** | A compact, instruction-tuned 1B-parameter model — small enough to run alongside ASR/TTS on a single T4 GPU |
+| **Why this model** | A compact, instruction-tuned 3B-parameter model — small enough to run alongside ASR/TTS on a single T4 GPU |
 | **Config** | Loaded via a Hugging Face `transformers` `pipeline("text-generation", ...)` with `torch_dtype=torch.float16`, `temperature=0.0` (deterministic/greedy decoding) by default, and `max_new_tokens=768` |
 | **System prompt** | Instructs the model to act as a support assistant for **Telecom Egypt (WE)**, answer strictly from the provided context, and say when the answer isn't in the knowledge base |
 
-> Note: your original model list said `meta-llama/Llama-3.2-1B` (base model); the code actually loads the **`-Instruct`** variant, which is what chat-style prompting (via `apply_chat_template`) requires.
+> Note: your original model list said `meta-llama/Llama-3.2-3B` (base model); the code actually loads the **`-Instruct`** variant, which is what chat-style prompting (via `apply_chat_template`) requires.
 
 ### 4. Text-to-Speech (TTS)
 
@@ -246,7 +246,7 @@ Telecom_Intelligent_Assistant/
 ├── ASR/
 │   └── asr_model.py            # Language detection (Faster-Whisper) + transcription (NAMAA Cohere Arabic ASR)
 ├── RAG/
-│   ├── llm.py                  # LLM wrapper (Llama-3.2-1B-Instruct)
+│   ├── llm.py                  # LLM wrapper (Llama-3.2-3B-Instruct)
 │   ├── memory.py                # ChatMemory - rolling conversation history
 │   ├── rag.py                   # RAGSystem - ties embeddings + retrieval + LLM + memory together
 │   ├── user_doc.py
@@ -324,7 +324,7 @@ Replace `YOUR_HUGGINGFACE_TOKEN` with your own [Hugging Face access token](https
 | `asr_model_name` | `"base"` | Faster-Whisper size used for language detection |
 | `asr_compute_type` | `"float32"` | Faster-Whisper compute precision |
 | `embedder_model` | `"BAAI/bge-m3"` | Embedding model for retrieval |
-| `llm_model` | `"meta-llama/Llama-3.2-1B-Instruct"` | Generation model |
+| `llm_model` | `"meta-llama/Llama-3.2-3B-Instruct"` | Generation model |
 | `max_turns` | `5` | Number of conversation turns kept in memory |
 | `top_k` | `5` | Number of chunks retrieved per query (the Gradio app sets this to `10`) |
 | `tts_reference_audio` / `tts_reference_text` | `None` | Reference clip/transcript for TTS voice cloning (the Gradio app sets these to `reference_audio.wav` and an Arabic sentence) |
@@ -386,7 +386,7 @@ The pipeline itself is not telecom-specific — swapping in a different `documen
 
 ## ⚠️ Limitations
 
-- The LLM is a small 1B-parameter model, which may limit reasoning quality compared to larger models
+- The LLM is a small 3B-parameter model, which may limit reasoning quality compared to larger models
 - The ASR transcription model runs in INT4-quantized form, which trades some accuracy for speed/memory
 - Conversation memory is a short rolling window (`max_turns`, default 5) rather than persistent long-term memory
 - Retrieval uses a simple in-memory vector store (no persistence across restarts, no approximate-nearest-neighbor indexing for large corpora)
@@ -431,7 +431,7 @@ The pipeline itself is not telecom-specific — swapping in a different `documen
 Open questions and gaps worth resolving before this README is final:
 
 1. **ASR model mismatch** — clarify whether language detection should use `whisper-tiny` (as you specified) or Faster-Whisper `"base"` (as coded).
-2. **LLM variant** — confirm `Llama-3.2-1B-Instruct` (used in code) vs. `Llama-3.2-1B` (in your original model list) is the intended model.
+2. **LLM variant** — confirm `Llama-3.2-3B-Instruct` (used in code) vs. `Llama-3.2-3B` (in your original model list) is the intended model.
 3. **`requirements.txt` sync** — reconcile it with the manual `pip install` steps and actual imports (`gradio`, `silma-tts`, `unstructured`, `bitsandbytes`, `speechbrain` are missing; `streamlit`/`streamlit-mic-recorder` appear unused by `app_gradio.py`).
 4. **License** — for the repo itself and a note on third-party model licenses.
 5. **Example usage** — a walkthrough or screenshots/GIF of a real session (text + voice).
