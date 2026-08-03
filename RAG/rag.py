@@ -27,7 +27,7 @@ class RAGSystem:
         self.embedder_config: str         = Rag_config["embedder"]
         self.llm_config                   = Rag_config["llm"]
         self.max_turns: int               = Rag_config["memory"]["max_turns"]
-        self.top_k: int                   = Rag_config["generation"]["top_k"]
+        self.top_k: int                   = Rag_config["retrieval"]["top_k"]
         
         """
         Initialize the RAG system with specified models and configuration.
