@@ -29,8 +29,6 @@ class ASR:
         print(f"Loaded Faster-Whisper Language Detector: {language_detector_name}")
         print(f"Loaded ASR MODEL : {asr_model}")
 
-        if device == "cuda":
-            print(f"GPU: {torch.cuda.get_device_name(0)}")
 
     def detect_language(self,audio_path):
         """
