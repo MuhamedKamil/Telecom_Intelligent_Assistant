@@ -21,15 +21,14 @@ class RAGSystem:
 
     def __init__(
         self,
-        embedder_model: str          = "BAAI/bge-m3",
-        device: Optional[str]        = None,
-        use_fp16: bool               = True,
-        llm_model: str               = "meta-llama/Llama-3.2-1B-Instruct",
-        max_turns: int               = 5,
-        top_k: int                   = 5,
-        max_new_tokens: int          = 512,
-        system_prompt: Optional[str] = None,
+        Rag_config: Optional[Dict] 
+
     ):
+        self.embedder_config: str         = Rag_config["embedder"],
+        self.llm_config                   = Rag_config["llm"]
+        self.max_turns: int               = Rag_config["memory"]["max_turns"],
+        self.top_k: int                   = Rag_config["generation"]["top_k"]
+        
         """
         Initialize the RAG system with specified models and configuration.
         
@@ -54,12 +53,10 @@ class RAGSystem:
                 Defaults to None.
         """
         self.embedding_manager = EmbeddingManager(
-            model_name  = embedder_model,
-            device      = device,
-            use_fp16    = use_fp16,
+            embedder_config    = self.embedder_config
         )
-        self.website_store  = WebsiteStore()
-        self.uploaded_store = UploadedStore()
+        self.website_store     = WebsiteStore()
+        self.uploaded_store    = UploadedStore()
         
         self.retrieval_manager = RetrievalManager(
             embedding_manager  = self.embedding_manager,
@@ -68,13 +65,10 @@ class RAGSystem:
         )
         
         self.llm = LLM(
-            model_name     = llm_model,
-            max_new_tokens = max_new_tokens,
-            system_prompt  = system_prompt,
+            llm_config = self.llm_config
         )
         
-        self.memory = ChatMemory(max_turns=max_turns)
-        self.top_k  = top_k
+        self.memory = ChatMemory(max_turns=self.max_turns)
     
     def add_website_documents(
         self,

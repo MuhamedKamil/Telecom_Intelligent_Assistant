@@ -1,6 +1,6 @@
 import torch
 from FlagEmbedding import BGEM3FlagModel
-from typing import List, Union
+from typing import List, Union,Optional,Dict
 
 class EmbeddingManager:
     """
@@ -9,22 +9,29 @@ class EmbeddingManager:
     """
     def __init__(
         self,
-        model_name: str = "BAAI/bge-m3",
-        device: str     = None,
-        use_fp16: bool  = True,
-        batch_size: int = 16,
-        max_length: int = 8192,
+        # model_name: str = "BAAI/bge-m3",
+        # device: str     = None,
+        # use_fp16: bool  = True,
+        # batch_size: int = 16,
+        # max_length: int = 8192,
+        embedder_config: Optional[Dict] 
+
     ):
-        if device is None:
-            device = "cuda" if torch.cuda.is_available() else "cpu"
         
-        self.device     = device
-        self.batch_size = batch_size
-        self.max_length = max_length
+        self.model_name = embedder_config["model_name"]
+        self.use_fp16   = embedder_config["use_fp16"]
+        self.device     = embedder_config["device"]
+        self.batch_size = embedder_config["batch_size"]
+        self.max_length = embedder_config["max_length"]
+
+
+        if self.device is None:
+            device = "cuda" if torch.cuda.is_available() else "cpu"
+
         self.model = BGEM3FlagModel(
-            model_name,
-            use_fp16 = use_fp16 and device == "cuda",
-            device   = device,
+            self.model_name,
+            use_fp16 = self.use_fp16 and device == self.device,
+            device   = self.device,
         )
 
     def embed_documents(self, texts: List[str]) -> torch.Tensor:

@@ -1,6 +1,7 @@
 import time
 from pathlib import Path
 from silma_tts.api import SilmaTTS
+from typing import Optional, Dict, List, Any, Union
 
 
 class TTS:
@@ -10,20 +11,21 @@ class TTS:
 
     def __init__(
         self,
-        reference_audio: str,
-        reference_text: str = None,
+   
+        TTS_config: Optional[Dict] 
+
     ):
       
         self.model = SilmaTTS()
-        self.reference_audio = reference_audio
-        self.reference_text  = reference_text
+        self.reference_audio = TTS_config["reference_audio"]
+        self.reference_text  = TTS_config["reference_text"]
 
     def generate(
         self,
         text: str,
         output_file: str = "generated_audio.wav",
-        speed: float = 1.0,
-        seed: int = None,
+        speed: float     = 1.0,
+        seed: int        = None,
     ):
         """
         Generate speech from text.

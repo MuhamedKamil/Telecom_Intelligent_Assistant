@@ -5,7 +5,7 @@ Combines ASR (Speech-to-Text), RAG pipeline, and TTS (Text-to-Speech).
 
 import time
 import json
-from typing import Optional, Dict, List, Any, Union
+from typing import Optional, Dict, List, Union
 from pathlib import Path
 from datetime import datetime
 import glob
@@ -31,24 +31,28 @@ class Orchestrator:
     def __init__(
         self,
         # ASR
-        language_detector_name:str = "base",
-        asr_device: str            = "cuda",
-        asr_compute_type: str      = "int8",
-        asr_model_name: str        = "namaa-space/cohere-transcribe-arabic-07-2026-int4",
+        # language_detector_name:str = "base",
+        # asr_device: str            = "cuda",
+        # asr_compute_type: str      = "int8",
+        # asr_model_name: str        = "namaa-space/cohere-transcribe-arabic-07-2026-int4",
 
-        # RAG
-        embedder_model: str     = "BAAI/bge-m3",
-        llm_model: str          = "meta-llama/Llama-3.2-3B-Instruct",
-        max_turns: int          = 5,
-        top_k: int              = 5,
-        system_prompt: Optional[str]       = None,
-        tts_reference_audio: Optional[str] = None,
-        tts_reference_text: Optional[str]  = None,
-        max_characters: int       = 1000,
-        new_after_n_chars: int    = 800,
-        overlap: int              = 100,
-        output_dir: str           = "outputs",
-        verbose: bool             = True,
+        # # RAG
+        # embedder_model: str     = "BAAI/bge-m3",
+        # llm_model: str          = "meta-llama/Llama-3.2-3B-Instruct",
+        # max_turns: int          = 5,
+        # top_k: int              = 5,
+        # system_prompt: Optional[str]       = None,
+
+        # tts_reference_audio: Optional[str] = None,
+        # tts_reference_text: Optional[str]  = None,
+
+        # max_characters: int       = 1000,
+        # new_after_n_chars: int    = 800,
+        # overlap: int              = 100,
+        # output_dir: str           = "outputs",
+        # verbose: bool             = True,
+        pipeline_config: Optional[Dict] 
+
     ):
         """
         Initialize the Orchestrator with all necessary components.
@@ -103,177 +107,38 @@ class Orchestrator:
             total_chunks_loaded (int): Total number of chunks in system.
             document_mapping (Dict): Maps chunk IDs to source metadata.
         """
-        self.verbose = verbose
+        self.verbose = True
         self._log("Initializing Orchestrator...")
 
-        self.output_dir = Path(output_dir)
+        self.output_dir = Path("output")
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
         # Initialize ASR
         self._log("🎤 Initializing ASR...")
         self.asr = ASR(
-            language_detector_name = language_detector_name,
-            device                 = asr_device,
-            compute_type           = asr_compute_type,
-            asr_model              = asr_model_name
+            ASR_config = pipeline_config["asr"]
         )
         self._log("ASR initialized")
 
         # Initialize RAG with system prompt that encourages source use
-        if system_prompt is None:
-            system_prompt = """You are a precise, factual assistant for Telecom Egypt (WE). Your purpose is to answer user questions accurately using ONLY the provided context.
-
-══════════════════════════════════════════════════════════════════
-CORE PRINCIPLES (MUST FOLLOW)
-══════════════════════════════════════════════════════════════════
-
-1. STRICT GROUNDING
-   - Answer ONLY using information explicitly present in the context
-   - NEVER add, infer, guess, or invent information not in the context
-   - If information is not in the context, say: "I don't have this information in my knowledge base."
-
-2. EXACT EXTRACTION
-   - Extract information exactly as it appears in the context
-   - For numbers, prices, dates, names: preserve the exact values
-   - For lists: only include items explicitly mentioned in the context
-   - For descriptions: paraphrase while preserving all key facts
-
-3. STRUCTURED RESPONSES
-   - When the context contains structured information (lists, categories, steps):
-     - Preserve the structure
-     - Include all items mentioned
-     - Do NOT add items not mentioned
-   - For questions asking "what", "how", "why": provide complete information
-   - For questions asking "yes/no": answer directly with supporting evidence
-
-4. HANDLE ALL INFORMATION TYPES
-   - Prices/Costs: Extract exact numbers with currency (جنيه, EGP, $)
-   - Dates/Times: Preserve exact format (e.g., "1:30 PM", "2024-01-01")
-   - Names/Titles: Preserve exact spelling and formatting
-   - Descriptions: Include all key attributes and characteristics
-   - Steps/Procedures: Maintain the exact order and sequence
-   - Comparisons: Include all differences and similarities mentioned
-
-5. SOURCE ATTRIBUTION
-   - When available, mention the source title or URL
-   - Cite specific information confidently when present
-   - Do NOT fabricate source details
-
-6. LANGUAGE CONSISTENCY
-   - Respond in the SAME language as the user's question
-   - Arabic question → Arabic response
-   - English question → English response
-
-7. CONCISENESS
-   - Be direct and to the point
-   - Avoid unnecessary introductory phrases
-   - Do not repeat the same information multiple times
-   - For short answers, keep them brief but complete
-
-8. HANDLE AMBIGUITY
-   - If the question is unclear, ask for clarification
-   - If multiple interpretations exist, state the one you're using
-   - If the context contains conflicting information, mention the conflict
-
-9. NEGATIVE CASES
-   - If the context mentions something is NOT available, state this
-   - If the answer would be "no", say so clearly
-   - If the context is insufficient, state what IS known and what IS NOT
-
-10. QUALITY STANDARDS
-    - Every claim must be traceable to the context
-    - Every number, date, and name must be verifiable
-    - Every list item must appear in the context
-    - Every instruction must be followed precisely
-
-══════════════════════════════════════════════════════════════════
-SPECIAL HANDLING FOR COMMON INFORMATION TYPES
-══════════════════════════════════════════════════════════════════
-
-For PRICES:
-- Look for patterns like: "سعر", "تكلفة", "قيمة", "بسعر", "EGP", "جنيه"
-- Extract: [number] + [currency] + [unit if applicable]
-- Format: "السعر هو X جنيه" or "The price is X EGP"
-
-For LISTS:
-- Extract ONLY the items explicitly listed
-- Preserve the exact order if meaningful
-- Do NOT group or categorize differently than the context
-
-For STEPS/PROCEDURES:
-- Preserve the exact sequence
-- Include all steps mentioned
-- Do NOT add steps not mentioned
-
-For DEFINITIONS:
-- Use the exact definition from the context
-- Include all parts of the definition
-- Do NOT simplify or modify the definition
-
-For COMPARISONS:
-- Include all points of comparison mentioned
-- Preserve the exact differences stated
-- Do NOT add comparative analysis not in the context
-
-══════════════════════════════════════════════════════════════════
-EXAMPLES OF CORRECT BEHAVIOR
-══════════════════════════════════════════════════════════════════
-
-Context: "خدمة 140 دليل تقدم معلومات عن: العناوين، أرقام الاتصال، الأقسام المتاحة."
-Question: "ما المعلومات التي تقدمها خدمة 140 دليل؟"
-CORRECT: "خدمة 140 دليل تقدم معلومات عن: العناوين، أرقام الاتصال، الأقسام المتاحة."
-WRONG: "تقدم خدمة 140 دليل معلومات عن الجامعات، المدارس، الخدمات الطبية..." (adding items not in context)
-
-══════════════════════════════════════════════════════════════════
-
-Context: "سعر الخدمة: 1.5 جنيه/الدقيقة"
-Question: "كم سعر الخدمة؟"
-CORRECT: "سعر الخدمة هو 1.5 جنيه في الدقيقة."
-WRONG: "سعر الخدمة حوالي 2 جنيه" (changing the number)
-
-══════════════════════════════════════════════════════════════════
-
-Context: "الجامعات الحكومية والخاصة فقط مسموح لها بالتقديم."
-Question: "ما هي الجامعات المسموح لها بالتقديم؟"
-CORRECT: "الجامعات الحكومية والخاصة فقط مسموح لها بالتقديم."
-WRONG: "الجامعات الحكومية والخاصة والأهلية مسموح لها بالتقديم." (adding "الأهلية")
-
-══════════════════════════════════════════════════════════════════
-
-Context: No information about mobile prices
-Question: "ما هي أسعار باقات الموبايل؟"
-CORRECT: "I don't have this information in my knowledge base."
-WRONG: "أسعار الباقات تبدأ من 50 جنيه" (guessing)
-
-══════════════════════════════════════════════════════════════════
-
-REMEMBER: Your job is to be a faithful conveyor of information from the context to the user, not to interpret, expand, or add to the information provided. Accuracy and truthfulness are paramount."""
-
+        
         self._log("Initializing RAG...")
         self.rag = RAGSystem(
-            embedder_model = embedder_model,
-            llm_model      = llm_model,
-            max_turns      = max_turns,
-            top_k          = top_k,
-            system_prompt  = system_prompt,
+            Rag_config = pipeline_config["rag"]
         )
         self._log("RAG initialized")
 
         self._log("Initializing Document Pipeline...")
         self.document_pipeline = None
-        self._init_document_pipeline(max_characters, new_after_n_chars, overlap)
+        self._init_document_pipeline(pipeline_config["document_processing"])
 
         # Initialize TTS
-        if tts_reference_audio and tts_reference_text:
-            self._log("Initializing TTS...")
-            self.tts = TTS(
-                reference_audio = tts_reference_audio,
-                reference_text  = tts_reference_text,
+        self._log("Initializing TTS...")
+        self.tts = TTS(
+                TTS_config = pipeline_config["document_processing"]
             )
-            self._log("TTS initialized with voice cloning")
-        else:
-            self.tts = None
-            self._log(" TTS not initialized")
+        self._log("TTS initialized with voice cloning")
+        
 
         self.conversation_id      = 0
         self.source_history       = []
@@ -299,7 +164,7 @@ REMEMBER: Your job is to be a faithful conveyor of information from the context 
         """Check if a file path is an audio file based on extension."""
         return Path(path).suffix.lower() in {'.wav', '.mp3', '.flac', '.m4a', '.ogg', '.aac'}
 
-    def _init_document_pipeline(self, max_characters, new_after_n_chars, overlap):
+    def _init_document_pipeline(self,document_processing:Optional[Dict]):
         """
         Initialize document processing pipeline with fallback options.
         
@@ -312,7 +177,7 @@ REMEMBER: Your job is to be a faithful conveyor of information from the context 
             overlap (int): Overlap between chunks.
         """        
         
-        self.document_pipeline = DocumentPipeline(max_characters, new_after_n_chars, overlap)
+        self.document_pipeline = DocumentPipeline(document_processing)
         self._log("Document Pipeline initialized with unstructured")
 
     def _load_json(self, file_path: str) -> Dict:

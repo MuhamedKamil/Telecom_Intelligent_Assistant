@@ -4,6 +4,7 @@ import mimetypes
 
 from unstructured.partition.auto import partition
 from unstructured.chunking.title import chunk_by_title
+from typing import Optional, Dict, List, Any, Union
 
 
 class DocumentFormatter:
@@ -102,9 +103,8 @@ class DocumentPipeline:
 
     def __init__(
         self,
-        max_characters    = 1000,
-        new_after_n_chars = 800,
-        overlap           = 100,
+        document_config: Optional[Dict] 
+
     ):
         """
         Initialize the pipeline with chunking parameters.
@@ -115,9 +115,9 @@ class DocumentPipeline:
             overlap (int): Character overlap between chunks. Default: 100
         """
 
-        self.max_characters      = max_characters
-        self.new_after_n_chars   = new_after_n_chars
-        self.overlap             = overlap
+        self.max_characters      = document_config["max_characters"]
+        self.new_after_n_chars   = document_config["new_after_n_chars"]
+        self.overlap             = document_config["overlap"]
 
         self.formatter = DocumentFormatter()
 

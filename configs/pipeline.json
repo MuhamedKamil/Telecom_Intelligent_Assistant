@@ -1,0 +1,66 @@
+{
+  
+  "asr": {
+    "language_detector_name" : "base",
+    "asr_model_name"         : "namaa-space/cohere-transcribe-arabic-07-2026-int4",
+    "device"                 : "cuda",
+    "compute_type"           : "int8",
+    "task"                   : "transcribe",
+    "sample_rate"            : 16000,
+    "max_new_tokens"         : 256
+  },
+
+  
+  
+  "rag": {
+    "embedder": {
+      "model_name"  : "BAAI/bge-m3",
+      "device"      : "cuda",
+      "use_fp16"    : true,
+      "batch_size"  : 16,
+      "max_length"  : 8192
+
+    },
+
+    "llm": {
+      "model_name"         : "meta-llama/Llama-3.2-3B-Instruct",
+      "device"             : "cuda",
+      "torch_dtype"        : "float16",
+      "max_new_tokens"     : 768,
+      "max_context_chars"  : 12000,
+      "temperature"        : 0.1,
+      "system_prompt"      : "system_prompt.txt"
+    },
+    
+    "generation": {
+      "top_p"               : 0.95,
+      "top_k"               : 50
+    },
+    
+    "retrieval": {
+      "top_k"               : 5,
+      "similarity_threshold": 0.5
+    },
+    
+    "memory": {
+      "max_turns": 5
+    }
+    
+  },
+  
+  "tts": {
+    "reference_audio" :"reference_audio.wav",
+    "reference_text"  :"ويدقق النظر في القرآن الكريم وسائر الكتب السماوية ويتبع مسالك الرسل العظام عليهم الصلاة والسلام."
+  },
+  
+     
+
+  "document_processing": {
+      "max_characters":    1000,
+      "new_after_n_chars": 800,
+      "overlap":           100,
+      "output_dir":        "outputs",
+      "verbose":           true
+  
+  }
+}

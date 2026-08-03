@@ -3,6 +3,7 @@ from faster_whisper import WhisperModel
 from faster_whisper.audio import decode_audio
 from transformers import AutoProcessor, CohereAsrForConditionalGeneration
 from transformers.audio_utils import load_audio
+from typing import Optional, Dict, List, Any, Union
 
 
 class ASR:
@@ -12,22 +13,27 @@ class ASR:
 
     def __init__(
         self,
-        language_detector_name: str = "base",
-        device: str                 = "cuda",
-        compute_type: str           = "int8",
-        asr_model:str               = "namaa-space/cohere-transcribe-arabic-07-2026-int4",
+        ASR_config: Optional[Dict] 
+
     ):
+        
+        self.language_detector_name: str = ASR_config["language_detector_name"],
+        self.device: str                 = ASR_config["device"],
+        self.compute_type: str           = ASR_config["compute_type"],
+        self.asr_model:str               = ASR_config["asr_model_name"],
+        self.sampling_rate  :int         = ASR_config["sampling_rate"],
+        self.max_new_tokens :int         = ASR_config["max_new_tokens"]
  
         if device == "cuda" and not torch.cuda.is_available():
             print("CUDA is not available. Falling back to CPU.")
             device = "cpu"
 
-        self.language_detector = WhisperModel(language_detector_name,device=device,compute_type=compute_type,)
-        self.processor         = AutoProcessor.from_pretrained(asr_model),
-        self.asr_model         = CohereAsrForConditionalGeneration.from_pretrained(asr_model, device_map=device)
+        self.language_detector = WhisperModel(self.language_detector_name,device=device,compute_type=self.compute_type,)
+        self.processor         = AutoProcessor.from_pretrained(self.asr_model),
+        self.asr_model         = CohereAsrForConditionalGeneration.from_pretrained(self.asr_model, device_map=self.device)
 
-        print(f"Loaded Faster-Whisper Language Detector: {language_detector_name}")
-        print(f"Loaded ASR MODEL : {asr_model}")
+        print(f"Loaded Faster-Whisper Language Detector: {self.language_detector_name}")
+        print(f"Loaded ASR MODEL : {self.asr_model}")
 
 
     def detect_language(self,audio_path):
@@ -55,9 +61,7 @@ class ASR:
 
     def transcribe(
         self,
-        audio_path     :str,
-        sampling_rate  :int = 16000,
-        max_new_tokens :int = 256
+        audio_path :str,
     ):
         """
         Transcribe speech from an audio file into text using the ASR (Automatic Speech Recognition) model.
@@ -74,11 +78,11 @@ class ASR:
                 Controls how long the output text can be.
         """
         language, prob = self.detect_language(audio_path)
-        inputs = self.processor(audio_path, sampling_rate = sampling_rate, language= language, return_tensors="pt").to(
+        inputs = self.processor(audio_path, sampling_rate = self.sampling_rate, language = language, return_tensors="pt").to(
             device = self.asr_model.device, 
             dtype  = self.asr_model.dtype) 
 
-        outputs = self.asr_model.generate(**inputs, max_new_tokens= max_new_tokens)
+        outputs = self.asr_model.generate(**inputs, max_new_tokens= self.max_new_tokens)
 
         return {
             "language"             : language,

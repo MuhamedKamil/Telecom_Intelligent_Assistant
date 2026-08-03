@@ -1,7 +1,7 @@
 import torch
 from transformers import pipeline
 from typing import List, Dict, Optional
-
+from pathlib import Path
 class LLM:
     """
     Simple LLM wrapper for text generation with context.
@@ -9,11 +9,7 @@ class LLM:
     
     def __init__(
         self,
-        model_name: str              = "meta-llama/Llama-3.2-3B-Instruct",
-        max_new_tokens: int          = 768,
-        max_context_chars: int       = 12000,
-        system_prompt: Optional[str] = None,
-        temperature: float           = 0.1,
+        llm_config: Optional[Dict] 
     ):
         """
         Initialize the LLM.
@@ -25,157 +21,65 @@ class LLM:
             system_prompt: Custom system prompt (uses default if None)
             temperature: Sampling temperature (0.0 for deterministic)
         """
-        self.model_name        = model_name
-        self.max_context_chars = max_context_chars
-        self.system_prompt     = system_prompt or self._default_system_prompt()
+        self.model_name        = llm_config["model_name"]
+        self.max_context_chars = llm_config["max_context_chars"]
+        self.system_prompt     = self._load_system_prompt(llm_config["system_prompt"]) 
+        self.max_new_tokens    = llm_config["max_new_tokens"]
+        self.temperature       = llm_config["temperature"]
         
         self.generator = pipeline(
             task         = "text-generation",
-            model        = model_name,
+            model        = self.model_name,
             device_map   = "auto",
             torch_dtype  = torch.float16,
+
         )
         
         self.generation_kwargs = {
-            "max_new_tokens"   : max_new_tokens,
-            "do_sample"        : temperature > 0,
-            "temperature"      : temperature if temperature > 0 else None,
+            "max_new_tokens"   : self.max_new_tokens,
+            "do_sample"        : self.temperature > 0,
+            "temperature"      : self.temperature if self.temperature > 0 else None,
             "return_full_text" : False,
             "eos_token_id"     : self.generator.tokenizer.eos_token_id,
         }
         
         self.generation_kwargs = {k: v for k, v in self.generation_kwargs.items() if v is not None}
     
-    @staticmethod
-    def _default_system_prompt() -> str:
-        return """You are a precise, factual assistant for Telecom Egypt (WE). Your purpose is to answer user questions accurately using ONLY the provided context.
 
-    ══════════════════════════════════════════════════════════════════
-    CORE PRINCIPLES (MUST FOLLOW)
-    ══════════════════════════════════════════════════════════════════
+    def _load_system_prompt(self, system_prompt: Optional[str]) -> str:
+        """
+        Load system prompt from file if specified, otherwise use default.
+        
+        Args:
+            system_prompt: Either a string prompt or a path to a .txt file
+            
+        Returns:
+            str: The system prompt
+        """
+        # If None, return default
+        if system_prompt is None:
+            return self._default_system_prompt()
+        
+        # If it's a file path, load from file
+        if isinstance(system_prompt, str) and system_prompt.endswith('.txt'):
+            file_path = Path(system_prompt)
+            if file_path.exists():
+                try:
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        content = f.read().strip()
+                        if content:
+                            return content
+                        else:
+                            print(f"Warning: Prompt file '{system_prompt}' is empty, using default")
+                except Exception as e:
+                    print(f"Error reading prompt file '{system_prompt}': {e}")
+                    print("Using default prompt")
+            else:
+                print(f"Warning: Prompt file '{system_prompt}' not found, using default")
+            return self._default_system_prompt()
+        
+        return system_prompt
 
-    1. STRICT GROUNDING
-    - Answer ONLY using information explicitly present in the context
-    - NEVER add, infer, guess, or invent information not in the context
-    - If information is not in the context, say: "I don't have this information in my knowledge base."
-
-    2. EXACT EXTRACTION
-    - Extract information exactly as it appears in the context
-    - For numbers, prices, dates, names: preserve the exact values
-    - For lists: only include items explicitly mentioned in the context
-    - For descriptions: paraphrase while preserving all key facts
-
-    3. STRUCTURED RESPONSES
-    - When the context contains structured information (lists, categories, steps):
-        - Preserve the structure
-        - Include all items mentioned
-        - Do NOT add items not mentioned
-    - For questions asking "what", "how", "why": provide complete information
-    - For questions asking "yes/no": answer directly with supporting evidence
-
-    4. HANDLE ALL INFORMATION TYPES
-    - Prices/Costs: Extract exact numbers with currency (جنيه, EGP, $)
-    - Dates/Times: Preserve exact format (e.g., "1:30 PM", "2024-01-01")
-    - Names/Titles: Preserve exact spelling and formatting
-    - Descriptions: Include all key attributes and characteristics
-    - Steps/Procedures: Maintain the exact order and sequence
-    - Comparisons: Include all differences and similarities mentioned
-
-    5. SOURCE ATTRIBUTION
-    - When available, mention the source title or URL
-    - Cite specific information confidently when present
-    - Do NOT fabricate source details
-
-    6. LANGUAGE CONSISTENCY
-    - Respond in the SAME language as the user's question
-    - Arabic question → Arabic response
-    - English question → English response
-
-    7. CONCISENESS
-    - Be direct and to the point
-    - Avoid unnecessary introductory phrases
-    - Do not repeat the same information multiple times
-    - For short answers, keep them brief but complete
-
-    8. HANDLE AMBIGUITY
-    - If the question is unclear, ask for clarification
-    - If multiple interpretations exist, state the one you're using
-    - If the context contains conflicting information, mention the conflict
-
-    9. NEGATIVE CASES
-    - If the context mentions something is NOT available, state this
-    - If the answer would be "no", say so clearly
-    - If the context is insufficient, state what IS known and what IS NOT
-
-    10. QUALITY STANDARDS
-        - Every claim must be traceable to the context
-        - Every number, date, and name must be verifiable
-        - Every list item must appear in the context
-        - Every instruction must be followed precisely
-
-    ══════════════════════════════════════════════════════════════════
-    SPECIAL HANDLING FOR COMMON INFORMATION TYPES
-    ══════════════════════════════════════════════════════════════════
-
-    For PRICES:
-    - Look for patterns like: "سعر", "تكلفة", "قيمة", "بسعر", "EGP", "جنيه"
-    - Extract: [number] + [currency] + [unit if applicable]
-    - Format: "السعر هو X جنيه" or "The price is X EGP"
-
-    For LISTS:
-    - Extract ONLY the items explicitly listed
-    - Preserve the exact order if meaningful
-    - Do NOT group or categorize differently than the context
-
-    For STEPS/PROCEDURES:
-    - Preserve the exact sequence
-    - Include all steps mentioned
-    - Do NOT add steps not mentioned
-
-    For DEFINITIONS:
-    - Use the exact definition from the context
-    - Include all parts of the definition
-    - Do NOT simplify or modify the definition
-
-    For COMPARISONS:
-    - Include all points of comparison mentioned
-    - Preserve the exact differences stated
-    - Do NOT add comparative analysis not in the context
-
-    ══════════════════════════════════════════════════════════════════
-    EXAMPLES OF CORRECT BEHAVIOR
-    ══════════════════════════════════════════════════════════════════
-
-    Context: "خدمة 140 دليل تقدم معلومات عن: العناوين، أرقام الاتصال، الأقسام المتاحة."
-    Question: "ما المعلومات التي تقدمها خدمة 140 دليل؟"
-    CORRECT: "خدمة 140 دليل تقدم معلومات عن: العناوين، أرقام الاتصال، الأقسام المتاحة."
-    WRONG: "تقدم خدمة 140 دليل معلومات عن الجامعات، المدارس، الخدمات الطبية..." (adding items not in context)
-
-    ══════════════════════════════════════════════════════════════════
-
-    Context: "سعر الخدمة: 1.5 جنيه/الدقيقة"
-    Question: "كم سعر الخدمة؟"
-    CORRECT: "سعر الخدمة هو 1.5 جنيه في الدقيقة."
-    WRONG: "سعر الخدمة حوالي 2 جنيه" (changing the number)
-
-    ══════════════════════════════════════════════════════════════════
-
-    Context: "الجامعات الحكومية والخاصة فقط مسموح لها بالتقديم."
-    Question: "ما هي الجامعات المسموح لها بالتقديم؟"
-    CORRECT: "الجامعات الحكومية والخاصة فقط مسموح لها بالتقديم."
-    WRONG: "الجامعات الحكومية والخاصة والأهلية مسموح لها بالتقديم." (adding "الأهلية")
-
-    ══════════════════════════════════════════════════════════════════
-
-    Context: No information about mobile prices
-    Question: "ما هي أسعار باقات الموبايل؟"
-    CORRECT: "I don't have this information in my knowledge base."
-    WRONG: "أسعار الباقات تبدأ من 50 جنيه" (guessing)
-
-    ══════════════════════════════════════════════════════════════════
-
-    REMEMBER: Your job is to be a faithful conveyor of information from the context to the user, not to interpret, expand, or add to the information provided. Accuracy and truthfulness are paramount."""
-    
     def _build_context(self, context_chunks: List[str]) -> str:
         """
         Build context string from chunks, respecting character limit.
