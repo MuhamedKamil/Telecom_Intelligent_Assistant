@@ -46,40 +46,7 @@ class LLM:
         self.generation_kwargs = {k: v for k, v in self.generation_kwargs.items() if v is not None}
     
 
-    def _load_system_prompt(self, system_prompt: Optional[str]) -> str:
-        """
-        Load system prompt from file if specified, otherwise use default.
-        
-        Args:
-            system_prompt: Either a string prompt or a path to a .txt file
-            
-        Returns:
-            str: The system prompt
-        """
-        # If None, return default
-        if system_prompt is None:
-            return self._default_system_prompt()
-        
-        # If it's a file path, load from file
-        if isinstance(system_prompt, str) and system_prompt.endswith('.txt'):
-            file_path = Path(system_prompt)
-            if file_path.exists():
-                try:
-                    with open(file_path, 'r', encoding='utf-8') as f:
-                        content = f.read().strip()
-                        if content:
-                            return content
-                        else:
-                            print(f"Warning: Prompt file '{system_prompt}' is empty, using default")
-                except Exception as e:
-                    print(f"Error reading prompt file '{system_prompt}': {e}")
-                    print("Using default prompt")
-            else:
-                print(f"Warning: Prompt file '{system_prompt}' not found, using default")
-            return self._default_system_prompt()
-        
-        return system_prompt
-
+    
     def _build_context(self, context_chunks: List[str]) -> str:
         """
         Build context string from chunks, respecting character limit.
@@ -97,6 +64,8 @@ class LLM:
                 break
             context += section
         return context.strip()
+
+    
     
     def _build_messages(
         self,
@@ -163,3 +132,39 @@ class LLM:
     def model_name(self, value: str) -> None:
         """Set the model name."""
         self._model_name = value
+
+    def _load_system_prompt(self, system_prompt: Optional[str]) -> str:
+        """
+        Load system prompt from the specified txt file.
+        
+        Args:
+            system_prompt: Path to the .txt file containing the system prompt
+            
+        Returns:
+            str: The system prompt content
+        """
+        # Load from file
+        if system_prompt and isinstance(system_prompt, str) and system_prompt.endswith('.txt'):
+            file_path = Path(system_prompt)
+            if file_path.exists():
+                try:
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        content = f.read().strip()
+                        if content:
+                            return content
+                        else:
+                            print(f"Warning: System prompt file '{system_prompt}' is empty")
+                except Exception as e:
+                    print(f"Error reading prompt file '{system_prompt}': {e}")
+            else:
+                print(f"Warning: System prompt file '{system_prompt}' not found")
+            
+            # Fallback: Try to create the file with a default prompt
+            print(f"Creating default system prompt file: {system_prompt}")
+            default_prompt = "You are a helpful assistant for Telecom Egypt (WE). Answer questions using ONLY the provided context."
+            with open(file_path, 'w', encoding='utf-8') as f:
+                f.write(default_prompt)
+            return default_prompt
+        
+        # If it's not a file path, assume it's the prompt string
+        return system_prompt or "You are a helpful assistant. Answer questions using ONLY the provided context."

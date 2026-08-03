@@ -26,11 +26,11 @@ class EmbeddingManager:
 
 
         if self.device is None:
-            device = "cuda" if torch.cuda.is_available() else "cpu"
+            self.device = "cuda" if torch.cuda.is_available() else "cpu"
 
         self.model = BGEM3FlagModel(
             self.model_name,
-            use_fp16 = self.use_fp16 and device == self.device,
+            use_fp16 = self.use_fp16,
             device   = self.device,
         )
 
