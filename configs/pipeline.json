@@ -6,7 +6,7 @@
     "device"                 : "cuda",
     "compute_type"           : "int8",
     "task"                   : "transcribe",
-    "sample_rate"            : 16000,
+    "sampling_rate"          : 16000,
     "max_new_tokens"         : 256
   },
 
