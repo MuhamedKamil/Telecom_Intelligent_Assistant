@@ -135,7 +135,7 @@ class Orchestrator:
         # Initialize TTS
         self._log("Initializing TTS...")
         self.tts = TTS(
-                TTS_config = pipeline_config["document_processing"]
+                TTS_config = pipeline_config["tts"]
             )
         self._log("TTS initialized with voice cloning")
         
