@@ -24,9 +24,9 @@ class RAGSystem:
         Rag_config: Optional[Dict] 
 
     ):
-        self.embedder_config: str         = Rag_config["embedder"],
+        self.embedder_config: str         = Rag_config["embedder"]
         self.llm_config                   = Rag_config["llm"]
-        self.max_turns: int               = Rag_config["memory"]["max_turns"],
+        self.max_turns: int               = Rag_config["memory"]["max_turns"]
         self.top_k: int                   = Rag_config["generation"]["top_k"]
         
         """

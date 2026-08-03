@@ -1,7 +1,7 @@
 {
   
   "asr": {
-    "language_detector_name" : "base",
+    "language_detector_name" : "base", 
     "asr_model_name"         : "namaa-space/cohere-transcribe-arabic-07-2026-int4",
     "device"                 : "cuda",
     "compute_type"           : "int8",

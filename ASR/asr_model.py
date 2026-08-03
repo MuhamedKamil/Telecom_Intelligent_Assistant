@@ -17,18 +17,18 @@ class ASR:
 
     ):
         
-        self.language_detector_name: str = ASR_config["language_detector_name"],
-        self.device: str                 = ASR_config["device"],
-        self.compute_type: str           = ASR_config["compute_type"],
-        self.asr_model:str               = ASR_config["asr_model_name"],
-        self.sampling_rate  :int         = ASR_config["sampling_rate"],
+        self.language_detector_name: str = ASR_config["language_detector_name"]
+        self.device: str                 = ASR_config["device"]
+        self.compute_type: str           = ASR_config["compute_type"]
+        self.asr_model:str               = ASR_config["asr_model_name"]
+        self.sampling_rate  :int         = ASR_config["sampling_rate"]
         self.max_new_tokens :int         = ASR_config["max_new_tokens"]
  
-        if device == "cuda" and not torch.cuda.is_available():
+        if self.device == "cuda" and not torch.cuda.is_available():
             print("CUDA is not available. Falling back to CPU.")
-            device = "cpu"
+            self.device = "cpu"
 
-        self.language_detector = WhisperModel(self.language_detector_name,device=device,compute_type=self.compute_type,)
+        self.language_detector = WhisperModel(self.language_detector_name,device=self.device,compute_type=self.compute_type)
         self.processor         = AutoProcessor.from_pretrained(self.asr_model),
         self.asr_model         = CohereAsrForConditionalGeneration.from_pretrained(self.asr_model, device_map=self.device)
 
