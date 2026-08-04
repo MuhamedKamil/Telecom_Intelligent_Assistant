@@ -23,7 +23,7 @@
     },
 
     "llm": {
-      "model_name"         : "silma-ai/SILMA-Kashif-2B-Instruct-v1.0",
+      "model_name"         : "LiquidAI/LFM2.5-2.6B",
       "device"             : "cuda",
       "torch_dtype"        : "float16",
       "max_new_tokens"     : 1024,
