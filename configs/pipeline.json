@@ -23,10 +23,10 @@
     },
 
     "llm": {
-      "model_name"         : "LiquidAI/LFM2-1.2B-RAG",
+      "model_name"         : "silma-ai/SILMA-Kashif-2B-Instruct-v1.0",
       "device"             : "cuda",
       "torch_dtype"        : "float16",
-      "max_new_tokens"     : 512,
+      "max_new_tokens"     : 1024,
       "max_context_chars"  : 10000,
       "temperature"        : 0.1,
       "system_prompt"      : "system_prompt.txt"
