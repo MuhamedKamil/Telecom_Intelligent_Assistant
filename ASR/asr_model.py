@@ -29,7 +29,7 @@ class ASR:
             self.device = "cpu"
 
         self.language_detector = WhisperModel(self.language_detector_name,device=self.device,compute_type=self.compute_type)
-        self.processor         = AutoProcessor.from_pretrained(self.asr_model),
+        self.processor         = AutoProcessor.from_pretrained(self.asr_model)
         self.asr_model         = CohereAsrForConditionalGeneration.from_pretrained(self.asr_model, device_map=self.device)
 
         print(f"Loaded Faster-Whisper Language Detector: {self.language_detector_name}")
