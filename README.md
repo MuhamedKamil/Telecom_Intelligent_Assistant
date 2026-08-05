@@ -39,7 +39,6 @@ The included example knowledge base is built around **Telecom Egypt ("WE")** cus
   - [🤝 Contributing](#-contributing)
   - [📄 License](#-license)
   - [🙏 Acknowledgments](#-acknowledgments)
-  - [📝 Suggested Additions](#-suggested-additions)
 
 ---
 
@@ -419,23 +418,9 @@ The pipeline itself is not telecom-specific — swapping in a different `documen
 - [NAMAA Space](https://huggingface.co/NAMAA-Space) — Arabic ASR model
 - [Faster-Whisper](https://github.com/SYSTRAN/faster-whisper) / [OpenAI Whisper](https://huggingface.co/openai/whisper-tiny) — language detection
 - [BAAI](https://huggingface.co/BAAI) — `bge-m3` embedding model
-- [Meta AI](https://huggingface.co/meta-llama) — Llama 3.2
+- [Liquid AI](https://huggingface.co/LiquidAI) — LFM2-1.2B-RAG
 - [SILMA AI](https://huggingface.co/silma-ai) — Arabic/English TTS with voice cloning
 - [Gradio](https://www.gradio.app/) — UI framework
 - [Hugging Face](https://huggingface.co/) — model hosting and `transformers`/`accelerate`/`FlagEmbedding` libraries
 
 ---
-
-## 📝 Suggested Additions
-
-Open questions and gaps worth resolving before this README is final:
-
-1. **ASR model mismatch** — clarify whether language detection should use `whisper-tiny` (as you specified) or Faster-Whisper `"base"` (as coded).
-2. **LLM variant** — confirm `Llama-3.2-3B-Instruct` (used in code) vs. `Llama-3.2-3B` (in your original model list) is the intended model.
-3. **`requirements.txt` sync** — reconcile it with the manual `pip install` steps and actual imports (`gradio`, `silma-tts`, `unstructured`, `bitsandbytes`, `speechbrain` are missing; `streamlit`/`streamlit-mic-recorder` appear unused by `app_gradio.py`).
-4. **License** — for the repo itself and a note on third-party model licenses.
-5. **Example usage** — a walkthrough or screenshots/GIF of a real session (text + voice).
-6. **Performance benchmarks** — latency, WER, retrieval accuracy on the T4 GPU.
-7. **Analytics Dashboard** — listed as a feature; not obviously implemented in the current file structure — confirm where this lives.
-8. **Contributing guidelines**.
-9. **Semantic chunking script** — the code that performs the `semantic_boundary_detection_by_section` chunking and cleaning isn't in the repo's Python files; only its output metadata is visible in `documents/*.json`. Adding the script (or confirming it lives outside this repo) would let the Data Collection section describe the algorithm itself.
