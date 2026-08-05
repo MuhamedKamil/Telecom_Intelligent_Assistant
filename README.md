@@ -127,12 +127,12 @@ The pipeline is built from four specialized open-source models, orchestrated by 
 
 | | |
 |---|---|
-| **Model** | [`meta-llama/Llama-3.2-3B-Instruct`](https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct) |
+| **Model** | [`LFM2-1.2B-RAG`](https://huggingface.co/LiquidAI/LFM2-1.2B-RAG) |
 | **Purpose** | Generates the final answer from the user's question, retrieved context chunks, and recent conversation history |
 | **Input** | Question + retrieved context chunks + chat history |
 | **Output** | Natural language answer (Arabic or English) |
 | **Why this model** | A compact, instruction-tuned 3B-parameter model — small enough to run alongside ASR/TTS on a single T4 GPU |
-| **Config** | Loaded via a Hugging Face `transformers` `pipeline("text-generation", ...)` with `torch_dtype=torch.float16`, `temperature=0.0` (deterministic/greedy decoding) by default, and `max_new_tokens=768` |
+| **Config** | Loaded via a Hugging Face `transformers` `pipeline("text-generation", ...)` with `torch_dtype=torch.float16`, `temperature=0.1` (deterministic/greedy decoding) by default, and `max_new_tokens=768` |
 | **System prompt** | Instructs the model to act as a support assistant for **Telecom Egypt (WE)**, answer strictly from the provided context, and say when the answer isn't in the knowledge base |
 
 > Note: your original model list said `meta-llama/Llama-3.2-3B` (base model); the code actually loads the **`-Instruct`** variant, which is what chat-style prompting (via `apply_chat_template`) requires.
