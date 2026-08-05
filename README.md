@@ -92,10 +92,11 @@ flowchart TD
 
 The assistant keeps a rolling window of recent conversation turns (question + answer pairs) and feeds them back into the LLM as chat history, so follow-up questions stay context-aware.
 
+
 ---
 ## System Configuration
 
-This is the central configuration hub that orchestrates the entire Telecom Intelligent Assistant pipeline. It defines all model selections, hardware settings, processing parameters, and system behavior across the ASR, RAG, and TTS modules.
+configuration hub that orchestrates the entire Telecom Intelligent Assistant pipeline. It defines all model selections, hardware settings, processing parameters, and system behavior across the ASR, RAG, and TTS modules.
 
 ```json
 {
