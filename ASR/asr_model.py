@@ -83,9 +83,10 @@ class ASR:
             dtype  = self.asr_model.dtype) 
 
         outputs = self.asr_model.generate(**inputs, max_new_tokens= self.max_new_tokens)
+        text    = self.processor.decode(outputs, skip_special_tokens=True)
 
         return {
             "language"             : language,
             "language_probability" : prob,
-            "text"                 : outputs,
+            "text"                 : text,
         }
