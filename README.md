@@ -35,9 +35,7 @@ The included example knowledge base is built around **Telecom Egypt ("WE")** cus
   - [🌍 Supported Languages](#-supported-languages)
   - [📌 Use Cases](#-use-cases)
   - [📊 Performance / Evaluation](#-performance--evaluation)
-  - [⚠️ Limitations](#️-limitations)
   - [🔮 Future Improvements](#-future-improvements)
-  - [🤝 Contributing](#-contributing)
   - [📄 License](#-license)
   - [🙏 Acknowledgments](#-acknowledgments)
 
@@ -460,27 +458,9 @@ The pipeline itself is not telecom-specific — swapping in a different `documen
 
 ---
 
-## ⚠️ Limitations
-
-- The LLM is a small 3B-parameter model, which may limit reasoning quality compared to larger models
-- The ASR transcription model runs in INT4-quantized form, which trades some accuracy for speed/memory
-- Conversation memory is a short rolling window (`max_turns`, default 5) rather than persistent long-term memory
-- Retrieval uses a simple in-memory vector store (no persistence across restarts, no approximate-nearest-neighbor indexing for large corpora)
-- `requirements.txt` does not currently install everything the app needs (see Tech Stack note above)
-
-> **TODO:** Add any other known limitations (e.g., accuracy on code-switched Arabic/English speech, document upload format support).
-
----
-
 ## 🔮 Future Improvements
 
 > **TODO:** e.g., persistent/long-term memory, a proper vector database (FAISS/Chroma/Qdrant) for scaling retrieval, larger LLM options, streaming responses, implementing the Analytics Dashboard feature, syncing `requirements.txt`.
-
----
-
-## 🤝 Contributing
-
-> **TODO:** Add contribution guidelines (branching strategy, PR process, code style, issue templates).
 
 ---
 
@@ -499,5 +479,3 @@ The pipeline itself is not telecom-specific — swapping in a different `documen
 - [SILMA AI](https://huggingface.co/silma-ai) — Arabic/English TTS with voice cloning
 - [Gradio](https://www.gradio.app/) — UI framework
 - [Hugging Face](https://huggingface.co/) — model hosting and `transformers`/`accelerate`/`FlagEmbedding` libraries
-
----
