@@ -263,12 +263,14 @@ Telecom_Intelligent_Assistant/
 │   ├── language.py              # Simple regex-based Arabic/English text language detection
 │   ├── screenshot.py            # Screenshot capture utility
 │   └── spidering.py             # Crawls te.eg and extracts clean page text (see "Data Collection" section)
+├── config/
+│   ├── pipeline.json            # Pipeline configuration (model paths, thresholds, settings)
+│   ├── reference_audio.wav      # Reference audio for TTS voice cloning
+│   └── system_prompt.txt        # System prompt for the LLM
 ├── documents/                    # Pre-scraped Telecom Egypt (WE) knowledge base (JSON chunks)
 ├── input_audios/                 # Sample AR/EN audio for testing
 ├── outputs/                      # Generated TTS responses (.wav) and saved session data
 ├── app_gradio.py                 # Gradio web app entry point
-├── colab.py                      # Google Colab setup/install script
-├── reference_audio.wav           # Default TTS voice-cloning reference audio
 ├── requirements.txt
 └── README.md
 ```
