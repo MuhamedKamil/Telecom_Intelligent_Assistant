@@ -15,6 +15,7 @@ The included example knowledge base is built around **Telecom Egypt ("WE")** cus
     - [1. Text Pipeline](#1-text-pipeline)
     - [2. Voice Pipeline](#2-voice-pipeline)
     - [3. Conversation Memory](#3-conversation-memory)
+  - [System Configuration](#system-configuration)
   - [🧩 Models Used](#-models-used)
     - [1. Automatic Speech Recognition (ASR)](#1-automatic-speech-recognition-asr)
     - [2. Retrieval (RAG — Embedding Model)](#2-retrieval-rag--embedding-model)
@@ -92,6 +93,79 @@ flowchart TD
 The assistant keeps a rolling window of recent conversation turns (question + answer pairs) and feeds them back into the LLM as chat history, so follow-up questions stay context-aware.
 
 ---
+## System Configuration
+
+This is the central configuration hub that orchestrates the entire Telecom Intelligent Assistant pipeline. It defines all model selections, hardware settings, processing parameters, and system behavior across the ASR, RAG, and TTS modules.
+
+```json
+{
+  
+  "asr": {
+    "language_detector_name" : "base", 
+    "asr_model_name"         : "namaa-space/cohere-transcribe-arabic-07-2026-int4",
+    "device"                 : "cuda",
+    "compute_type"           : "int8",
+    "task"                   : "transcribe",
+    "sampling_rate"          : 16000,
+    "max_new_tokens"         : 256
+  },
+
+  
+  
+  "rag": {
+    "embedder": {
+      "model_name"  : "BAAI/bge-m3",
+      "device"      : "cuda",
+      "use_fp16"    : true,
+      "batch_size"  : 16,
+      "max_length"  : 8192
+
+    },
+
+    "llm": {
+      "model_name"         : "LiquidAI/LFM2-1.2B-RAG",
+      "device"             : "cuda",
+      "torch_dtype"        : "float16",
+      "max_new_tokens"     : 1024,
+      "max_context_chars"  : 10000,
+      "temperature"        : 0.1,
+      "system_prompt"      : "system_prompt.txt"
+    },
+    
+    "generation": {
+      "top_p"               : 0.95,
+      "top_k"               : 5
+    },
+    
+    "retrieval": {
+      "top_k"               : 5,
+      "similarity_threshold": 0.5
+    },
+    
+    "memory": {
+      "max_turns": 5
+    }
+    
+  },
+  
+  "tts": {
+    "reference_audio" :"reference_audio.wav",
+    "reference_text"  :"ويدقق النظر في القرآن الكريم وسائر الكتب السماوية ويتبع مسالك الرسل العظام عليهم الصلاة والسلام."
+  },
+  
+     
+
+  "document_processing": {
+      "max_characters":    1000,
+      "new_after_n_chars": 800,
+      "overlap":           100,
+      "output_dir":        "outputs",
+      "verbose":           true
+  
+  }
+}
+
+```
 
 ## 🧩 Models Used
 
