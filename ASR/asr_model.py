@@ -87,5 +87,5 @@ class ASR:
         return {
             "language"             : language,
             "language_probability" : prob,
-            "segments"             : outputs,
+            "text"                 : outputs,
         }
