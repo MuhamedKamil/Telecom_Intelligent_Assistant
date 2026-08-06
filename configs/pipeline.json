@@ -29,7 +29,7 @@
       "max_new_tokens"     : 1024,
       "max_context_chars"  : 10000,
       "temperature"        : 0.1,
-      "system_prompt"      : "system_prompt.txt"
+      "system_prompt"      : "configs/system_prompt.txt"
     },
     
     "generation": {
@@ -49,7 +49,7 @@
   },
   
   "tts": {
-    "reference_audio" :"reference_audio.wav",
+    "reference_audio" :"configs/reference_audio.wav",
     "reference_text"  :"ويدقق النظر في القرآن الكريم وسائر الكتب السماوية ويتبع مسالك الرسل العظام عليهم الصلاة والسلام."
   },
   
