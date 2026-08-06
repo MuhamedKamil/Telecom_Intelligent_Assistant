@@ -88,5 +88,5 @@ class ASR:
         return {
             "language"             : language,
             "language_probability" : prob,
-            "text"                 : text,
+            "text"                 : " ".join(text),
         }
