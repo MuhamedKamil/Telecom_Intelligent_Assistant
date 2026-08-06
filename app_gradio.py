@@ -326,14 +326,31 @@ def upload_file(file):
         return "No file uploaded", ""
     
     try:
-        log_message(f"Uploading: {file.name}")
+        # For newer Gradio versions, file is a list or single file object
+        if isinstance(file, list):
+            file = file[0]  # Take the first file if multiple
+            
+        file_name = file.name if hasattr(file, 'name') else os.path.basename(str(file))
+        log_message(f"Uploading: {file_name}")
         
         upload_dir = Path("uploads")
         upload_dir.mkdir(exist_ok=True)
         
-        file_path = upload_dir / file.name
-        with open(file_path, "wb") as f:
-            f.write(file.read())
+        # Use the file's path directly
+        if hasattr(file, 'path'):
+            import shutil
+            file_path = upload_dir / file_name
+            shutil.copy2(file.path, file_path)
+        else:
+            # Fallback for older versions
+            file_path = upload_dir / file_name
+            with open(file_path, "wb") as f:
+                if hasattr(file, 'read'):
+                    f.write(file.read())
+                else:
+                    # If it's a string path
+                    with open(str(file), "rb") as src:
+                        f.write(src.read())
         
         if state.orchestrator:
             state.orchestrator.add_uploaded_file(str(file_path))

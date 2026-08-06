@@ -1,0 +1,109 @@
+================================================================
+           TELECOM BILL SUMMARY - ACCOUNT #8743-2210
+================================================================
+BILL DATE:              2026-08-01
+DUE DATE:               2026-08-21
+STATEMENT PERIOD:       2026-07-01  to  2026-07-31
+ACCOUNT HOLDER:         Mr. James A. Carter
+SERVICE ADDRESS:        1422 Oakwood Lane, Apt 4B
+                        Springfield, IL 62704
+BILLING CYCLE:          Monthly (Postpaid)
+CURRENT BALANCE:        $142.68
+PAYMENT DUE:            $142.68
+MINIMUM DUE:            $25.00
+LATE FEE (if unpaid):   $7.50
+================================================================
+
+SERVICE & USAGE DETAILS
+================================================================
+PLAN NAME:              Unlimited Premium Family Plan (4 lines)
+BASE PLAN COST:         $100.00
+  - Line 1 (Primary):   James (iPhone 15 Pro)
+  - Line 2:             Sarah (iPhone 15)
+  - Line 3:             David (Samsung S24)
+  - Line 4:             Emily (iPhone SE)
+
+ADD-ONS & FEATURES:
+  - Unlimited International SMS:      $5.00
+  - 5G Ultra-Wideband Access:         $10.00
+  - Cloud Storage (500GB Family):     $12.00
+  - Device Protection Plan (x4):      $20.00
+
+SUB-TOTAL (Plan + Add-ons):           $147.00
+
+DISCOUNTS & ADJUSTMENTS:
+  - Auto-Pay Discount:                -$5.00
+  - Loyalty Bonus (12 mo.):           -$10.00
+  - Adjustment (Credit - Outage):     -$2.50
+
+TOTAL DISCOUNTS:                      -$17.50
+
+NET PLAN CHARGES:                     $129.50
+================================================================
+
+USAGE-BASED CHARGES (overage & extra usage)
+================================================================
+  - Data Overage (2.3 GB @ $10/GB):   $23.00
+  - International Calls (15 min):     $7.50
+  - Roaming Charges (Canada):         $12.00
+
+TOTAL USAGE CHARGES:                  $42.50
+================================================================
+
+EQUIPMENT & INSTALLMENT CHARGES
+================================================================
+  - Device Installment (iPhone 15 Pro):   $22.50
+  - Device Installment (iPhone 15):       $18.75
+  - Device Installment (Samsung S24):     $16.25
+  - Device Installment (iPhone SE):       $12.50
+
+TOTAL EQUIPMENT CHARGES:                  $70.00
+================================================================
+
+TAXES, FEES & SURCHARGES
+================================================================
+  - Federal Universal Service Fund:    $3.25
+  - State Sales Tax (6.25%):           $8.62
+  - County Communications Tax:         $2.10
+  - 911 Emergency Surcharge:           $1.50
+  - Regulatory Compliance Fee:         $1.25
+
+TOTAL TAXES & FEES:                    $16.72
+================================================================
+
+CURRENT BILL CALCULATION
+================================================================
+  PLAN CHARGES:                        $129.50
+  USAGE CHARGES:                       +$42.50
+  EQUIPMENT CHARGES:                   +$70.00
+  TAXES & FEES:                        +$16.72
+  -------------------------------------------
+  TOTAL CURRENT CHARGES:               $258.72
+  PREVIOUS BALANCE:                    $0.00
+  PAYMENTS / CREDITS RECEIVED:         -$116.04
+  -------------------------------------------
+  **TOTAL AMOUNT DUE:**               $142.68
+================================================================
+
+PAYMENT HISTORY (LAST 3 MONTHS)
+================================================================
+  May 2026:  $210.45  (Paid on time)
+  Jun 2026:  $185.30  (Paid on time)
+  Jul 2026:  $142.68  (Current - not yet paid)
+================================================================
+
+CUSTOMER SUPPORT NOTES:
+  - Next billing date: 2026-09-01
+  - Data usage is trending +12% month-over-month.
+  - Suggest reviewing 5G usage or upgrading to Unlimited Premium Plus.
+  - Loyalty offer: Free Disney+ for 6 months (available).
+================================================================
+
+PAYMENT OPTIONS:
+  1. Auto-Pay (already enrolled - ends in ********7890)
+  2. Online: telecomprovider.com/pay
+  3. Phone: 1-800-555-0199
+  4. Mail check to: P.O. Box 4421, Springfield, IL 62704
+================================================================
+END OF BILL
+================================================================
