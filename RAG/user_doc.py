@@ -157,3 +157,13 @@ class DocumentPipeline:
 
         return self.formatter.format(str(path), chunks)
 
+
+
+sample_file = "bills.txt"
+# Now process it
+pipeline = DocumentPipeline({"max_characters": 200, "new_after_n_chars": 150, "overlap": 50})
+result = pipeline.process(sample_file)
+
+# Print the first chunk's text
+print(f"First chunk: {result['chunks'][0]['text']}")
+print(f"Total chunks: {result['document']['total_chunks']}")

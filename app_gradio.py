@@ -13,7 +13,7 @@ import tempfile
 from pathlib import Path
 from datetime import datetime
 from Utils.config import read_config 
-
+import shutil
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from Orchestration.orchestrator import Orchestrator
 
@@ -312,6 +312,7 @@ def get_history_html():
     return html
 
 
+
 def upload_file(file):
     """
     Handle file upload and process document.
@@ -326,45 +327,104 @@ def upload_file(file):
         return "No file uploaded", ""
     
     try:
-        # For newer Gradio versions, file is a list or single file object
+        # Handle different file object types from Gradio
         if isinstance(file, list):
             file = file[0]  # Take the first file if multiple
-            
-        file_name = file.name if hasattr(file, 'name') else os.path.basename(str(file))
+        
+        # Get filename - handles both old and new Gradio versions
+        if hasattr(file, 'name'):
+            file_name = file.name
+            if file_name.startswith('/tmp/'):
+                # It's a temporary file, get the original name
+                file_name = os.path.basename(file_name)
+        else:
+            file_name = os.path.basename(str(file))
+        
         log_message(f"Uploading: {file_name}")
         
+        # Create upload directory
         upload_dir = Path("uploads")
         upload_dir.mkdir(exist_ok=True)
         
-        # Use the file's path directly
+        # Copy the file to uploads directory
+        dest_path = upload_dir / file_name
+        
         if hasattr(file, 'path'):
-            import shutil
-            file_path = upload_dir / file_name
-            shutil.copy2(file.path, file_path)
+            # Newer Gradio version with path attribute
+            log_message(f"Copying from temp: {file.path}")
+            shutil.copy2(file.path, dest_path)
+        elif hasattr(file, 'name') and os.path.exists(file.name):
+            # File has a valid path
+            log_message(f"Copying from: {file.name}")
+            shutil.copy2(file.name, dest_path)
         else:
-            # Fallback for older versions
-            file_path = upload_dir / file_name
-            with open(file_path, "wb") as f:
+            # Fallback: try to read and write
+            log_message("Using fallback file handling")
+            with open(dest_path, "wb") as f:
                 if hasattr(file, 'read'):
                     f.write(file.read())
                 else:
-                    # If it's a string path
                     with open(str(file), "rb") as src:
                         f.write(src.read())
         
+        # Verify file was saved
+        if not dest_path.exists():
+            return f"❌ Error: File not saved properly", ""
+        
+        file_size = dest_path.stat().st_size
+        log_message(f"File saved: {dest_path} ({file_size} bytes)")
+        
+        if file_size == 0:
+            return f"❌ Error: Uploaded file is empty", ""
+        
+        # Process the document
         if state.orchestrator:
-            state.orchestrator.add_uploaded_file(str(file_path))
-            state.total_chunks = state.orchestrator.total_chunks_loaded
-            state.source_count = len(state.orchestrator.source_history)
-            log_message(f"Uploaded: {file.name} (Total: {state.total_chunks} chunks)")
-            return f"Uploaded: {file.name}\nTotal chunks: {state.total_chunks}", f"Chunks: {state.total_chunks}"
+            try:
+                # Add file to orchestrator
+                success = state.orchestrator.add_uploaded_file(str(dest_path))
+                
+                # Update stats
+                state.total_chunks = state.orchestrator.total_chunks_loaded
+                state.source_count = len(state.orchestrator.source_history)
+                
+                log_message(f"Processing complete - Total chunks: {state.total_chunks}")
+                
+                if state.total_chunks == 0:
+                    # Check what's in the orchestrator
+                    log_message("⚠️ No chunks extracted. Debugging...")
+                    if hasattr(state.orchestrator, 'source_history'):
+                        log_message(f"Source history: {state.orchestrator.source_history}")
+                    
+                    # Try to read the file content to verify it's not empty
+                    try:
+                        with open(dest_path, 'r', encoding='utf-8') as f:
+                            content = f.read()
+                            log_message(f"File content length: {len(content)} characters")
+                            if len(content) > 0:
+                                log_message(f"First 200 chars: {content[:200]}...")
+                            else:
+                                log_message("File appears to be empty or unreadable as text")
+                    except Exception as e:
+                        log_message(f"Could not read file as text: {e}")
+                    
+                    return f"⚠️ File uploaded but no text extracted.\nFile: {file_name}\nSize: {file_size} bytes\nPlease check if the file format is supported.", f"Chunks: 0"
+                
+                log_message(f"✅ Successfully processed: {file_name}")
+                return f"✅ Uploaded: {file_name}\nTotal chunks: {state.total_chunks}", f"Chunks: {state.total_chunks}"
+                
+            except Exception as e:
+                log_message(f"❌ Processing error: {e}")
+                import traceback
+                traceback.print_exc()
+                return f"❌ Error processing file: {str(e)}", ""
         else:
             return "⚠️ Initialize system first", ""
             
     except Exception as e:
-        log_message(f"❌ Error: {e}")
+        log_message(f"❌ Upload error: {e}")
+        import traceback
+        traceback.print_exc()
         return f"❌ Error: {str(e)}", ""
-
 
 # ============================================================================
 # UI
